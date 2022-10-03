@@ -1,21 +1,21 @@
 import React from 'react';
-import './styles.css';
-import logo from '../src/assets/logo_white_2.png'
-
+import ListenNow from './ListenNow'
+import Home from './Home'
+import Donate from './Donate'
+import GetInvolved from './GetInvolved'
+import { Routes, Route } from "react-router-dom";
+import Volunteer from './Volunteer';
 
 function App() {
   return (
-    <div className="homepage">
-      <div className="≈">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="buttons">
-          <button className="button-5">Listen Now</button>
-          <button className="button-5">Donate</button>
-          <button className="button-5">Get Involved</button>
-        </div>
-      </div>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listenNow" element={<ListenNow />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/getInvolved" element={<GetInvolved />} />
+        <Route path="/volunteer" element={<Volunteer />} />
+      </Routes>
     </div>
   );
 }

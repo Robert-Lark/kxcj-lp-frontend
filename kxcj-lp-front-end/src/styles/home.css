@@ -1,11 +1,15 @@
 
 /* Homepage background */
 html { 
-  background: url("./assets/Illinois-River1.jpg") no-repeat center center fixed; 
+  background: url("../assets/Illinois-River1.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+body {
+  max-width: 1400px;
 }
 
 .homepage {
@@ -71,4 +75,9 @@ html {
   background-color: #c85000;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
