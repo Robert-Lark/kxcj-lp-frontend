@@ -7,11 +7,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
-body {
-  max-width: 1400px;
-}
-
 .homepage {
   display: flex;
   align-items: center;
