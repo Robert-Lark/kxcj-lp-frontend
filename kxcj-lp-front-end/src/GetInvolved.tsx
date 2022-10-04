@@ -1,17 +1,13 @@
 import React from 'react';
-import '../src/styles/getInvolved.css';
+import '../src/styles/innerPages.css';
+import SideButtons from './SideButtons';
 
 function GetInvolved() {
   return (
-    <div className='get-involved-outer-container'>
-        <div className="get-involved-container">
-            <div className="get-involved-buttons">
-                <button className="button-5"><a href='/listenNow'>Volunteer</a></button>
-                <button className="button-5"><a href='/donate'>Submit a PSA</a></button>
-                <button className="button-5"><a href='/getInvolved'>Become a DJ!</a></button>
-                <button className="button-5"><a href='/donate'>Donate</a></button>
-            </div>
-            <div className="get-involved-content-container">
+    <div className='outer-container'>
+        <div className="inner-container">
+            <SideButtons />
+            <div className="content-container">
                 <span>
                     <h1>Volunteer-run, community-based radio</h1>
 

@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import '../src/styles/form.css'
 
-function Form() {
+type formValues = {
+    value: string
+    placeholder: string
+    name: string
+}
+
+function Form(props: formValues) {
+    const { value, placeholder, name} = props
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -29,7 +36,7 @@ function Form() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="Email address"
-                    type="email"
+                    type="text"
                     name="email"
                     required
                 />
@@ -37,7 +44,7 @@ function Form() {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Password"
-                    type="password"
+                    type="text"
                     name="password"
                     required
                 />
