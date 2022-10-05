@@ -1,6 +1,6 @@
 export default {
-    name: 'donate',
-    title: 'Donate',
+    name: 'shop',
+    title: 'Shop',
     type: 'document',
     fields: [
         {

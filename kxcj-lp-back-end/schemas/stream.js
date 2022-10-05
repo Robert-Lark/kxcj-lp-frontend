@@ -1,6 +1,6 @@
 export default {
-    name: 'donate',
-    title: 'Donate',
+    name: 'stream',
+    title: 'Stream',
     type: 'document',
     fields: [
         {

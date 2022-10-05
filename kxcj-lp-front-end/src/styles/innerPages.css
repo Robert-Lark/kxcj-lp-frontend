@@ -52,10 +52,67 @@ div.gallery {
     width: 180px;
   }
   
-  div.gallery img {
+  div.gallery .gallery_image {
     width:  90%;
     height: 90%;
+    max-height: 250px;
     object-fit: cover;
     border-radius: 20px;
   }
+
+  div.desc {
+    text-align: center;
+  }
+
+  .innerImageText {
+    background: black;
+    width:  15%;
+    position: absolute;
+    margin-left: 8px;
+    top: 280px;
+    opacity: 0;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .innerImageText:hover {
+    opacity: 1;
+  }
+
+  /* buttons */
+
+  .grid{
+    display: grid;
+    justify-content: center;
+  }
+  
+  .planks, .caption{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .planks {
+    width: 300px;
+  }
+
+  .caption {
+    /* margin-top: -35px; */
+  }
+
+  .planks:hover {
+    transform: skewY(10deg);
+  }
+
+  .caption:hover {
+    /* margin-top: -35px; */
+    transform: skewY(10deg);
+  }
+
+  /* frames */
+
+  .frame {
+    width: 100px;
+  }
+  
+  
   

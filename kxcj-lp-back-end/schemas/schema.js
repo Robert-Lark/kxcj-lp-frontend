@@ -5,6 +5,13 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import volunteer from './volunteer'
 import images from './images'
+import submitPSA from './submitPSA'
+import getInvolved from './getInvolved'
+import donate from './donate'
+import becomeDJ from './becomeDJ'
+import stream from './stream'
+import shop from './shop'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -12,6 +19,6 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    volunteer, images
+    volunteer, images, submitPSA, getInvolved, donate, becomeDJ, stream, shop
   ]),
 })

@@ -1,6 +1,6 @@
 export default {
-    name: 'donate',
-    title: 'Donate',
+    name: 'getInvolved',
+    title: 'Get Involved',
     type: 'document',
     fields: [
         {
@@ -22,5 +22,15 @@ export default {
             of: [{type: 'block'}],
             description: 'Write the body text here'
         },
+        {
+            name: 'referenceList',
+            title: 'Images (limit 6)',
+            type: 'array',
+            of: [
+              {
+                type: 'images'
+              },
+            ]
+          },
     ],
 }

@@ -1,6 +1,6 @@
 export default {
-    name: 'donate',
-    title: 'Donate',
+    name: 'becomeDJ',
+    title: 'Become A DJ',
     type: 'document',
     fields: [
         {
@@ -21,6 +21,12 @@ export default {
             type: 'array', 
             of: [{type: 'block'}],
             description: 'Write the body text here'
+        },
+        {
+            name: 'text',
+            title: 'Form Heading',
+            type: 'string',
+            description: 'Heading of the form'
         },
     ],
 }

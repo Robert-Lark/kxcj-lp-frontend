@@ -1,6 +1,6 @@
 export default {
-    name: 'donate',
-    title: 'Donate',
+    name: 'submitPSA',
+    title: 'Submit A PSA',
     type: 'document',
     fields: [
         {
@@ -22,5 +22,11 @@ export default {
             of: [{type: 'block'}],
             description: 'Write the body text here'
         },
+        {
+          name: 'text',
+          title: 'Form Heading',
+          type: 'string',
+          description: 'Heading of the form'
+      },
     ],
 }
