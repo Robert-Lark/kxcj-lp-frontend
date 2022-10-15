@@ -5,10 +5,12 @@ import logo from "../src/assets/logo_white_2.png";
 function Home() {
   return (
     <div className="homepage">
-      <div>
+
+      <div className='in-cont'>  
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
+
         <div className="buttons">
           <div className="side_button">
             <a href="/listenNow">
@@ -27,6 +29,7 @@ function Home() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
