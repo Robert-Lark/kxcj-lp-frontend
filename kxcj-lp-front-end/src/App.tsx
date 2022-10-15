@@ -6,6 +6,7 @@ import GetInvolved from './GetInvolved'
 import { Routes, Route } from "react-router-dom";
 import Volunteer from './Volunteer';
 import SubmitPSA from './SubmitPSA';
+import TemplateFormPage from './TemplateFormPage';
 // import BecomeDJ from './BecomeDJ';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/volunteer" element={<Volunteer />} />
         {/* <Route path="/becomeadj" element={<BecomeDJ />} /> */}
         <Route path="/submit" element={<SubmitPSA />} />
+        <Route path="/template" element={<TemplateFormPage />} />
       </Routes>
     </div>
   );

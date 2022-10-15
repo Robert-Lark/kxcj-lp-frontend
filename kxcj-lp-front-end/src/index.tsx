@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react'
 import App from './App';
-// 5xzup7mu
+import './styles/index.css';
 
 const client = new ApolloClient({
   uri: 'https://5xzup7mu.api.sanity.io/v1/graphql/production/default',

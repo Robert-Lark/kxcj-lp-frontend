@@ -1,6 +1,6 @@
-import React from 'react';
-import '../src/styles/home.css';
-import logo from '../src/assets/logo_white_2.png'
+import React from "react";
+import "../src/styles/home.css";
+import logo from "../src/assets/logo_white_2.png";
 
 function Home() {
   return (
@@ -10,9 +10,21 @@ function Home() {
           <img src={logo} alt="logo" />
         </div>
         <div className="buttons">
-          <button className="button-5"><a href='/listenNow'>Listen Now</a></button>
-          <button className="button-5"><a href='/donate'>Donate</a></button>
-          <button className="button-5"><a href='/getInvolved'>Get Involved</a></button>
+          <div className="side_button">
+            <a href="/listenNow">
+              <button className="button-5">Listen Now</button>
+            </a>
+          </div>
+          <div className="side_button">
+            <a href="/donate">
+              <button className="button-5">Donate</button>
+            </a>
+          </div>
+          <div className="side_button">
+            <a href="/getInvolved">
+              <button className="button-5">Get Involved</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

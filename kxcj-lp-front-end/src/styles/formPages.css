@@ -1,0 +1,16 @@
+.top-level-container {
+    border: 2px solid red;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.glass-container {
+    border: 4px solid red;
+    background-color: rgba(255, 255, 255, .15);   
+    backdrop-filter: blur(8px);
+    min-width: 800px;
+    min-height: 700px;
+}
