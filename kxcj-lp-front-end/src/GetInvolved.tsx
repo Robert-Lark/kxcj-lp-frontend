@@ -1,6 +1,6 @@
 import React from 'react';
 import '../src/styles/innerPages.css';
-import SideButtons from './lib/SideButtons';
+// import SideButtons from './lib/SideButtons';
 import {useQuery, gql} from "@apollo/client"
 import ErrorState from './lib/ErrorState';
 import stock_image_1 from './assets/stock_image_1.jpeg'
@@ -10,7 +10,7 @@ import stock_image_4 from './assets/stock_image_4.jpeg'
 import stock_image_5 from './assets/stock_image_5.jpeg'
 import stock_image_6 from './assets/stock_image_6.jpeg'
 import plank from './assets/plank.jpg'
-import Frame1 from './assets/Frame1.gif'
+// import Frame1 from './assets/Frame1.gif'
 
 const GET_INVOVLED_QUERY = gql`
     query GetAllGetInvolved {

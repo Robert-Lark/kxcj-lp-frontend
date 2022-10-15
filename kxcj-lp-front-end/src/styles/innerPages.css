@@ -95,10 +95,6 @@ div.gallery {
     width: 300px;
   }
 
-  .caption {
-    /* margin-top: -35px; */
-  }
-
   .planks:hover {
     transform: skewY(10deg);
   }
