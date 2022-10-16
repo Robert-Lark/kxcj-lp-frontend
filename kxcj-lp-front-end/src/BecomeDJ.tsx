@@ -3,7 +3,7 @@ import Form from './lib/Form';
 import SideButtons from './lib/SideButtons';
 import {useQuery, gql} from "@apollo/client"
 import ErrorState from './lib/ErrorState';
-import BecomeDJForm from './lib/BecomeADJForm';
+
 
 const SUBMITPSA_QUERY = gql`
     query allBecomeDJ {
