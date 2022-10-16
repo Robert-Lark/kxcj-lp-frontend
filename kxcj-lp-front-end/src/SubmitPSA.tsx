@@ -3,6 +3,7 @@ import Form from './lib/Form';
 import SideButtons from './lib/SideButtons';
 import {useQuery, gql} from "@apollo/client"
 import ErrorState from './lib/ErrorState';
+import TemplateFormPage from './TemplateFormPage';
 
 const SUBMITPSA_QUERY = gql`
     query allSubmitPSA {
@@ -14,10 +15,7 @@ const SUBMITPSA_QUERY = gql`
 `
 
 function SubmitPSA() {
-    const {loading, error, data} = useQuery(SUBMITPSA_QUERY)
-    if (loading) return <p>loading...</p>;
-    if (error) return <ErrorState error={error}/>;
-
+    const {data} = useQuery(SUBMITPSA_QUERY)
     const heading = data?.allSubmitPSA[0]?.heading
     const content = data?.allSubmitPSA[1]?.contentRaw[0]?.children[0]?.text
     const fallback = <span>We broadcast Public Service Announcements (PSA) as a free service to the Illinois Valley community.
@@ -30,7 +28,8 @@ function SubmitPSA() {
 
     return (
         <div className='outer-container'>
-        <div className="inner-container">
+            <TemplateFormPage content={content} heading={heading} query={SUBMITPSA_QUERY} fallBackHeading={'Public Service Announcements'} FallBackBody={fallback} />
+        {/* <div className="inner-container">
             <SideButtons back/>
             <div className="content-container">
                 <h1>{heading ? heading : 'Public Service Announcements'}</h1>
@@ -41,7 +40,7 @@ function SubmitPSA() {
                     <Form value={''} placeholder={''} name={''} />
                 </span>
             </div>
-        </div>
+        </div> */}
     </div>
     );
 }

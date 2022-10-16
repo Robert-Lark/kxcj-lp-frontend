@@ -1,16 +1,27 @@
 .top-level-container {
-    border: 2px solid red;
-    max-width: 1300px;
-    margin: auto;
+    /* height: 95vh; */
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    gap: 20px;
+    
 }
 
 .glass-container {
-    border: 4px solid red;
     background-color: rgba(255, 255, 255, .15);   
     backdrop-filter: blur(8px);
-    min-width: 800px;
-    min-height: 700px;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    color: #FFFFFF;
+}
+
+.glass-container h1{
+font-size: 3rem;    
 }
