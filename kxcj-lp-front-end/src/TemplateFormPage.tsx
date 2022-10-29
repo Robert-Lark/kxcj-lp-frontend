@@ -1,4 +1,3 @@
-import React from 'react';
 import {useLocation} from 'react-router-dom';
 import ErrorState from './lib/ErrorState';
 import Form from './lib/Form';
@@ -7,6 +6,7 @@ import {useQuery} from "@apollo/client"
 import './styles/formPages.css'
 
 function TemplateFormPage(props: any) {
+    // use location is used to ensure we dont display a link in the side buttons to the page we are currently on
     const location = useLocation();
     const { query, heading, fallBackHeading, content, FallBackBody} = props
     const {loading, error} = useQuery(query)
@@ -22,7 +22,7 @@ function TemplateFormPage(props: any) {
                 <p>
                     {content ? content : FallBackBody}
                 </p>
-                <span>
+                <span className='form-container'>
                     <Form value={''} placeholder={''} name={''} />
                 </span>
             </div>
