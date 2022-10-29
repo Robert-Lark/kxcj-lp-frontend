@@ -1,48 +1,36 @@
-import React from 'react';
-import Form from './lib/Form';
-import SideButtons from './lib/SideButtons';
-import {useQuery, gql} from "@apollo/client"
-import ErrorState from './lib/ErrorState';
-import {useLocation} from 'react-router-dom';
+import { useQuery, gql } from "@apollo/client";
+import ErrorState from "./lib/ErrorState";
+import TemplateFormPage from "./TemplateFormPage";
 
-
-const SUBMITPSA_QUERY = gql`
-    query allBecomeDJ {
-        allBecomeDJ {
-            heading
-            contentRaw
-            text
-        }
+const BECOMEDJ_QUERY = gql`
+  query allBecomeDJ {
+    allBecomeDJ {
+      heading
+      contentRaw
+      text
     }
-`
+  }
+`;
 
 function BecomeDJ() {
-    const location = useLocation();
-    const {loading, error, data} = useQuery(SUBMITPSA_QUERY)
-    if (loading) return <p>loading...</p>;
-    if (error) return <ErrorState error={error}/>;
+  const { data, loading, error } = useQuery(BECOMEDJ_QUERY);
+  const heading = data?.allBecomeDJ[0]?.heading;
+  const content = data?.allBecomeDJ[1]?.contentRaw[0]?.children[0]?.text;
+  if (loading) return <p>loading...</p>;
+  if (error) return <ErrorState error={error} />;
+  const fallback = <span>Send us your idea for a new program on KXCJ!</span>;
 
-    const heading = data?.allBecomeDJ[0]?.heading
-    const content = data?.allBecomeDJ[1]?.contentRaw[0]?.children[0]?.text
-    const formHeader = data?.allBecomeDJ[1]?.text
-    const fallback = <span></span>
-    return (
-        <div className='outer-container'>
-        <div className="inner-container">
-            <SideButtons back currentPage={location.pathname}/>
-            <div className="content-container">
-                <h1>{heading ? heading : 'Become A DJ'}</h1>
-                <span>
-                    {content ? content : fallback}
-                </span>
-                <span>
-                    <h2>{formHeader ? formHeader : 'Send us your idea for a new program on KXCJ!'}</h2>
-                    {/* <BecomeDJForm/> */}
-                </span>
-            </div>
-        </div>
+  return (
+    <div className="outer-container">
+      <TemplateFormPage
+        content={content}
+        heading={heading}
+        query={BECOMEDJ_QUERY}
+        fallBackHeading={"Propose a Program"}
+        FallBackBody={fallback}
+      />
     </div>
-    );
+  );
 }
 
 export default BecomeDJ;

@@ -73,7 +73,7 @@ function GetInvolved() {
   const lorem = [
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum ",
   ];
-  const links = ["/dj", "/submit", "/donate", "/volunteer"];
+  const links = ["/becomeadj", "/submit", "/donate", "/volunteer"];
   const fallbackCaptions = [
     "Donate",
     "Submit A PSA",

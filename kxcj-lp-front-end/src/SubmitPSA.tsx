@@ -39,18 +39,6 @@ function SubmitPSA() {
         fallBackHeading={"Public Service Announcements"}
         FallBackBody={fallback}
       />
-      {/* <div className="inner-container">
-            <SideButtons back/>
-            <div className="content-container">
-                <h1>{heading ? heading : 'Public Service Announcements'}</h1>
-                <span>
-                    {content ? content : fallback}
-                </span>
-                <span>
-                    <Form value={''} placeholder={''} name={''} />
-                </span>
-            </div>
-        </div> */}
     </div>
   );
 }
