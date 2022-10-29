@@ -39,7 +39,7 @@ function Form(props: formValues) {
     useMultistepForm([
       <ContactForm {...data} updateFields={updateFields} />,
       <PsaForm {...data} updateFields={updateFields} />,
-    //   <BecomeDjForm {...data} updateFields={updateFields} />,
+      //   <BecomeDjForm {...data} updateFields={updateFields} />,
     ]);
 
   function updateFields(fields: Partial<FormData>) {

@@ -20,7 +20,7 @@ export function PsaForm({
     updateFields,
   }: PSAFormProps)  {
   return (
-    <FormWrapper title="">
+    <FormWrapper title="Submit a PSA test">
       <label>First Name</label>
       <input autoFocus required type="text" value={firstName}
         onChange={(e) => updateFields({ firstName: e.target.value })}></input>

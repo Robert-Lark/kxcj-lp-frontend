@@ -94,8 +94,7 @@ function GetInvolved() {
               ? images.map((image: imageType, i: any) => {
                   return (
                     <div className="gallery" key={i}>
-                      <a href={links[i]}>
-                        <span className="innerImageText">{lorem[0]}</span>
+                        {/* <span className="innerImageText">{lorem[0]}</span> */}
                         <img
                           className="gallery_image"
                           src={image?.asset?.url}
@@ -108,7 +107,7 @@ function GetInvolved() {
                             </button>
                           </a>
                         </div>
-                      </a>
+
                     </div>
                   );
                 })

@@ -66,50 +66,21 @@ div.gallery {
   }
 
   .innerImageText {
-    background: black;
-    width:  15%;
-    position: absolute;
-    margin-left: 8px;
-    top: 280px;
-    opacity: 0;
-    border-radius: 20px;
-    padding: 20px;
+    z-index: 99;
   }
 
   .innerImageText:hover {
     opacity: 1;
   }
 
-  /* buttons */
-
-  .grid{
-    display: grid;
-    justify-content: center;
-  }
-  
-  .planks, .caption{
+  .innerImageText, .gallery_image{
     grid-column: 1;
     grid-row: 1;
   }
 
-  .planks {
-    width: 300px;
-  }
+  /* buttons */
 
-  .planks:hover {
-    transform: skewY(10deg);
-  }
 
-  .caption:hover {
-    /* margin-top: -35px; */
-    transform: skewY(10deg);
-  }
-
-  /* frames */
-
-  .frame {
-    width: 100px;
-  }
   
   
   
