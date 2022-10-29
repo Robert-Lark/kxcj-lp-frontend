@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 type props = { back?: boolean; currentPage: string };
 
 function SideButtons(props: props) {
-  const buttonArr = ["Listen Now", "Donate", "Get Involved", "Shop"];
-  const linkArr = ["/listenNow", "/donate", "/getInvolved", "/shop"];
+  const buttonArr = ["Listen Now", "Donate", "Get Involved", "Shop", "Become a DJ"];
+  const linkArr = ["/listenNow", "/donate", "/getInvolved", "/shop", "/becomeadj"];
   const navigate = useNavigate();
   const { back = false, currentPage } = props;
+
+  
   return (
-    <div className="get-involved-buttons">
+    <div className="side_buttons">
       {back && (
         <div className="side_button">
           <button className="button-wood-plank back" onClick={() => navigate(-1)}>
@@ -18,11 +20,11 @@ function SideButtons(props: props) {
         </div>
       )}
       {buttonArr.map((button: string, i: any) => {
-        if (button[i] === currentPage) {
-          return null;
+        if (linkArr[i] === currentPage) {
+          return null
         } else
           return (
-            <div className="side_button">
+            <div className="side_button" key={i}>
               <a href={linkArr[i]}>
                 <button className="button-wood-plank">{buttonArr[i]}</button>
               </a>
