@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat+Brush&family=Francois+One&family=Indie+Flower&family=Limelight&family=Neucha&family=Roboto:ital@1&family=Rubik+Dirt&family=Rye&display=swap');
+
 
 /* Homepage background */
 html { 
@@ -39,9 +41,47 @@ html {
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
+  
 }
 
 a {
   color: #FFFFFF;
   text-decoration: none;
+  
+}
+
+button {
+  font-size: 50px;
+}
+
+#amatic {
+  font-family: 'Amatic SC', cursive;
+}
+
+#indie-flower {
+  font-family: 'Indie Flower', cursive;
+}
+
+#francois-one {
+  font-family: 'Francois One', sans-serif;
+}
+
+#neutcha {
+  font-family: 'Neucha', cursive;
+}
+
+#caveat-brush {
+  font-family: 'Caveat Brush', cursive;
+}
+
+#rubik-dirt {
+  font-family: 'Rubik Dirt', cursive;
+}
+
+#rye {
+  font-family: 'Rye', cursive;
+}
+
+#limelight {
+  font-family: 'Limelight', cursive;
 }
