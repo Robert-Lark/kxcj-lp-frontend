@@ -9,7 +9,7 @@ import stock_image_3 from "./assets/stock_image_3.jpeg";
 import stock_image_4 from "./assets/stock_image_4.jpeg";
 import stock_image_5 from "./assets/stock_image_5.jpeg";
 import stock_image_6 from "./assets/stock_image_6.jpeg";
-import plank from "./assets/plank.jpg";
+
 // import Frame1 from './assets/Frame1.gif'
 
 const GET_INVOVLED_QUERY = gql`
@@ -73,7 +73,7 @@ function GetInvolved() {
   const lorem = [
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum ",
   ];
-  const links = ["/donate", "/submit", "/shop", "/dj", "/volunteer", "/"];
+  const links = ["/dj", "/submit", "/donate", "/volunteer"];
   const fallbackCaptions = [
     "Donate",
     "Submit A PSA",
@@ -99,11 +99,14 @@ function GetInvolved() {
                         <img
                           className="gallery_image"
                           src={image?.asset?.url}
-                          alt="Cinque Terre"
+                          alt="button"
                         />
-                        <div className="grid">
-                          <img className="planks" src={plank} alt="plank" />
-                          <p className="caption">{image?.caption}</p>
+                        <div className="side_button">
+                          <a href={links[i]}>
+                            <button className="button-wood-plank">
+                              {image.caption}
+                            </button>
+                          </a>
                         </div>
                       </a>
                     </div>
@@ -118,7 +121,13 @@ function GetInvolved() {
                         <div className="desc">
                           Add a description of the image here
                         </div>
-                        <button className="desc">{fallbackCaptions[i]}</button>
+                        <div className="side_button">
+                          <a href={links[i]}>
+                            <button className="button-wood-plank">
+                              {fallbackCaptions[i]}
+                            </button>
+                          </a>
+                        </div>
                       </a>
                     </div>
                   );
