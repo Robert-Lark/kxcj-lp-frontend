@@ -1,40 +1,34 @@
-import React from "react";
 import "../styles/buttons.css";
+import { useNavigate } from "react-router-dom";
 
-type props = { back?: boolean };
+type props = { back?: boolean; currentPage: string };
 
 function SideButtons(props: props) {
-  const { back = false } = props;
+  const buttonArr = ["Listen Now", "Donate", "Get Involved", "Shop"];
+  const linkArr = ["/listenNow", "/donate", "/getInvolved", "/shop"];
+  const navigate = useNavigate();
+  const { back = false, currentPage } = props;
   return (
     <div className="get-involved-buttons">
-      {back ? (
+      {back && (
         <div className="side_button">
-          <a href="/">
-            <button className="button-5">Back</button>
-          </a>
-        </div>
-      ) : (
-        <div className="side_button">
-          <a href="/volunteer">
-            <button className="button-5">Volunteer</button>
-          </a>
+          <button className="button-wood-plank back" onClick={() => navigate(-1)}>
+            Back
+          </button>
         </div>
       )}
-      <div className="side_button">
-        <a href="/submit">
-          <button className="button-5">Submit a PSA</button>
-        </a>
-      </div>
-      <div className="side_button">
-        <a href="/becomeadj">
-          <button className="button-5">Become a DJ!</button>
-        </a>
-      </div>
-      <div className="side_button">
-        <a href="/donate">
-          <button className="button-5">Donate</button>
-        </a>
-      </div>
+      {buttonArr.map((button: string, i: any) => {
+        if (button[i] === currentPage) {
+          return null;
+        } else
+          return (
+            <div className="side_button">
+              <a href={linkArr[i]}>
+                <button className="button-wood-plank">{buttonArr[i]}</button>
+              </a>
+            </div>
+          );
+      })}
     </div>
   );
 }

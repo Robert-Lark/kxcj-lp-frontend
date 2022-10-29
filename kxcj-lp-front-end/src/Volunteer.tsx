@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './lib/Form';
+import {useLocation} from 'react-router-dom';
 import '../src/styles/innerPages.css';
 import SideButtons from './lib/SideButtons';
 import {useQuery, gql} from "@apollo/client"
@@ -15,6 +16,8 @@ const VOLUNTEER_QUERY = gql`
 `
 
 function Volunteer() {
+    // use location is used to ensure we dont display a link in the side buttons to the page we are currently on
+    const location = useLocation();
     const {loading, error, data} = useQuery(VOLUNTEER_QUERY)
     if (loading) return <p>loading...</p>;
     if (error) return <ErrorState error={error}/>;
@@ -29,7 +32,7 @@ function Volunteer() {
     return (
         <div className='outer-container'>
         <div className="inner-container">
-            <SideButtons back/>
+            <SideButtons back currentPage={location.pathname}/>
             <div className="content-container">
                 <h1>{heading ? heading : 'Volunteer'}</h1>
                 <span>

@@ -10,7 +10,6 @@ function Home() {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-
         <div className="buttons" id="amatic">
           <div className="side_button">
             <a href="/listenNow">

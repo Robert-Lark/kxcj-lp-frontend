@@ -3,6 +3,7 @@ import Form from './lib/Form';
 import SideButtons from './lib/SideButtons';
 import {useQuery, gql} from "@apollo/client"
 import ErrorState from './lib/ErrorState';
+import {useLocation} from 'react-router-dom';
 
 
 const SUBMITPSA_QUERY = gql`
@@ -16,6 +17,7 @@ const SUBMITPSA_QUERY = gql`
 `
 
 function BecomeDJ() {
+    const location = useLocation();
     const {loading, error, data} = useQuery(SUBMITPSA_QUERY)
     if (loading) return <p>loading...</p>;
     if (error) return <ErrorState error={error}/>;
@@ -27,7 +29,7 @@ function BecomeDJ() {
     return (
         <div className='outer-container'>
         <div className="inner-container">
-            <SideButtons back/>
+            <SideButtons back currentPage={location.pathname}/>
             <div className="content-container">
                 <h1>{heading ? heading : 'Become A DJ'}</h1>
                 <span>
