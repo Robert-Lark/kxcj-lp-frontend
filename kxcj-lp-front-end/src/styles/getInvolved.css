@@ -1,0 +1,19 @@
+.images-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+max-width: 100%;
+}
+
+.image-container {
+    
+}
+
+.image {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 20px;
+    
+}

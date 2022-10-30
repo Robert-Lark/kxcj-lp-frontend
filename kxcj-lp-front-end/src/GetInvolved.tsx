@@ -1,5 +1,5 @@
 import React from "react";
-import "../src/styles/innerPages.css";
+import "../src/styles/getInvolved.css";
 // import SideButtons from './lib/SideButtons';
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
@@ -84,58 +84,86 @@ function GetInvolved() {
   ];
 
   return (
-    <div className="outer-container">
-      <div className="inner-container">
-        <div className="content-container ">
-          <h1>{heading ? heading : "Volunteer"}</h1>
-          <span>{textContent ? textContent : fallback}</span>
-          <div className="row">
-            {images
-              ? images.map((image: imageType, i: any) => {
-                  return (
-                    <div className="gallery" key={i}>
-                        {/* <span className="innerImageText">{lorem[0]}</span> */}
-                        <img
-                          className="gallery_image"
-                          src={image?.asset?.url}
-                          alt="button"
-                        />
-                        <div className="side_button">
-                          <a href={links[i]}>
-                            <button className="button-wood-plank">
-                              {image.caption}
-                            </button>
-                          </a>
-                        </div>
-
-                    </div>
-                  );
-                })
-              : fallbackImages.map((image, i) => {
-                  return (
-                    <div className="gallery" key={i}>
-                      <a href={links[i]}>
-                        <span className="innerImageText">{lorem[0]}</span>
-                        <img src={image} alt="Cinque Terre" />
-                        <div className="desc">
-                          Add a description of the image here
-                        </div>
-                        <div className="side_button">
-                          <a href={links[i]}>
-                            <button className="button-wood-plank">
-                              {fallbackCaptions[i]}
-                            </button>
-                          </a>
-                        </div>
-                      </a>
-                    </div>
-                  );
-                })}
-          </div>
+    <div className="top-level-container">
+      <div className="glass-container">
+        <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
+        <p>{textContent ? textContent : fallback}</p>
+        <div className="images-container">
+          {images.map((image: imageType, i: any) => {
+            return (
+              <div className="image-container" key={i}>
+                <div>
+                  
+                  <img className="image" src={image?.asset?.url} alt="button" />
+                </div>
+                <div className="side_button">
+                  <a href={links[i]}>
+                    <button className="button-wood-plank">
+                      {image.caption}
+                    </button>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
   );
+
+  //  return (
+  //   <div className="outer-container">
+  //     <div className="inner-container">
+  //       <div className="content-container">
+  //         <h1>{heading ? heading : "Volunteer"}</h1>
+  //         <span>{textContent ? textContent : fallback}</span>
+  //         <div className="row">
+  //           {images
+  //             ? images.map((image: imageType, i: any) => {
+  //                 return (
+  //                   <div className="gallery" key={i}>
+  //                       {/* <span className="innerImageText">{lorem[0]}</span> */}
+  //                       <img
+  //                         className="gallery_image"
+  //                         src={image?.asset?.url}
+  //                         alt="button"
+  //                       />
+  //                       <div className="side_button">
+  //                         <a href={links[i]}>
+  //                           <button className="button-wood-plank">
+  //                             {image.caption}
+  //                           </button>
+  //                         </a>
+  //                       </div>
+
+  //                   </div>
+  //                 );
+  //               })
+  //             : fallbackImages.map((image, i) => {
+  //                 return (
+  //                   <div className="gallery" key={i}>
+  //                     <a href={links[i]}>
+  //                       <span className="innerImageText">{lorem[0]}</span>
+  //                       <img src={image} alt="Cinque Terre" />
+  //                       <div className="desc">
+  //                         Add a description of the image here
+  //                       </div>
+  //                       <div className="side_button">
+  //                         <a href={links[i]}>
+  //                           <button className="button-wood-plank">
+  //                             {fallbackCaptions[i]}
+  //                           </button>
+  //                         </a>
+  //                       </div>
+  //                     </a>
+  //                   </div>
+  //                 );
+  //               })}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default GetInvolved;
