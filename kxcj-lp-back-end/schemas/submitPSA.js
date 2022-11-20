@@ -23,10 +23,10 @@ export default {
             description: 'Write the body text here'
         },
         {
-          name: 'text',
-          title: 'Form Heading',
-          type: 'string',
-          description: 'Heading of the form'
-      },
+            name: 'formHeading',
+            title: 'Form Heading',
+            type: 'string',
+            description: 'The heading atop the form'
+        },
     ],
 }

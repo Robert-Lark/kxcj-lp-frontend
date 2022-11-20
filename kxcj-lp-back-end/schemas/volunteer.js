@@ -22,5 +22,11 @@ export default {
             of: [{type: 'block'}],
             description: 'Write the body text here'
         },
+        {
+            name: 'formHeading',
+            title: 'Form Heading',
+            type: 'string',
+            description: 'The heading atop the form'
+        },
     ],
 }
