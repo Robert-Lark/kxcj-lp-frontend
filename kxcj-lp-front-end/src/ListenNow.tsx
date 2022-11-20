@@ -6,7 +6,7 @@ function ListenNow() {
   const location = useLocation();
   return (
     <div className="top-level-container">
-      <SideButtons back currentPage={location.pathname} />
+      <SideButtons currentPage={location.pathname} listenNow/>
       <div className="stream-container">
         <div className="schedule-container"> PUT SCHEDULE HERE </div>
         <div>

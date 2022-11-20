@@ -1,13 +1,13 @@
 import "../styles/buttons.css";
 import { useNavigate } from "react-router-dom";
 
-type props = { back?: boolean; currentPage: string };
+type props = { back?: boolean; currentPage: string, listenNow?: boolean };
 
 function SideButtons(props: props) {
   const buttonArr = ["Listen Now", "Donate", "Get Involved", "Shop", "Become a DJ"];
   const linkArr = ["/listenNow", "/donate", "/getInvolved", "/shop", "/becomeadj"];
   const navigate = useNavigate();
-  const { back = false, currentPage } = props;
+  const { back = false, listenNow = false, currentPage } = props;
 
   
   return (
@@ -16,6 +16,13 @@ function SideButtons(props: props) {
         <div className="side_button">
           <button className="button-wood-plank back" onClick={() => navigate(-1)}>
             Back
+          </button>
+        </div>
+      )}
+      {listenNow && (
+        <div className="side_button">
+          <button className="button-wood-plank back" onClick={() => navigate('/')}>
+            Home
           </button>
         </div>
       )}
