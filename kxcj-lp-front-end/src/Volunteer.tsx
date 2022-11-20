@@ -9,6 +9,7 @@ const VOLUNTEER_QUERY = gql`
     allVolunteer {
       heading
       contentRaw
+      formHeading
     }
   }
 `;
@@ -17,9 +18,12 @@ function Volunteer() {
   const { loading, error, data } = useQuery(VOLUNTEER_QUERY);
   if (loading) return <p>loading...</p>;
   if (error) return <ErrorState error={error} />;
-
+  
+  //API CONTENT
+  const formHeading = data?.allVolunteer[0]?.formHeading;
   const heading = data?.allVolunteer[0]?.heading;
   const content = data?.allVolunteer[1]?.contentRaw[0]?.children[0]?.text;
+
   const fallback = (
     <span>
       An easy way to get involved is to come to our monthly volunteer nights!
@@ -42,8 +46,9 @@ function Volunteer() {
         <TemplateFormPage
           content={content}
           heading={heading}
+          formHeading={formHeading}
           query={VOLUNTEER_QUERY}
-          fallBackHeading={"Public Service Announcements"}
+          fallBackHeading={"Volunteer"}
           FallBackBody={fallback}
         />
       </div>

@@ -8,7 +8,7 @@ import './styles/formPages.css'
 function TemplateFormPage(props: any) {
     // use location is used to ensure we dont display a link in the side buttons to the page we are currently on
     const location = useLocation();
-    const { query, heading, fallBackHeading, content, FallBackBody} = props
+    const { query, heading, fallBackHeading, content, FallBackBody, formHeading} = props
     const {loading, error} = useQuery(query)
 
     if (loading) return <p>loading...</p>;
@@ -19,9 +19,10 @@ function TemplateFormPage(props: any) {
             <SideButtons back currentPage={location.pathname}/>
             <div className='glass-container'>
                 <h1>{heading ? heading : fallBackHeading}</h1>
-                <p>
+                <span>
                     {content ? content : FallBackBody}
-                </p>
+                </span>
+                <span className='formHeading'>{formHeading}</span>
                 <span className='form-container'>
                     <Form value={''} placeholder={''} name={''} />
                 </span>

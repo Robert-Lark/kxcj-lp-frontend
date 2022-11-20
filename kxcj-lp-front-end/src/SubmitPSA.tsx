@@ -8,12 +8,16 @@ const SUBMITPSA_QUERY = gql`
     allSubmitPSA {
       heading
       contentRaw
+      formHeading
     }
   }
 `;
 
 function SubmitPSA() {
   const { data, loading, error } = useQuery(SUBMITPSA_QUERY);
+  
+  //API CONTENT
+  const formHeading = data?.allSubmitPSA[0]?.formHeading;
   const heading = data?.allSubmitPSA[0]?.heading;
   const content = data?.allSubmitPSA[1]?.contentRaw[0]?.children[0]?.text;
   if (loading) return <p>loading...</p>;
@@ -35,6 +39,7 @@ function SubmitPSA() {
       <TemplateFormPage
         content={content}
         heading={heading}
+        formHeading={formHeading}
         query={SUBMITPSA_QUERY}
         fallBackHeading={"Public Service Announcements"}
         FallBackBody={fallback}

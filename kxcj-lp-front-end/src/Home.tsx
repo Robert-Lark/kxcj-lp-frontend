@@ -12,7 +12,7 @@ function Home() {
         </div>
         <div className="buttons" id="amatic">
           <div className="side_button">
-            <a href="/listenNow">
+            <a href="/listenNow" target="_blank" rel="noopener noreferrer">
               <button className="button-wood-plank">Listen Now</button>
             </a>
           </div>
@@ -27,7 +27,7 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className="buttons" id="indie-flower">
+        {/* <div className="buttons" id="indie-flower">
           <div className="side_button">
             <a href="/listenNow">
               <button className="button-wood-plank">Listen Now</button>
@@ -145,7 +145,7 @@ function Home() {
               <button className="button-wood-plank">Get Involved</button>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       
     </div>
