@@ -86,7 +86,7 @@ function GetInvolved() {
 
   return (
     <div className="top-level-container">
-      <div className="glass-container">
+      <div className="get-involved-glass-container">
         <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
         <p>{textContent ? textContent : fallback}</p>
         <div className="images-container">
