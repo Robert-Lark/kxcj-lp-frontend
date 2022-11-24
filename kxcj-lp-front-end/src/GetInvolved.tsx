@@ -3,6 +3,7 @@ import "../src/styles/getInvolved.css";
 // import SideButtons from './lib/SideButtons';
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
+import woodFrame from "./assets/woodFrame.gif";
 import stock_image_1 from "./assets/stock_image_1.jpeg";
 import stock_image_2 from "./assets/stock_image_2.jpeg";
 import stock_image_3 from "./assets/stock_image_3.jpeg";
@@ -92,9 +93,9 @@ function GetInvolved() {
           {images.map((image: imageType, i: any) => {
             return (
               <div className="image-container" key={i}>
-                <div>
-                  
-                  <img className="image" src={image?.asset?.url} alt="button" />
+                <div className="frames">
+                  <img id="images" src={image?.asset?.url} alt="button" />
+                  <img id="frame" src={woodFrame} alt="frame" />
                 </div>
                 <div className="side_button">
                   <a href={links[i]}>

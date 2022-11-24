@@ -6,14 +6,29 @@ gap: 20px;
 max-width: 100%;
 }
 
-.image-container {
-    
+.frames {
+    display: grid;
 }
 
-.image {
+#images {
+    width: 11rem;
+    height: 11.5rem;
+    position: absolute;
+    z-index: -1;
+    margin: 42px 0px 0px 30px;
+
+    object-fit: cover;
+}
+
+#frame {
     width: 15rem;
     height: 15rem;
-    object-fit: cover;
-    border-radius: 20px;
-    
 }
+
+.frames img {
+    grid-column: 1;
+    grid-row: 1;
+    
+      
+}
+
