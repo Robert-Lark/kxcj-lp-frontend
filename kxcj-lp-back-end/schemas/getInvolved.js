@@ -24,7 +24,7 @@ export default {
         },
         {
             name: 'referenceList',
-            title: 'Images (limit 6)',
+            title: 'Images (limit 4, small file size, keep the captions the same, make sure action is in center of image )',
             type: 'array',
             of: [
               {
