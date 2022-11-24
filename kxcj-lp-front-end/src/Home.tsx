@@ -1,11 +1,9 @@
-import React from "react";
 import "../src/styles/home.css";
 import logo from "../src/assets/logo_white_2.png";
 
 function Home() {
   return (
     <div className="homepage">
-
       <div className='in-cont'>  
         <div className="logo">
           <img src={logo} alt="logo" />
@@ -18,7 +16,7 @@ function Home() {
           </div>
           <div className="side_button">
             <a href="/donate">
-              <button className="button-wood-plank">Donate</button>
+              <button className="button-wood-plank">Donate/Shop</button>
             </a>
           </div>
           <div className="side_button">
