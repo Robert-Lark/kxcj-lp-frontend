@@ -1,4 +1,5 @@
-import { FormWrapper } from "./FormWrapper";
+import { FormWrapper } from "../../lib/FormWrapper";
+
 
 type PSAData = {
   name: string;
@@ -23,7 +24,7 @@ type PSAFormProps = {
   updateFields: (fields: Partial<PSAData>) => void;
 };
 
-export function PsaForm({
+export function PsaFormOne({
   name,
   organization,
   phone,
@@ -35,7 +36,7 @@ export function PsaForm({
   updateFields,
 }: PSAFormProps) {
   return (
-    <FormWrapper title="Submit a PSA">
+    <FormWrapper title="Your Info">
       <label>Name</label>
       <input
         autoFocus
@@ -62,31 +63,6 @@ export function PsaForm({
         value={phone}
         onChange={(e) => updateFields({ phone: e.target.value })}
       ></input>
-      <label>Use Through Date</label>
-      <input
-        min={1}
-        type="string"
-        value={useThrough}
-        onChange={(e) => updateFields({ useThrough: e.target.value })}
-      ></input>
-      <label>Ten Second PSA</label>
-      <input
-        id="ten"
-        type="radio"
-        value={time10}
-        onChange={(e) => updateFields({ time10: e.target.value })}
-      ></input>
-      <label>Thirty Second PSA</label>
-      <input
-        id="thirty"
-        type="radio"
-        value={time30}
-        onChange={(e) => updateFields({ time30: e.target.value })}
-      ></input>
-      <label>Your Announcement</label>
-      <textarea rows={4} cols={50} name={announcement}>
-        Enter your announcement here
-      </textarea>
     </FormWrapper>
   );
 }

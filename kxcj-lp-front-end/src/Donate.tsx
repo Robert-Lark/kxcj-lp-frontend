@@ -66,6 +66,7 @@ function Donate() {
               />
             </form>
           </div>
+          <div></div>
         </div>
       </div>
     </div>

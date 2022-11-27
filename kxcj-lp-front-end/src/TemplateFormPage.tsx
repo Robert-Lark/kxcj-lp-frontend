@@ -24,7 +24,7 @@ function TemplateFormPage(props: any) {
                 </span>
                 <span className='formHeading'>{formHeading}</span>
                 <span className='form-container'>
-                    <Form value={''} placeholder={''} name={''} />
+                    <Form value={''} placeholder={''} formHeading={formHeading} />
                 </span>
             </div>
         </div>

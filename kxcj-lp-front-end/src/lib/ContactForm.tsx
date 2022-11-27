@@ -1,47 +1,37 @@
 import { FormWrapper } from "./FormWrapper";
 
 type UserData = {
-  firstName: string;
-  lastName: string;
-  emailAddress: string;
+  name: string,
+  email: string;
 };
 
 type FormProps = {
-  firstName: string;
-  lastName: string;
-  emailAddress: string;
+  name: string;
+  email: string;
   updateFields: (fields: Partial<UserData>) => void;
 };
 
 export function ContactForm({
-  firstName,
-  lastName,
-  emailAddress,
+  name,
+  email,
   updateFields,
 }: FormProps) {
   return (
     <FormWrapper title="Contact">
-      <label>First Name</label>
+      <label>Name</label>
       <input
         autoFocus
         required
         type="text"
-        value={firstName}
-        onChange={(e) => updateFields({ firstName: e.target.value })}
+        value={name}
+        onChange={(e) => updateFields({ name: e.target.value })}
       ></input>
-      <label>Last Name</label>
+      <label>Email </label>
       <input
         required
         type="text"
-        value={lastName}
-        onChange={(e) => updateFields({ lastName: e.target.value })}
-      ></input>
-      <label>Email Address</label>
-      <input
-        required
-        type="text"
-        value={emailAddress}
-        onChange={(e) => updateFields({ emailAddress: e.target.value })}
+        value={email}
+        onChange={(e) => updateFields({ email: e.target.value })}
       ></input>
     </FormWrapper>
   );

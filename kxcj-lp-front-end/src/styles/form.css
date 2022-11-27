@@ -36,10 +36,13 @@
     grid-template-columns: auto minmax(auto, 400px);
 }
 
-
 .form form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
+
+.form button {
+    font-size: 2vw;
+  }

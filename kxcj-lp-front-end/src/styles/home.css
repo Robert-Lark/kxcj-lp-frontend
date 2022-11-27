@@ -10,6 +10,7 @@ html {
   background-size: cover;
 }
 .homepage {
+  border: 2px solid red;
   height: 100vh;
   display: flex;
   flex-direction: column;

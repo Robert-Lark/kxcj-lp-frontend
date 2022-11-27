@@ -1,7 +1,8 @@
-import React from "react";
+import {useLocation} from 'react-router-dom';
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
-import TemplateFormPage from "./TemplateFormPage";
+import SideButtons from "./lib/SideButtons";
+import PSAForm from './forms/psa/PSAForm';
 
 const SUBMITPSA_QUERY = gql`
   query allSubmitPSA {
@@ -15,7 +16,7 @@ const SUBMITPSA_QUERY = gql`
 
 function SubmitPSA() {
   const { data, loading, error } = useQuery(SUBMITPSA_QUERY);
-  
+  const location = useLocation();
   //API CONTENT
   const formHeading = data?.allSubmitPSA[0]?.formHeading;
   const heading = data?.allSubmitPSA[0]?.heading;
@@ -36,14 +37,17 @@ function SubmitPSA() {
 
   return (
     <div className="outer-container">
-      <TemplateFormPage
-        content={content}
-        heading={heading}
-        formHeading={formHeading}
-        query={SUBMITPSA_QUERY}
-        fallBackHeading={"Public Service Announcements"}
-        FallBackBody={fallback}
-      />
+      <div className="top-level-container">
+        <SideButtons back currentPage={location.pathname} />
+        <div className="glass-container">
+          <h1>{heading ? heading : "Submit PSA"}</h1>
+          <span>{content ? content : fallback}</span>
+          <span className="formHeading">{formHeading}</span>
+          <span className="form-container">
+            <PSAForm value={''} placeholder={''} formHeading={''} />
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

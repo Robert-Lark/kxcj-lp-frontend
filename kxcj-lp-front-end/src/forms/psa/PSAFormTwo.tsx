@@ -1,4 +1,5 @@
-import { FormWrapper } from "./FormWrapper";
+import { FormWrapper } from "../../lib/FormWrapper";
+
 
 type PSAData = {
   name: string;
@@ -23,7 +24,7 @@ type PSAFormProps = {
   updateFields: (fields: Partial<PSAData>) => void;
 };
 
-export function PsaForm({
+export function PsaFormTwo({
   name,
   organization,
   phone,
@@ -35,33 +36,7 @@ export function PsaForm({
   updateFields,
 }: PSAFormProps) {
   return (
-    <FormWrapper title="Submit a PSA">
-      <label>Name</label>
-      <input
-        autoFocus
-        type="text"
-        value={name}
-        onChange={(e) => updateFields({ name: e.target.value })}
-      ></input>
-      <label>Email Address</label>
-      <input
-        type="text"
-        value={email}
-        onChange={(e) => updateFields({ email: e.target.value })}
-      ></input>
-      <label>Organization Name</label>
-      <input
-        type="text"
-        value={organization}
-        onChange={(e) => updateFields({ organization: e.target.value })}
-      ></input>
-      <label>Phone Number</label>
-      <input
-        min={1}
-        type="number"
-        value={phone}
-        onChange={(e) => updateFields({ phone: e.target.value })}
-      ></input>
+    <FormWrapper title="Info about your announcement">
       <label>Use Through Date</label>
       <input
         min={1}

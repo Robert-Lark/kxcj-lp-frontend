@@ -1,8 +1,8 @@
 import React, { FormEvent, useState } from "react";
-import "../styles/form.css";
-import { ContactForm } from "./ContactForm";
-import { useMultistepForm } from "./FormHook";
-import { PsaForm } from "./PsaForm";
+import "../../styles/form.css";
+import { useMultistepForm } from "../../lib/FormHook";
+import { PsaFormOne } from "./PsaFormOne";
+import { PsaFormTwo } from "./PSAFormTwo";
 
 type formValues = {
   value: string;
@@ -12,7 +12,7 @@ type formValues = {
 
 type FormData = {
   //on all forms
-  name: string,
+  name: string;
   email: string;
   //become a dj
   age: string;
@@ -37,13 +37,12 @@ const INITIAL_DATA: FormData = {
   announcement: "",
 };
 
-function Form(props: formValues) {
+function PSAForm(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      // <ContactForm {...data} updateFields={updateFields} />,
-      <PsaForm {...data} updateFields={updateFields} />,
-      //   <BecomeDjForm {...data} updateFields={updateFields} />,
+      <PsaFormOne {...data} updateFields={updateFields} />,
+      <PsaFormTwo {...data} updateFields={updateFields} />,
     ]);
 
   function updateFields(fields: Partial<FormData>) {
@@ -78,4 +77,4 @@ function Form(props: formValues) {
   );
 }
 
-export default Form;
+export default PSAForm;
