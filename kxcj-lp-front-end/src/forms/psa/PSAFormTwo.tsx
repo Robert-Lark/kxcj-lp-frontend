@@ -60,7 +60,6 @@ export function PsaFormTwo({
       ></input>
       <label>Your Announcement</label>
       <textarea rows={4} cols={50} name={announcement}>
-        Enter your announcement here
       </textarea>
     </FormWrapper>
   );

@@ -1,8 +1,9 @@
-import {useLocation} from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
 import SideButtons from "./lib/SideButtons";
-import PSAForm from './forms/psa/PSAForm';
+import PSAForm from "./forms/psa/PSAForm";
+import { useState } from "react";
 
 const SUBMITPSA_QUERY = gql`
   query allSubmitPSA {
@@ -14,9 +15,47 @@ const SUBMITPSA_QUERY = gql`
   }
 `;
 
+function Modal(props: any) {
+  const { show, setShow } = props;
+  if (!show) return null;
+  return (
+    <div className="modal">
+      <h1>Example Announcement</h1>
+      <p>
+        <strong>Contact:</strong> Insert the contact name, institution name,
+        email address and telephone number
+      </p>
+      <p>
+        <strong>For use through:</strong> End date of announcement
+      </p>
+      <p>
+        <strong>Length:</strong> 0:30 - Indicates announcement runs for thirty
+        seconds
+      </p>
+      <p>
+        <strong>Content:</strong> One of the most important activities to share
+        with your baby is reading. That's why the illinois valley public library
+        is offering the "Born to read" program for teen parents. Tutors provide
+        coaching, a video offers tips, and librarians distribute books and other
+        materials. The program is made possible through a grant from the four
+        way community foundation. for more information, or to be a volunteer,
+        call (505) 555-1234.
+      </p>
+      <button onClick={() => setShow(!show)}>Close</button>
+    </div>
+  );
+}
+
 function SubmitPSA() {
+  const [show, setShow] = useState(false);
   const { data, loading, error } = useQuery(SUBMITPSA_QUERY);
   const location = useLocation();
+
+  //modal
+  function showModal() {
+    setShow(!show);
+  }
+
   //API CONTENT
   const formHeading = data?.allSubmitPSA[0]?.formHeading;
   const heading = data?.allSubmitPSA[0]?.heading;
@@ -42,9 +81,13 @@ function SubmitPSA() {
         <div className="glass-container">
           <h1>{heading ? heading : "Submit PSA"}</h1>
           <span>{content ? content : fallback}</span>
+          <button className="example-psa-button" onClick={() => setShow(!show)}>
+            View an example PSA here
+          </button>
+          <Modal show={show} setShow={setShow}/>
           <span className="formHeading">{formHeading}</span>
           <span className="form-container">
-            <PSAForm value={''} placeholder={''} formHeading={''} />
+            <PSAForm value={""} placeholder={""} formHeading={formHeading} />
           </span>
         </div>
       </div>
