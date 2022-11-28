@@ -24,6 +24,10 @@ const GET_INVOVLED_QUERY = gql`
           url
         }
       }
+      imageOverlayOne
+      imageOverlayTwo
+      imageOverlayThree
+      imageOverlayFour
     }
   }
 `;
@@ -48,6 +52,12 @@ function GetInvolved() {
 
   const heading = data?.allGetInvolved[0]?.heading;
   const textContent = data?.allGetInvolved[0]?.contentRaw[0]?.children[0]?.text;
+  const imageOverlayText = [
+    data?.allGetInvolved[0]?.imageOverlayOne,
+    data?.allGetInvolved[0]?.imageOverlayTwo,
+    data?.allGetInvolved[0]?.imageOverlayThree,
+    data?.allGetInvolved[0]?.imageOverlayFour,
+  ];
   const fallback = (
     <span>
       KXCJ-LP is an FCC-licensed, volunteer-run, community-based FM radio
@@ -92,19 +102,25 @@ function GetInvolved() {
         <div className="images-container">
           {images.map((image: imageType, i: any) => {
             return (
-              <div className="image-container" key={i}>
-                <div className="frames">
-                  <img id="images" src={image?.asset?.url} alt="button" />
-                  <img id="frame" src={woodFrame} alt="frame" />
-                </div>
-                <div className="side_button">
+              <label htmlFor="links">
+                <div
+                  className="image-container"
+                  key={i}
+                  data-hover={imageOverlayText[i]}
+                >
                   <a href={links[i]}>
-                    <button className="button-wood-plank">
-                      {image.caption}
-                    </button>
+                    <div className="frames">
+                      <img id="images" src={image?.asset?.url} alt="button" />
+                      <img id="frame" src={woodFrame} alt="frame" />
+                    </div>
+                    <div className="side_button">
+                      <button className="button-wood-plank" id="links">
+                        {image.caption}
+                      </button>
+                    </div>
                   </a>
                 </div>
-              </div>
+              </label>
             );
           })}
         </div>

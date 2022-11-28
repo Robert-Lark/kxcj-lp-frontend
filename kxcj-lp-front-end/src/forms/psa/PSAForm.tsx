@@ -1,8 +1,9 @@
 import React, { FormEvent, useState } from "react";
 import "../../styles/form.css";
 import { useMultistepForm } from "../../lib/FormHook";
-import { PsaFormOne } from "./PsaFormOne";
+import { PsaFormThree } from "./PSAFormThree";
 import { PsaFormTwo } from "./PSAFormTwo";
+import { GeneralInfo } from "../GeneralInfo";
 
 type formValues = {
   value: string;
@@ -41,8 +42,9 @@ function PSAForm(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <PsaFormOne {...data} updateFields={updateFields} />,
+      <GeneralInfo {...data} updateFields={updateFields} />,
       <PsaFormTwo {...data} updateFields={updateFields} />,
+      <PsaFormThree {...data} updateFields={updateFields} />,
     ]);
 
   function updateFields(fields: Partial<FormData>) {
