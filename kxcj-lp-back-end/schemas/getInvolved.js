@@ -31,6 +31,30 @@ export default {
                 type: 'images'
               },
             ]
-          },
+        },
+        {
+          name: 'imageOverlayOne',
+          title: 'Image on hover text one',
+          type: 'string',
+          description: 'Text that will overlay the first image'
+        },
+        {
+          name: 'imageOverlayTwo',
+          title: 'Image on hover text two',
+          type: 'string',
+          description: 'Text that will overlay the second image'
+        },
+        {
+          name: 'imageOverlayThree',
+          title: 'Image on hover text three',
+          type: 'string',
+          description: 'Text that will overlay the third image'
+        },
+        {
+          name: 'imageOverlayFour',
+          title: 'Image on hover text four',
+          type: 'string',
+          description: 'Text that will overlay the fourth image'
+        },
     ],
 }
