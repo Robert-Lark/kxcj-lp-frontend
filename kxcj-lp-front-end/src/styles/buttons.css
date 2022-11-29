@@ -39,6 +39,14 @@
     cursor: auto;
 }
 
+.schedule_button {
+    background-image: url("../assets/planks_panda/Plank_1.png"); 
+}
+
+.donate_button {
+    background-image: url("../assets/planks_panda/PayPal_plank.png"); 
+}
+
 .back {
     color: whitesmoke;
 }
