@@ -30,6 +30,15 @@
     font-weight: 600;
 }
 
+.stream_button {
+    background-image: url("../assets/planks_panda/Plank_2.png"); 
+}
+
+.stream_button button {
+    padding: 10px;
+    cursor: auto;
+}
+
 .back {
     color: whitesmoke;
 }

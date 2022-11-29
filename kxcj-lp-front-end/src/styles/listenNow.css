@@ -1,6 +1,5 @@
 .stream-container {
     width: 99vw;
-    height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +12,7 @@
 }
 
 .schedule-container {
+    margin: 20px;
     border: 2px solid red;
     padding: 100px;
     color: red;

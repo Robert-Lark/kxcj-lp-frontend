@@ -6,16 +6,18 @@ function ListenNow() {
   const location = useLocation();
   return (
     <div className="top-level-container">
-      <SideButtons currentPage={location.pathname} listenNow/>
+      <SideButtons currentPage={location.pathname} listenNow />
       <div className="stream-container">
-        <div className="schedule-container"> PUT SCHEDULE HERE </div>
         <div>
           <div className="glass-container">
-            <p>STREAM KXCJ-LP</p>
+            <div className="stream_button">
+              <button disabled className="button-wood-plank">Stream!</button>
+            </div>
             <audio controls autoPlay className="stream-player">
               <source src="http://207.55.228.207:8888/KXCJ"></source>
             </audio>
           </div>
+          <div className="schedule-container"> PUT SCHEDULE HERE </div>
         </div>
       </div>
     </div>
