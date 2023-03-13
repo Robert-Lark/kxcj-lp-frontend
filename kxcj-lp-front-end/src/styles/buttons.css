@@ -49,6 +49,19 @@
     transform: skewY(10deg);
 }
 
+#id-0 {
+    background: url("../assets/Listen_Now_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#id-0:hover {
+    transform: skewY(10deg);
+}
+
 #id-1 {
     background: url("../assets/Donate_Plank.png"); 
     -webkit-background-size: cover;

@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles/donate.css";
+import Paypal from "./assets/PayPal_Plank_2.png";
+import Logo from "./assets/logo_white_2.png";
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
 import { useLocation } from "react-router-dom";
@@ -29,25 +31,27 @@ function Donate() {
   );
 
   return (
+    <div className='donatePage'>
     <div className="top-level-container">
       <SideButtons currentPage={location.pathname} back />
       <div className="glass-container">
-        <h1>{heading}</h1>
+        <img src={Logo} id='logo' alt='logo'/>
+
         <span>{content ? content : fallback}</span>
         <div>
-          <div>
+          <div id="donate_button">
             <a
               role="button"
               href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
               className="button-wood-plank"
             >
-              <div className="donate_button">
-              </div>
+              <img src={Paypal} alt="archive button" id="paypal" />
             </a>
           </div>
           <div></div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
