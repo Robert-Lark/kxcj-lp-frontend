@@ -18,7 +18,14 @@ function ListenNow() {
           <div className="buttons">
             <img src={SteamNow} alt="stream now button" />
 
-            <img src={Archive} alt="archive button" id="archive" />
+            <img
+              src={Archive}
+              alt="archive button"
+              id="archive"
+              onClick={() =>
+                window.open("www.archive.org/details/@kxcj-lp", "_blank")
+              }
+            />
           </div>
           <audio controls autoPlay className="stream-player">
             <source src="http://207.55.228.207:8888/KXCJ"></source>
@@ -31,10 +38,13 @@ function ListenNow() {
           </div>
         </div>
       </div>
-      <div className="cal">
-        <a href="www.illinoisvalleyweb.org" target="_blank">
+      <div
+        className="cal"
+        onClick={() =>
+          window.open("www.illinoisvalleyweb.org/calendar", "_blank")
+        }
+      >
         <img src={Calendar} alt="cal" />
-        </a>
       </div>
     </div>
   );
