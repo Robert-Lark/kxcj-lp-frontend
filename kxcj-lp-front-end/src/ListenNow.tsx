@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 function ListenNow() {
   const location = useLocation();
   return (
-    <div>
+    <div className="listenNow">
       <div className="top-level-container">
         <div className="streamSidebuttons">
           <SideButtons currentPage={location.pathname} listenNow />

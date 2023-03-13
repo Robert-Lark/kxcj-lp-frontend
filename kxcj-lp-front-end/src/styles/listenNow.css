@@ -1,3 +1,14 @@
+.listenNow {
+    background: url("../assets/ListenNowBG.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
 .stream-container {
     display: flex;
     flex-direction: column;
@@ -36,8 +47,10 @@
 
 .schedule-container {
     margin: 20px;
-    width: 750px;
+    width: 650px;
     height: 400px;
+    max-width: 750px;
+    max-height: 400px;
     overflow: scroll;
 }
 
@@ -51,8 +64,8 @@
 }
 
 .cal img{
-width: 250px;
+width: 20%;
 position: absolute;
 left: 115px;
-top: 570px;
+top: 480px;
 }
