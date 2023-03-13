@@ -2,14 +2,13 @@
 
 
 /* Homepage background */
-html { 
-  background: url("../assets/Illinois-River1.jpg") no-repeat center center fixed; 
+
+.homepage {
+  background: url("../assets/GetInvolvedBG.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.homepage {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,15 +21,14 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, .15);   
-  backdrop-filter: blur(8px);
   padding: 40px;
   max-width: 900px;
   margin: auto;
+  margin-top: 30px;
 }
 
 /* logo */
-.in-cont img {
+.logo img {
   min-width: 700px;
   max-width: 800px;
 }
@@ -40,14 +38,17 @@ html {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-top: 20px;
-  
+  margin-top: 190px;
+
 }
 
-a {
-  color: #FFFFFF;
-  text-decoration: none;
-  
+#plank{
+margin-top: -30px;
+  width: 250px;
+
+}
+#plank:hover {
+  transform: skewY(10deg);
 }
 
 button {

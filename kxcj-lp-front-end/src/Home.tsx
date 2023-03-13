@@ -1,29 +1,30 @@
 import "../src/styles/home.css";
+import ListenNow from "../src/assets/Listen_Now_Plank.png";
+import GetInvolved from "../src/assets/Get_Involved_Plank.png";
+import Donate from "../src/assets/Donate_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
 
 function Home() {
   return (
     <div className="homepage">
-      <div className='in-cont'>  
+      <div className="in-cont">
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
         <div className="buttons" id="amatic">
-          <div className="side_button">
+
             <a href="/listenNow" target="_blank" rel="noopener noreferrer">
-              <button className="button-wood-plank">Listen Now</button>
+              <img src={ListenNow} id="plank"/>
             </a>
-          </div>
-          <div className="side_button">
+
             <a href="/donate">
-              <button className="button-wood-plank">Donate/Shop</button>
+              <img src={Donate} id="plank"/>
             </a>
-          </div>
-          <div className="side_button">
+          
             <a href="/getInvolved">
-              <button className="button-wood-plank">Get Involved</button>
+              <img src={GetInvolved} id="plank"/>
             </a>
-          </div>
+          
         </div>
         {/* <div className="buttons" id="indie-flower">
           <div className="side_button">
@@ -145,7 +146,6 @@ function Home() {
           </div>
         </div> */}
       </div>
-      
     </div>
   );
 }
