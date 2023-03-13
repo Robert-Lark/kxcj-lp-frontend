@@ -32,7 +32,9 @@ function ListenNow() {
         </div>
       </div>
       <div className="cal">
+        <a href="www.illinoisvalleyweb.org" target="_blank">
         <img src={Calendar} alt="cal" />
+        </a>
       </div>
     </div>
   );
