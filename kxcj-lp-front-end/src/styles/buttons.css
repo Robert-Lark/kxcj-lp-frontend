@@ -3,16 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
+    gap: .2rem;
     margin-left: 20px;
 }
-
-.side_button {
-    background-image: url("../assets/plank.jpg"); 
-}
-.side_button:hover {
-    transform: skewY(10deg);
-  }
 
 .button-wood-plank {
     justify-content: center;
@@ -28,6 +21,71 @@
     cursor: pointer;
     font-size: 30px;
     font-weight: 600;
+}
+
+#back {
+    background: url("../assets/Back_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#back:hover {
+    transform: skewY(10deg);
+}
+
+#home {
+    background: url("../assets/Home_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#home:hover {
+    transform: skewY(10deg);
+}
+
+#id-1 {
+    background: url("../assets/Donate_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#id-1:hover {
+    transform: skewY(10deg);
+}
+
+#id-2 {
+    background: url("../assets/Get_Involved_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#id-2:hover {
+    transform: skewY(-10deg);
+}
+
+#id-3 {
+    background: url("../assets/Shop_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100px;
+}
+
+#id-3:hover {
+    transform: skewY(10deg);
 }
 
 .stream_button {

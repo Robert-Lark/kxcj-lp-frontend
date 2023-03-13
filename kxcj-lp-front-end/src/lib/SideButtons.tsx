@@ -1,39 +1,51 @@
 import "../styles/buttons.css";
 import { useNavigate } from "react-router-dom";
 
-type props = { back?: boolean; currentPage: string, listenNow?: boolean };
+type props = { back?: boolean; currentPage: string; listenNow?: boolean };
 
 function SideButtons(props: props) {
-  const buttonArr = ["Listen Now", "Donate", "Get Involved", "Shop", "Become a DJ"];
-  const linkArr = ["/listenNow", "/donate", "/getInvolved", "/shop", "/becomeadj"];
+  const buttonArr = [
+    "Listen Now",
+    "Donate",
+    "Get Involved",
+    "Shop",
+    "Become a DJ",
+  ];
+  const linkArr = [
+    "/listenNow",
+    "/donate",
+    "/getInvolved",
+    "/shop",
+    "/becomeadj",
+  ];
   const navigate = useNavigate();
   const { back = false, listenNow = false, currentPage } = props;
 
-  
   return (
     <div className="side_buttons">
       {back && (
-        <div className="side_button">
-          <button className="button-wood-plank back" onClick={() => navigate(-1)}>
-            Back
-          </button>
-        </div>
+        <button
+          className="button-wood-plank back"
+          onClick={() => navigate(-1)}
+          id="back"
+        >
+        </button>
       )}
       {listenNow && (
-        <div className="side_button">
-          <button className="button-wood-plank back" onClick={() => navigate('/')}>
-            Home
-          </button>
-        </div>
+        <button
+          className="button-wood-plank back"
+          onClick={() => navigate("/")}
+          id="home"
+        ></button>
       )}
       {buttonArr.map((button: string, i: any) => {
         if (linkArr[i] === currentPage) {
-          return null
+          return null;
         } else
           return (
-            <div className="side_button" key={i}>
+            <div key={i}>
               <a href={linkArr[i]}>
-                <button className="button-wood-plank">{buttonArr[i]}</button>
+                <button id={`id-${i}`} className="button-wood-plank"></button>
               </a>
             </div>
           );
