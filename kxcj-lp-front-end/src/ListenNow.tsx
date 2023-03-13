@@ -3,7 +3,7 @@ import SideButtons from "./lib/SideButtons";
 import SteamNow from "./assets/Stream_Now_Plank.png";
 import Archive from "./assets/Archive_Plank_2.png";
 import Calendar from "./assets/Calendar.png";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function ListenNow() {
   const location = useLocation();
@@ -32,15 +32,9 @@ function ListenNow() {
         </div>
       </div>
       <div className="cal">
-        <Link
-          to={{
-            pathname:
-              "www.illinoisvalleyweb.org",
-          }}
-          target="_blank"
-        >
-          <img src={Calendar} alt="cal" />
-        </Link>
+        <a href="www.illinoisvalleyweb.org" target="_blank">
+        <img src={Calendar} alt="cal" />
+        </a>
       </div>
     </div>
   );
