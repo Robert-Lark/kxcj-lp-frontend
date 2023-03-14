@@ -17,15 +17,15 @@ function ListenNow() {
         <div className="stream-container">
           <div className="buttons">
             <img src={SteamNow} alt="stream now button" />
-
-            <img
-              src={Archive}
-              alt="archive button"
-              id="archive"
-              onClick={() =>
-                window.open("www.archive.org/details/@kxcj-lp", "_blank")
-              }
-            />
+            <a
+              role="button"
+              href="https://www.archive.org/details/@kxcj-lp"
+              className="button-wood-plank"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={Archive} alt="archive button" id="archive" />
+            </a>
           </div>
           <audio controls autoPlay className="stream-player">
             <source src="http://207.55.228.207:8888/KXCJ"></source>
@@ -40,11 +40,16 @@ function ListenNow() {
       </div>
       <div
         className="cal"
-        onClick={() =>
-          window.open("www.illinoisvalleyweb.org/calendar", "_blank")
-        }
       >
+        <a
+              role="button"
+              href="https://www.illinoisvalleyweb.org/calendar"
+              className="button-wood-plank"
+              target="_blank"
+              rel="noreferrer"
+            >
         <img src={Calendar} alt="cal" />
+        </a>
       </div>
     </div>
   );
