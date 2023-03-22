@@ -11,6 +11,13 @@ import stock_image_4 from "./assets/stock_image_4.jpeg";
 import stock_image_5 from "./assets/stock_image_5.jpeg";
 import stock_image_6 from "./assets/stock_image_6.jpeg";
 
+import Become_DJ_Plank from "./assets/Become_A_DJ_Plank.png";
+import Submit_A_PSA from "./assets/Submit_PSA_Plank_2.png";
+import Donate_Plank_2 from "./assets/Donate_Plank.png";
+import Volunteer_Plank from "./assets/Volunteer_Plank_2.png";
+
+import Scroll from "./assets/Scroll.png";
+
 // import Frame1 from './assets/Frame1.gif'
 
 const GET_INVOVLED_QUERY = gql`
@@ -93,12 +100,17 @@ function GetInvolved() {
     "Volunteer",
     "Home",
   ];
+const planksArr = [Become_DJ_Plank,Submit_A_PSA, Donate_Plank_2, Volunteer_Plank ]
 
   return (
+    <div className="getInvolvedContainer">
     <div className="top-level-container">
       <div className="get-involved-glass-container">
-        <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
-        <p>{textContent ? textContent : fallback}</p>
+        <span className="texts">
+        {/* <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
+        <p>{textContent ? textContent : fallback}</p> */}
+        <img src={Scroll} />
+        </span>
         <div className="images-container">
           {images.map((image: imageType, i: any) => {
             return (
@@ -114,8 +126,8 @@ function GetInvolved() {
                       <img id="frame" src={woodFrame} alt="frame" />
                     </div>
                     <div className="side_button">
-                      <button className="button-wood-plank" id="links">
-                        {image.caption}
+                      <button className="button-wood-plank" id={`links-${i}`}>
+                        <img src={planksArr[i]}/>
                       </button>
                     </div>
                   </a>
@@ -125,6 +137,7 @@ function GetInvolved() {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 
