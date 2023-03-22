@@ -6,6 +6,7 @@ import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
 import { useLocation } from "react-router-dom";
 import SideButtons from "./lib/SideButtons";
+import Footer from "./lib/Footer";
 
 const DONATE_QUERY = gql`
   query allDonate {
@@ -36,8 +37,6 @@ function Donate() {
       <SideButtons currentPage={location.pathname} back />
       <div className="glass-container">
         <img src={Logo} id='logo' alt='logo'/>
-
-        <span>{content ? content : fallback}</span>
         <div>
           <div id="donate_button">
             <a
@@ -51,7 +50,9 @@ function Donate() {
           <div></div>
         </div>
       </div>
+      
     </div>
+    <Footer />
     </div>
   );
 }
