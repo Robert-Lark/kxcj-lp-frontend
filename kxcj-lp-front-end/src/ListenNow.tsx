@@ -2,8 +2,9 @@ import "../src/styles/listenNow.css";
 import SideButtons from "./lib/SideButtons";
 import SteamNow from "./assets/Stream_Now_Plank.png";
 import Archive from "./assets/Archive_Plank_2.png";
-import Calendar from "./assets/Calendar.png";
+
 import { useLocation } from "react-router-dom";
+import Footer from "./lib/Footer";
 
 function ListenNow() {
   const location = useLocation();
@@ -11,7 +12,7 @@ function ListenNow() {
     <div className="listenNow">
       <div className="top-level-container">
         <div className="streamSidebuttons">
-          <SideButtons currentPage={location.pathname} listenNow />
+          <SideButtons currentPage={location.pathname} listenNow cal/>
         </div>
 
         <div className="stream-container">
@@ -38,19 +39,8 @@ function ListenNow() {
           </div>
         </div>
       </div>
-      <div
-        className="cal"
-      >
-        <a
-              role="button"
-              href="https://www.illinoisvalleyweb.org/calendar"
-              className="button-wood-plank"
-              target="_blank"
-              rel="noreferrer"
-            >
-        <img src={Calendar} alt="cal" />
-        </a>
-      </div>
+      <Footer />
+      
     </div>
   );
 }

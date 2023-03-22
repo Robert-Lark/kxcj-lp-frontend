@@ -1,7 +1,8 @@
 import "../styles/buttons.css";
 import { useNavigate } from "react-router-dom";
 
-type props = { back?: boolean; currentPage: string; listenNow?: boolean };
+
+type props = { back?: boolean; currentPage: string; listenNow?: boolean; cal?: boolean; };
 
 function SideButtons(props: props) {
   const buttonArr = [
@@ -50,6 +51,16 @@ function SideButtons(props: props) {
             </div>
           );
       })}
+      {props.cal && <button id='id-5' className="button-wood-plank">
+        <a
+              role="button"
+              href="https://www.illinoisvalleyweb.org/calendar"
+              className="button-wood-plank"
+              target="_blank"
+              rel="noreferrer"
+            >
+        </a>
+        </button>}
     </div>
   );
 }

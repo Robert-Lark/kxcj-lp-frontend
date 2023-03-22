@@ -121,3 +121,12 @@
 .back {
     color: whitesmoke;
 }
+
+#id-5 {
+    background: url("../assets/Calendar.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 300px;
+}

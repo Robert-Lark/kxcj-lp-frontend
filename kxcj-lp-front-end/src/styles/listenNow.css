@@ -7,6 +7,7 @@
     overflow-x: hidden;
     background-attachment: fixed;
     height: 100vh;
+    overflow: hidden;
 }
 
 .stream-container {
@@ -66,12 +67,4 @@
 .stream-player {
     width: 28rem;
     margin-top: -130px;
-}
-
-.cal img{
-width: 20%;
-position: absolute;
-left: 115px;
-top: 480px;
-cursor: pointer;
 }
