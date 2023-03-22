@@ -1,13 +1,157 @@
-.footer {
+  .footer {
     background-image: url("../assets/footer/Footer2.png"); /* specify the URL of your image */
-    background-position: center center; /* center the background image */
-    background-size: cover; /* resize the background image to cover the entire footer */
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0;
     margin-top: -200px;
     height: 200px;
   }
-
+  
   .container {
-    max-width: 1200px; /* set a max-width for the footer content */
-    margin: 0 auto; /* center the content within the footer */
-    padding: 20px; /* add some padding to the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+.box {
+margin-top: -100px;}
+
+  /* EMAIL */
+
+  .box-content-email {
+    position: relative;
+    width: 100px;
+    height: 80px;
+  }
+
+
+  
+  .box-content-email:hover:after {
+    content: attr(data-content);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/footer/Email.png');
+    background-size: cover; /* or contain or custom size */
+    background-position: center center; /* or custom position */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+  }
+
+  .box-content-email:after {
+    content: "";
+    display: none;
+  }
+
+/* Phone */
+
+.box-content-phone {
+    position: relative;
+    width: 100px;
+    height: 80px;
+  }
+
+
+  
+  .box-content-phone:hover:after {
+    content: attr(data-content);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/footer/Phone.png');
+    background-size: cover; /* or contain or custom size */
+    background-position: center center; /* or custom position */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+  }
+
+  .box-content-phone:after {
+    content: "";
+    display: none;
+  }
+
+  /* snail-mail */
+
+.box-content-snail-mail {
+    position: relative;
+    width: 100px;
+    height: 180px;
+  }
+
+
+  
+  .box-content-snail-mail:hover:after {
+    content: attr(data-content);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/footer/Address.png');
+    background-size: cover; /* or contain or custom size */
+    background-position: center center; /* or custom position */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+  }
+
+  .box-content-snail-mail:after {
+    content: "";
+    display: none;
+  }
+
+
+    /* Radio */
+
+.box-content-radio {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    
+  }
+
+
+  
+  .box-content-radio:hover:after {
+    content: attr(data-content);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/footer/Radio.png');
+    background-size: cover; /* or contain or custom size */
+    background-position: center center; /* or custom position */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+  }
+
+  .box-content-radio:after {
+    content: "";
+    display: none;
+  }
+
+
+
+  .none {
+    display: none;
   }
