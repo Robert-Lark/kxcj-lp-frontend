@@ -1,7 +1,13 @@
-.footer img {
-    margin: auto;
+.footer {
+    background-image: url("../assets/footer/Footer2.png"); /* specify the URL of your image */
+    background-position: center center; /* center the background image */
+    background-size: cover; /* resize the background image to cover the entire footer */
+    margin-top: -200px;
+    height: 200px;
+  }
 
-
-
-    width: 1000px;
-}
+  .container {
+    max-width: 1200px; /* set a max-width for the footer content */
+    margin: 0 auto; /* center the content within the footer */
+    padding: 20px; /* add some padding to the content */
+  }
