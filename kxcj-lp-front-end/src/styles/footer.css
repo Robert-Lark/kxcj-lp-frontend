@@ -11,21 +11,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 20px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-.box {
-margin-top: -100px;}
+  .container a {
+    cursor: pointer;
+  }
+
+.box {margin-top: -100px;}
+
+.box-content {
+    position: relative;
+    width: 100px;
+    height: 80px;
+  }
 
   /* EMAIL */
 
   .box-content-email {
     position: relative;
-    width: 100px;
-    height: 80px;
+    width: 150px;
+    height:200px;
   }
 
 
@@ -57,7 +66,7 @@ margin-top: -100px;}
 .box-content-phone {
     position: relative;
     width: 100px;
-    height: 80px;
+    height: 180px;
   }
 
 
@@ -77,6 +86,7 @@ margin-top: -100px;}
     text-align: center;
     padding: 20px;
     width: 200px;
+    margin-left: -50px;
   }
 
   .box-content-phone:after {
@@ -108,7 +118,8 @@ margin-top: -100px;}
     color: black;
     text-align: center;
     padding: 20px;
-    width: 200px;
+    width: 300px;
+    margin-left: -100px;
   }
 
   .box-content-snail-mail:after {
@@ -121,9 +132,8 @@ margin-top: -100px;}
 
 .box-content-radio {
     position: relative;
-    width: 200px;
+    width: 100px;
     height: 280px;
-    
   }
 
 
@@ -141,8 +151,8 @@ margin-top: -100px;}
     background-position: center center; /* or custom position */
     color: black;
     text-align: center;
-    padding: 20px;
-    width: 200px;
+    width: 300px;
+    margin-left: -100px;
   }
 
   .box-content-radio:after {
@@ -154,4 +164,11 @@ margin-top: -100px;}
 
   .none {
     display: none;
+  }
+
+
+  .finalTwo {
+    display: flex;
+    gap: 20px;
+margin-top: 20px;
   }
