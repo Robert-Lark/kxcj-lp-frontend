@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     padding: 60px;
-    gap: 140px;
+    
     
 }
 
@@ -15,10 +15,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+border: 2px solid red;
+
 }
 
 .glass-container h1{
 font-size: 3rem;    
 }
+
+.glass-container {
+    height: 1000px;
+}
+
+.glass-container img{
+    width: 900px;   
+    margin-left: 170px;
+    
+    }
+
+    .sideBut {
+        margin-top: 300px;
+        padding-left: 100px;
+    }
+
+    .form-container {
+        
+    }
+    .scroll img {
+        width: 800px;
+    }

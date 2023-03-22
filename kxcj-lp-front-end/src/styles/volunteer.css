@@ -1,0 +1,38 @@
+.volCont {
+    background: url("../assets/ArchiveBG.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+  }
+
+  .container {
+    background: url("../assets/ArchiveBG.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  .box1 {
+    display: flex;
+    margin-bottom: -180px;
+  }
+  
+
+  .box1 img {
+width: 800px;
+margin-top: -100px;
+  }
+  .box2 {
+    display: flex;
+  }
+
+  .form-container{
+    margin-top: 40px;
+
+  }
+  

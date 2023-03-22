@@ -16,12 +16,13 @@ function TemplateFormPage(props: any) {
     
     return (
         <div className='top-level-container'>
+            <div className="scroll">
+                <img src={props.scroll} />
+            </div>
+            <div className='sideBut'>
             <SideButtons back currentPage={location.pathname}/>
+            </div>
             <div className='glass-container'>
-                <h1>{heading ? heading : fallBackHeading}</h1>
-                <span>
-                    {content ? content : FallBackBody}
-                </span>
                 <span className='formHeading'>{formHeading}</span>
                 <span className='form-container'>
                     <Form value={''} placeholder={''} formHeading={formHeading} />
