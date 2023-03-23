@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from "react";
 import "../../styles/form.css";
 import { useMultistepForm } from "../../lib/FormHook";
 import { GeneralInfo } from "../GeneralInfo";
+import { BecomeDjForm } from "../../lib/BecomeDjForm";
 
 
 type formValues = {
@@ -41,7 +42,9 @@ function BecomeADJ(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <GeneralInfo {...data} updateFields={updateFields} />,
+      <BecomeDjForm DJName={""} Style={""} CoHosts={""} Phone={""} updateFields={function (fields: Partial<{ DJName: string; Style: string; CoHosts: string; Phone: string; }>): void {
+        throw new Error("Function not implemented.");
+      } } />,
       
     ]);
 

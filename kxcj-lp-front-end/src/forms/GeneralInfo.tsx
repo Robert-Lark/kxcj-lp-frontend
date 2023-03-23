@@ -19,7 +19,7 @@ export function GeneralInfo({
   updateFields,
 }: GeneralFormProps) {
   return (
-    <FormWrapper title="Your Info">
+    <FormWrapper title="">
       <label>Name</label>
       <input
         autoFocus

@@ -43,7 +43,7 @@ function PSAForm(props: formValues) {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
       <GeneralInfo {...data} updateFields={updateFields} />,
-      <PsaFormTwo {...data} updateFields={updateFields} />,
+      
       <PsaFormThree {...data} updateFields={updateFields} />,
     ]);
 

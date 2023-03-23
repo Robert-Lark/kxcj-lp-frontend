@@ -23,7 +23,7 @@ export function PsaFormThree({
   updateFields,
 }: PSAFormProps) {
   return (
-    <FormWrapper title="Info about your announcement">
+    <FormWrapper title="">
       <label>Use Through Date</label>
       <input
         min={1}
@@ -46,7 +46,7 @@ export function PsaFormThree({
         onChange={(e) => updateFields({ time30: e.target.value })}
       ></input>
       <label>Your Announcement</label>
-      <textarea rows={4} cols={50} name={announcement}>
+      <textarea rows={10} cols={50} name={announcement}>
       </textarea>
     </FormWrapper>
   );

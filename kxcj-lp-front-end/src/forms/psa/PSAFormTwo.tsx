@@ -18,7 +18,7 @@ export function PsaFormTwo({
   updateFields,
 }: PSAFormProps) {
   return (
-    <FormWrapper title="Info about your announcement">
+    <FormWrapper title="Info about your ">
       <label>Organization Name</label>
       <input
         type="text"

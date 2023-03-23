@@ -8,6 +8,7 @@ import TemplateFormPage from "./TemplateFormPage";
 import Scroll from "./assets/Scrolls/Scroll_v.png";
 import SideButtons from "./lib/SideButtons";
 import Form from "./lib/Form";
+import { VolunteerForm } from "./lib/VolunteerForm";
 
 const VOLUNTEER_QUERY = gql`
   query GetAllVolunteer {
@@ -35,7 +36,9 @@ function Volunteer() {
               <SideButtons back currentPage={location.pathname}/>  
               </span>
                 <span className='form-container'>
-                    <Form value={''} placeholder={''} formHeading='Volunteer' />
+                    <VolunteerForm Name={""} Email={""} Reason={""} Phone={""} updateFields={function (fields: Partial<{ Name: string; Email: string; Reason: string; Phone: string; }>): void {
+            throw new Error("Function not implemented.");
+          } } />
                 </span>
             </div>
         </div>

@@ -3,7 +3,10 @@ import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
 import SideButtons from "./lib/SideButtons";
 import PSAForm from "./forms/psa/PSAForm";
+import Scroll from "./assets/Scrolls/Scroll_p.png";
 import { useState } from "react";
+import "../src/styles/volunteer.css";
+
 
 const SUBMITPSA_QUERY = gql`
   query allSubmitPSA {
@@ -75,22 +78,27 @@ function SubmitPSA() {
   );
 
   return (
-    <div className="outer-container">
-      <div className="top-level-container">
-        <SideButtons back currentPage={location.pathname} />
-        <div className="glass-container">
-          <h1>{heading ? heading : "Submit PSA"}</h1>
-          <span>{content ? content : fallback}</span>
+    <div className="container">
+      <div className="box1">
+                <img src={Scroll} alt='scroll'/>
+            </div>
+          <div className='box2'>
+            <span>
+            <SideButtons back currentPage={location.pathname}/>  
+            </span>
+            <div className="innerbox3">
           <button className="example-psa-button" onClick={() => setShow(!show)}>
             View an example PSA here
           </button>
           <Modal show={show} setShow={setShow}/>
-          <span className="formHeading">{formHeading}</span>
+          
           <span className="form-container">
             <PSAForm value={""} placeholder={""} formHeading={formHeading} />
           </span>
-        </div>
-      </div>
+          </div>
+            </div>
+     
+     
     </div>
   );
 }
