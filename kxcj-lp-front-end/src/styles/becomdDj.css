@@ -1,0 +1,24 @@
+.becomeDjCont {
+     background: url("../assets/GetInvolvedBG_2.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 180px;
+
+}
+
+.becomeDjContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.becomeDjContent img {
+ width: 600px;
+ margin-bottom: -100px;
+}

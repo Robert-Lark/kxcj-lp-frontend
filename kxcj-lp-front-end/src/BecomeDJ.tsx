@@ -1,9 +1,11 @@
 import { useQuery, gql } from "@apollo/client";
+import "./styles/becomdDj.css";
 import { useLocation } from "react-router-dom";
 import BecomeADJ from "./forms/becomeADJ/BecomeADJForm";
 import ErrorState from "./lib/ErrorState";
 import SideButtons from "./lib/SideButtons";
 import TemplateFormPage from "./TemplateFormPage";
+import Scroll from "./assets/Scrolls/Scroll_s.png";
 
 const BECOMEDJ_QUERY = gql`
   query allBecomeDJ {
@@ -33,11 +35,12 @@ function BecomeDJ() {
   if (error) return <ErrorState error={error} />;
 
   return (
-    <div className="top-level-container">
+    <div className="becomeDjCont">
+      <div>
       <SideButtons back currentPage={location.pathname} />
-      <div className="glass-container">
-        <h1>{heading ? heading : fallback}</h1>
-        <span>{content}</span>
+      </div>
+      <div className="becomeDjContent">
+        <img src={Scroll} alt='scroll'/>
         <span className="formHeading">{formHeading}</span>
         <span className="form-container">
           <BecomeADJ value={""} placeholder={""} formHeading={formHeading} />
