@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
 .listenNow {
     background: url("../assets/ListenNowBG.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -69,4 +75,44 @@
 .stream-player {
     width: 28rem;
     margin-top: -130px;
+}
+
+
+.listenNowContainer {
+    display: grid;
+  grid-template-columns: 1fr 3fr; /* 1/4 for the sidebar, 3/4 for the content */
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "sidebar content"
+    "footer footer";
+    height: 100vh;
+    border: 2px solid yellow;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    height: 75%;
+    max-height: 800px;
+    width: 100%;
+  }
+
+.content {
+    grid-area: content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   padding-top: 80px;
+}
+
+.listen-footer {
+    grid-area: footer;
+    height: 25%;
+margin-top: -60px;
+    z-index: 5;
+}
+
+.tock {
+    max-height: 300px;
+    overflow-y: scroll;
 }

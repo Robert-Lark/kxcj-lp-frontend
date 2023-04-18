@@ -9,38 +9,72 @@ import Footer from "./lib/Footer";
 function ListenNow() {
   const location = useLocation();
   return (
-    <div className="listenNow">
-      <div className="top-level-container">
-        <div className="streamSidebuttons">
-          <SideButtons currentPage={location.pathname} listenNow cal/>
+    // <div className="listenNow">
+    //   <div className="top-level-container">
+    //     <div className="streamSidebuttons">
+    //       <SideButtons currentPage={location.pathname} listenNow cal/>
+    //     </div>
+
+    //     <div className="stream-container">
+    //       <div className="buttons">
+    // <img src={SteamNow} alt="stream now button" />
+    // <a
+    //   role="button"
+    //   href="https://www.archive.org/details/@kxcj-lp"
+    //   className="button-wood-plank"
+    //   target="_blank"
+    //   rel="noreferrer"
+    // >
+    //   <img src={Archive} alt="archive button" id="archive" />
+    // </a>
+    //       </div>
+    // <audio controls autoPlay className="stream-player">
+    //   <source src="http://207.55.228.207:8888/KXCJ"></source>
+    // </audio>
+    //       <div className="schedule-container">
+    // <div
+    //   data-tockify-component="calendar"
+    //   data-tockify-calendar="kxcjfm"
+    // ></div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <Footer />
+
+    // </div>
+    <div className="listenNowContainer">
+      <div className="sidebar">
+        <SideButtons currentPage={location.pathname} listenNow cal />
+      </div>
+      <div className="content">
+        <div className="buttons">
+          <img src={SteamNow} alt="stream now button" />
+          <a
+            role="button"
+            href="https://www.archive.org/details/@kxcj-lp"
+            className="button-wood-plank"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Archive} alt="archive button" id="archive" />
+          </a>
         </div>
 
-        <div className="stream-container">
-          <div className="buttons">
-            <img src={SteamNow} alt="stream now button" />
-            <a
-              role="button"
-              href="https://www.archive.org/details/@kxcj-lp"
-              className="button-wood-plank"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={Archive} alt="archive button" id="archive" />
-            </a>
-          </div>
+        <div>
           <audio controls autoPlay className="stream-player">
             <source src="http://207.55.228.207:8888/KXCJ"></source>
           </audio>
-          <div className="schedule-container">
-            <div
-              data-tockify-component="calendar"
-              data-tockify-calendar="kxcjfm"
-            ></div>
-          </div>
         </div>
+
+        <div
+          data-tockify-component="calendar"
+          data-tockify-calendar="kxcjfm"
+          data-tockify-height="400px"
+        ></div>
       </div>
-      <Footer />
-      
+      <div className="listen-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

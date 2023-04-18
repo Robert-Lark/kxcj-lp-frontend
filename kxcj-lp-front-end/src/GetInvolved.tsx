@@ -127,7 +127,7 @@ const planksArr = [Become_DJ_Plank,Submit_A_PSA, Donate_Plank_2, Volunteer_Plank
                     </div>
                     <div className="side_button">
                       <button className="button-wood-plank" id={`links-${i}`}>
-                        <img src={planksArr[i]}/>
+                        <img src={planksArr[i]} alt="planks" />
                       </button>
                     </div>
                   

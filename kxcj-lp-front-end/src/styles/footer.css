@@ -1,5 +1,5 @@
   .footer {
-    background-image: url("../assets/footer/Footer2.png"); /* specify the URL of your image */
+    background-image: url("../assets/footer/Footer2.png");
     background-position: center center;
     background-size: cover;
     padding: 50px 0;
@@ -7,7 +7,7 @@
     height: 250px;
   }
   
-  .container {
+  .footer-container {
     display: flex;
     justify-content: center;
     align-items: center;

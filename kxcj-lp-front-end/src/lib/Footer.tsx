@@ -3,7 +3,7 @@ import "../styles/footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <div className="container">
+      <div className="footer-container">
         <a role="button" href="https://www.facebook.com/KXCJ1057/">
           <div className="box">
             <div className="box-content"></div>
