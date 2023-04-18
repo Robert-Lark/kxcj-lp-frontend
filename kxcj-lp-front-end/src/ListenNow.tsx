@@ -42,6 +42,7 @@ function ListenNow() {
     //   <Footer />
 
     // </div>
+    <div>
     <div className="listenNowContainer">
       <div className="sidebar">
         <SideButtons currentPage={location.pathname} listenNow cal />
@@ -75,6 +76,7 @@ function ListenNow() {
       <div className="listen-footer">
         <Footer />
       </div>
+    </div>
     </div>
   );
 }

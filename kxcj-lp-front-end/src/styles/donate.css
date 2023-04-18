@@ -6,13 +6,39 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
+}
+
+.donateMain {
+    display: flex;
+justify-content: center;
+
+}
+
+.donate-side-container {
+    
+    width: 500px;
+}
+
+.donate-content-container {
+    padding: 0px 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
-#donate_button {
+
+#logo {
+
+
+    width: 600px;
+}
+
+.donate-footer {
+    margin-top: 150px;
+    width: 100%;
+}
+
+/* #donate_button {
     width: 150px;
     height: 150px;
     background-image: url("../assets/PayPal_Plank_2.png") no-repeat; 
@@ -32,4 +58,4 @@
     right: 270px;
     bottom: 170px;
 
-}
+} */

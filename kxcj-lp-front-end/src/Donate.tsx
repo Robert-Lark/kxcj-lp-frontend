@@ -32,27 +32,32 @@ function Donate() {
   );
 
   return (
-    <div className='donatePage'>
-    <div className="top-level-container">
-      <SideButtons currentPage={location.pathname} back />
-      <div className="glass-container">
-        <img src={Logo} id='logo' alt='logo'/>
-        <div>
-          <div id="donate_button">
-            <a
-              role="button"
-              href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
-              className="button-wood-plank"
-            >
-              <img src={Paypal} alt="archive button" id="paypal" />
-            </a>
+    <div className="donatePage">
+      <div className="donateMain">
+        <div className="donate-side-container">
+          <SideButtons currentPage={location.pathname} back />
+        </div>
+
+        <div className="donate-content-container">
+          <img src={Logo} id="logo" alt="logo" />
+          <div>
+            <div id="donate_button">
+              <a
+                role="button"
+                href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
+                className="button-wood-plank"
+              >
+                <img src={Paypal} alt="archive button" id="paypal" />
+              </a>
+            </div>
+            <div></div>
           </div>
-          <div></div>
         </div>
       </div>
-      
-    </div>
-    <Footer />
+
+      <div className="donate-footer">
+        <Footer />
+      </div>
     </div>
   );
 }
