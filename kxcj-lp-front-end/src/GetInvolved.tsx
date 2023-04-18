@@ -109,18 +109,18 @@ const planksArr = [Become_DJ_Plank,Submit_A_PSA, Donate_Plank_2, Volunteer_Plank
         <span className="texts">
         {/* <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
         <p>{textContent ? textContent : fallback}</p> */}
-        <img src={Scroll} />
+        <img src={Scroll} alt="scroll" />
         </span>
         <div className="images-container">
           {images.map((image: imageType, i: any) => {
             return (
               <label htmlFor="links">
+                <a href={links[i]}>
                 <div
                   className="image-container"
                   key={i}
                   data-hover={imageOverlayText[i]}
                 >
-                  <a href={links[i]}>
                     <div className="frames">
                       <img id="images" src={image?.asset?.url} alt="button" />
                       <img id="frame" src={woodFrame} alt="frame" />
@@ -130,8 +130,9 @@ const planksArr = [Become_DJ_Plank,Submit_A_PSA, Donate_Plank_2, Volunteer_Plank
                         <img src={planksArr[i]}/>
                       </button>
                     </div>
-                  </a>
+                  
                 </div>
+                </a>
               </label>
             );
           })}
