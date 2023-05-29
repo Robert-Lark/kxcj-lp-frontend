@@ -39,7 +39,6 @@ const PSAFormFinal = () => {
           <label className="form-label">
             Name:
             <input
-              className="form-input"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -49,7 +48,6 @@ const PSAFormFinal = () => {
           <label className="form-label">
             Email:
             <input
-              className="form-input"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +57,6 @@ const PSAFormFinal = () => {
           <label className="form-label">
             Use Through Date:
             <input
-              className="form-input"
               type="text"
               value={useThrough}
               onChange={(e) => setUseThrough(e.target.value)}
@@ -70,7 +67,6 @@ const PSAFormFinal = () => {
             <label className="form-label">
               PSA Length:
               <input
-                className="form-input"
                 id="ten"
                 type="text"
                 value={time10}

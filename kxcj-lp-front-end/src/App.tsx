@@ -5,9 +5,10 @@ import Donate from './Donate'
 import GetInvolved from './GetInvolved'
 import { Routes, Route } from "react-router-dom";
 import Volunteer from './Volunteer';
-import SubmitPSA from './SubmitPSA';
+import SubmitPSAGood from './SubmitPSA';
 
 import BecomeDjGood from './BecomeDJ';
+
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route path="/getInvolved" element={<GetInvolved />} />
         <Route path="/volunteer" element={<Volunteer />} /> 
         <Route path="/becomeadj" element={<BecomeDjGood />} />
-        <Route path="/submit" element={<SubmitPSA />} />
+        <Route path="/submit" element={<SubmitPSAGood />} />
       </Routes>
     </div>
   );

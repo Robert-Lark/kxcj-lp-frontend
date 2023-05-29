@@ -2,16 +2,48 @@ import React, { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./styles/test.css";
-import Scroll from "./assets/Scrolls/Scroll_s.png";
+import Scroll from "./assets/Scrolls/Scroll_p.png";
 import SideButtons from "./lib/SideButtons";
 
-function BecomeDjGood() {
+function Modal(props: any) {
+    const { show, setShow } = props;
+    if (!show) return null;
+    return (
+      <div className="modal">
+        <h1>Example Announcement</h1>
+        <p>
+          <strong>Contact:</strong> Insert the contact name, institution name,
+          email address and telephone number
+        </p>
+        <p>
+          <strong>For use through:</strong> End date of announcement
+        </p>
+        <p>
+          <strong>Length:</strong> 0:30 - Indicates announcement runs for thirty
+          seconds
+        </p>
+        <p>
+          <strong>Content:</strong> One of the most important activities to share
+          with your baby is reading. That's why the illinois valley public library
+          is offering the "Born to read" program for teen parents. Tutors provide
+          coaching, a video offers tips, and librarians distribute books and other
+          materials. The program is made possible through a grant from the four
+          way community foundation. for more information, or to be a volunteer,
+          call (505) 555-1234.
+        </p>
+        <button onClick={() => setShow(!show)}>Close</button>
+      </div>
+    );
+  }
+
+function SubmitPSAGood() {
   const location = useLocation();
-  const [djName, setDjName] = useState("");
-  const [musicStyle, setMusicStyle] = useState("");
-  const [coHosts, setCoHosts] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [useThrough, setUseThrough] = useState("");
+  const [time10, setTime10] = useState("");
+  const [announcement, setAnnouncement] = useState("");
 
   const form = useRef(null);
 
@@ -26,18 +58,15 @@ function BecomeDjGood() {
           "_9f0M6ZsHv1G2xiIL"
         )
         .then((result) => {
-          setDjName('');
-          setMusicStyle('');
-          setCoHosts('');
-          setPhoneNumber('');
-          setEmail('');
+          
+          
           alert("successfull form submission");
         })
         .catch((error) => {
           console.log(error.text);
         });
     }
-    console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
+    // console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
   };
 
   return (
@@ -49,58 +78,67 @@ function BecomeDjGood() {
       <div className="content-test">
         <div className="component-test">
           <img
-            style={{ maxWidth: "100%", height: "auto" }}
             src={Scroll}
             alt="scroll"
           />
+          <button className="example-psa-button" onClick={() => setShow(!show)}>
+            View an example PSA here
+          </button>
         </div>
-
+        <Modal show={show} setShow={setShow}/>
         <div className="component-test-form">
           <form onSubmit={handleSubmit} ref={form}>
-            <label htmlFor="djName">DJ Name</label>
+          <label className="form-label">
+            Name:
             <input
-              id="djName"
-              autoFocus
-              required
               type="text"
-              value={djName}
-              onChange={(e) => setDjName(e.target.value)}
-              name="DjName"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              name="name"
             />
-            <label htmlFor="musicStyle">Style of Music</label>
+          </label>
+          <label className="form-label">
+            Email:
             <input
-              id="musicStyle"
-              type="text"
-              value={musicStyle}
-              onChange={(e) => setMusicStyle(e.target.value)}
-              name="styleOfMusic"
-            />
-            <label htmlFor="coHosts">Co-Hosts</label>
-            <input
-              id="coHosts"
-              type="text"
-              value={coHosts}
-              onChange={(e) => setCoHosts(e.target.value)}
-              name="coHosts"
-            />
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input
-              id="phoneNumber"
-              min={8}
-              type="number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              name="phoneNumber"
-            />
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              required
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               name="email"
             />
+          </label>
+          <label className="form-label">
+            Use Through Date:
+            <input
+              type="text"
+              value={useThrough}
+              onChange={(e) => setUseThrough(e.target.value)}
+              name="useThroughDate"
+            />
+          </label>
+          <div className="radio-label">
+            <label className="form-label">
+              PSA Length:
+              <input
+                id="ten"
+                type="text"
+                value={time10}
+                onChange={(e) => setTime10(e.target.value)}
+                name="psaTime"
+                placeholder="Please specify if you would like a 10 second or 30 second psa"
+              />
+            </label>
+          </div>
+          <label className="form-label">
+            Your Announcement:
+            <textarea
+              rows={10}
+              cols={50}
+              name="announcement"
+              value={announcement}
+              className="form-textarea"
+              onChange={(e) => setAnnouncement(e.target.value)}
+            />
+          </label>
 
             <button type="submit">Submit</button>
           </form>
@@ -112,4 +150,4 @@ function BecomeDjGood() {
   );
 }
 
-export default BecomeDjGood;
+export default SubmitPSAGood;
