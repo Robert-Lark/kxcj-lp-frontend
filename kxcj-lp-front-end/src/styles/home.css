@@ -33,7 +33,7 @@
   max-width: 800px;
 }
 /* buttons */
-.buttons {
+.buttons-home {
   display: flex;
   align-items: center;
   justify-content: center;

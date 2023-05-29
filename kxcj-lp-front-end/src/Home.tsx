@@ -11,7 +11,7 @@ function Home() {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <div className="buttons" id="amatic">
+        <div className="buttons-home" id="amatic">
 
             <a href="/listenNow" target="_blank" rel="noopener noreferrer">
               <img src={ListenNow} id="plank"/>
