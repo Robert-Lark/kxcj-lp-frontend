@@ -1,37 +1,90 @@
-import { FormWrapper } from "./FormWrapper";
+import React, { useState, useRef } from 'react';
+import emailjs from "@emailjs/browser";
 
-type BecomeDjData = {
-  DJName: string;
-  Style: string;
-  CoHosts: string;
-  Phone: string;
-};
+export function BecomeDjForm() {
+  const form = useRef<HTMLFormElement>(null);
+  const [djName, setDjName] = useState('');
+  const [musicStyle, setMusicStyle] = useState('');
+  const [coHosts, setCoHosts] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
 
-type BecomeDjProps = {
-  DJName: string;
-  Style: string;
-  CoHosts: string;
-  Phone: string;
-  updateFields: (fields: Partial<BecomeDjData>) => void;
-};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_9fu5jyw",
+          "template_lj7mk7j",
+          form.current,
+          "_9f0M6ZsHv1G2xiIL"
+        )
+        .then((result) => {
+          setDjName('');
+          setMusicStyle('');
+          setCoHosts('');
+          setPhoneNumber('');
+          setEmail('');
+          alert("successfull form submission");
+        })
+        .catch((error) => {
+          console.log(error.text);
+        });
+    }
+    console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
+  };
 
-export function BecomeDjForm({
-  DJName,
-  Style,
-  CoHosts,
-  Phone: string,
-  updateFields,
-}: BecomeDjProps) {
   return (
-    <FormWrapper title="">
-      <label>DJ Name</label>
-      <input autoFocus required type="text"></input>
-      <label>Style of music</label>
-      <input required type="text"></input>
-      <label>Co-Hosts</label>
-      <input type="text"></input>
-      <label>Phone number</label>
-      <input required min={8} type="number"></input>
-    </FormWrapper>
+    <div className="form">
+      <form onSubmit={handleSubmit} ref={form}>
+        <div className="formContent">
+          <label htmlFor="djName">DJ Name</label>
+          <input
+            id="djName"
+            autoFocus
+            required
+            type="text"
+            value={djName}
+            onChange={(e) => setDjName(e.target.value)}
+            name="DjName"
+          />
+          <label htmlFor="musicStyle">Style of Music</label>
+          <input
+            id="musicStyle"
+            type="text"
+            value={musicStyle}
+            onChange={(e) => setMusicStyle(e.target.value)}
+            name="styleOfMusic"
+          />
+          <label htmlFor="coHosts">Co-Hosts</label>
+          <input
+            id="coHosts"
+            type="text"
+            value={coHosts}
+            onChange={(e) => setCoHosts(e.target.value)}
+            name="coHosts"
+          />
+          <label htmlFor="phoneNumber">Phone Number</label>
+          <input
+            id="phoneNumber"
+            min={8}
+            type="number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            name="phoneNumber"
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            required
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+          />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   );
 }

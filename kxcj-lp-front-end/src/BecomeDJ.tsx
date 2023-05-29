@@ -6,6 +6,7 @@ import ErrorState from "./lib/ErrorState";
 import SideButtons from "./lib/SideButtons";
 import TemplateFormPage from "./TemplateFormPage";
 import Scroll from "./assets/Scrolls/Scroll_s.png";
+import { BecomeDjForm } from "./lib/BecomeDjForm";
 
 const BECOMEDJ_QUERY = gql`
   query allBecomeDJ {
@@ -43,7 +44,7 @@ function BecomeDJ() {
         <img src={Scroll} alt='scroll'/>
         <span className="formHeading">{formHeading}</span>
         <span className="form-container">
-          <BecomeADJ value={""} placeholder={""} formHeading={formHeading} />
+          <BecomeDjForm />
         </span>
       </div>
     </div>

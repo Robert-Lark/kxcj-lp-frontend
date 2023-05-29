@@ -42,9 +42,9 @@ function BecomeADJ(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <BecomeDjForm DJName={""} Style={""} CoHosts={""} Phone={""} updateFields={function (fields: Partial<{ DJName: string; Style: string; CoHosts: string; Phone: string; }>): void {
-        throw new Error("Function not implemented.");
-      } } />,
+      // <BecomeDjForm DJName={""} Style={""} CoHosts={""} Phone={""} Email={""} updateFields={function (fields: Partial<{ DJName: string; Style: string; CoHosts: string; Phone: string; }>): void {
+      //   throw new Error("Function not implemented.");
+      // } } />,
       
     ]);
 
