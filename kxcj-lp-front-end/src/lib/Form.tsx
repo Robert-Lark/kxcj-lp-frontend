@@ -1,8 +1,9 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useRef } from "react";
 import "../styles/form.css";
 import { ContactForm } from "./ContactForm";
 import { useMultistepForm } from "./FormHook";
 import { PsaForm } from "./PsaForm";
+import emailjs from "@emailjs/browser";
 
 type formValues = {
   value: string;
@@ -12,7 +13,7 @@ type formValues = {
 
 type FormData = {
   //on all forms
-  name: string,
+  name: string;
   email: string;
   //become a dj
   age: string;
@@ -39,6 +40,7 @@ const INITIAL_DATA: FormData = {
 
 function Form(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
+  const form = useRef<HTMLFormElement>(null);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
       // <ContactForm {...data} updateFields={updateFields} />,
@@ -52,15 +54,30 @@ function Form(props: formValues) {
     });
   }
 
-  function onSubmit(e: FormEvent) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!isLastStep) return next();
-    // here is where we send the data
-    alert("successfull form submission");
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_9fu5jyw",
+          "template_8r21128",
+          form.current,
+          "_9f0M6ZsHv1G2xiIL"
+        )
+        .then((result) => {
+          console.log(result.text);
+        })
+        .catch((error) => {
+          console.log(error.text);
+        });
+      alert("Successful form submission");
+    }
   }
+
   return (
     <div className="form">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} ref={form}>
         <div className="step">
           {currentStepIndex + 1} / {steps.length}
         </div>
