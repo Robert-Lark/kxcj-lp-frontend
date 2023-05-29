@@ -40,7 +40,7 @@ function VolunteerGood() {
 
   return (
     <div className="container-test">
-      <div className="background-test" />
+      <div className="background-test-volunteer" />
       <div className="sidebar-test">
         <SideButtons back currentPage={location.pathname} />
       </div>

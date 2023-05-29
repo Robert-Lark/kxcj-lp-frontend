@@ -42,7 +42,7 @@ function BecomeDjGood() {
 
   return (
     <div className="container-test">
-      <div className="background-test" />
+      <div className="background-test-dj" />
       <div className="sidebar-test">
         <SideButtons back currentPage={location.pathname} />
       </div>

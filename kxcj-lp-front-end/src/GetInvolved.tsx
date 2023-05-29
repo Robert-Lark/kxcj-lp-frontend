@@ -107,8 +107,6 @@ const planksArr = [Become_DJ_Plank,Submit_A_PSA, Donate_Plank_2, Volunteer_Plank
     <div className="top-level-container">
       <div className="get-involved-glass-container">
         <span className="texts">
-        {/* <h1>{heading ? heading : "Volunteer-run, community-based radio"}</h1>
-        <p>{textContent ? textContent : fallback}</p> */}
         <img src={Scroll} alt="scroll" />
         </span>
         <div className="images-container">

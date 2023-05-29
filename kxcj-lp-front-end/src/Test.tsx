@@ -1,153 +1,143 @@
-import React, { useState, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import emailjs from "@emailjs/browser";
-import "./styles/test.css";
-import Scroll from "./assets/Scrolls/Scroll_p.png";
-import SideButtons from "./lib/SideButtons";
+import React from "react";
+import "../src/styles/getInvolved-copy.css";
+import { useQuery, gql } from "@apollo/client";
+import ErrorState from "./lib/ErrorState";
+import woodFrame from "./assets/woodFrame.gif";
 
-function Modal(props: any) {
-    const { show, setShow } = props;
-    if (!show) return null;
-    return (
-      <div className="modal">
-        <h1>Example Announcement</h1>
-        <p>
-          <strong>Contact:</strong> Insert the contact name, institution name,
-          email address and telephone number
-        </p>
-        <p>
-          <strong>For use through:</strong> End date of announcement
-        </p>
-        <p>
-          <strong>Length:</strong> 0:30 - Indicates announcement runs for thirty
-          seconds
-        </p>
-        <p>
-          <strong>Content:</strong> One of the most important activities to share
-          with your baby is reading. That's why the illinois valley public library
-          is offering the "Born to read" program for teen parents. Tutors provide
-          coaching, a video offers tips, and librarians distribute books and other
-          materials. The program is made possible through a grant from the four
-          way community foundation. for more information, or to be a volunteer,
-          call (505) 555-1234.
-        </p>
-        <button onClick={() => setShow(!show)}>Close</button>
-      </div>
-    );
-  }
+import Become_DJ_Plank from "./assets/Become_A_DJ_Plank.png";
+import Submit_A_PSA from "./assets/Submit_PSA_Plank_2.png";
+import Donate_Plank_2 from "./assets/Donate_Plank.png";
+import Volunteer_Plank from "./assets/Volunteer_Plank_2.png";
 
-function SubmitPSAGood() {
-  const location = useLocation();
-  const [show, setShow] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [useThrough, setUseThrough] = useState("");
-  const [time10, setTime10] = useState("");
-  const [announcement, setAnnouncement] = useState("");
+import Scroll from "./assets/Scroll.png";
 
-  const form = useRef(null);
+// import Frame1 from './assets/Frame1.gif'
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (form.current) {
-      emailjs
-        .sendForm(
-          "service_9fu5jyw",
-          "template_8r21128",
-          form.current,
-          "_9f0M6ZsHv1G2xiIL"
-        )
-        .then((result) => {
-          
-          
-          alert("successfull form submission");
-        })
-        .catch((error) => {
-          console.log(error.text);
-        });
+const GET_INVOVLED_QUERY = gql`
+  query GetAllGetInvolved {
+    allGetInvolved {
+      heading
+      contentRaw
+      referenceList {
+        caption
+        asset {
+          url
+        }
+      }
+      imageOverlayOne
+      imageOverlayTwo
+      imageOverlayThree
+      imageOverlayFour
     }
-    // console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
-  };
+  }
+`;
+
+type imageType = {
+  asset: { url: string | undefined };
+  caption:
+    | string
+    | number
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactFragment
+    | React.ReactPortal
+    | null
+    | undefined;
+};
+
+function GetInvolvedTest() {
+  const { loading, error, data } = useQuery(GET_INVOVLED_QUERY);
+  if (loading) return <p>loading...</p>;
+  if (error) return <ErrorState error={error} />;
+
+  const imageOverlayText = [
+    data?.allGetInvolved[0]?.imageOverlayOne,
+    data?.allGetInvolved[0]?.imageOverlayTwo,
+    data?.allGetInvolved[0]?.imageOverlayThree,
+    data?.allGetInvolved[0]?.imageOverlayFour,
+  ];
+
+  const images = data.allGetInvolved[0]?.referenceList;
+
+  const links = ["/becomeadj", "/submit", "/donate", "/volunteer"];
+
+  const planksArr = [
+    Become_DJ_Plank,
+    Submit_A_PSA,
+    Donate_Plank_2,
+    Volunteer_Plank,
+  ];
 
   return (
-    <div className="container-test">
-      <div className="background-test" />
-      <div className="sidebar-test">
-        <SideButtons back currentPage={location.pathname} />
+    <div className="page-container">
+      <div className="image-box">
+        <img src={Scroll} alt="scroll" />
       </div>
-      <div className="content-test">
-        <div className="component-test">
-          <img
-            src={Scroll}
-            alt="scroll"
-          />
-          <button className="example-psa-button" onClick={() => setShow(!show)}>
-            View an example PSA here
-          </button>
+      <div className="content-box">
+        <div className="images-container">
+          {images.map((image: imageType, i: any) => {
+            return (
+              <label htmlFor="links">
+                <a href={links[i]}>
+                  <div
+                    className="image-container"
+                    key={i}
+                    data-hover={imageOverlayText[i]}
+                  >
+                    <div className="frames">
+                      <img id="images" src={image?.asset?.url} alt="button" />
+                      <img id="frame" src={woodFrame} alt="frame" />
+                    </div>
+                    <div className="side_button">
+                      <button className="button-wood-plank" id={`links-${i}`}>
+                        <img src={planksArr[i]} alt="planks" />
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </label>
+            );
+          })}
         </div>
-        <Modal show={show} setShow={setShow}/>
-        <div className="component-test-form">
-          <form onSubmit={handleSubmit} ref={form}>
-          <label className="form-label">
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-            />
-          </label>
-          <label className="form-label">
-            Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-            />
-          </label>
-          <label className="form-label">
-            Use Through Date:
-            <input
-              type="text"
-              value={useThrough}
-              onChange={(e) => setUseThrough(e.target.value)}
-              name="useThroughDate"
-            />
-          </label>
-          <div className="radio-label">
-            <label className="form-label">
-              PSA Length:
-              <input
-                id="ten"
-                type="text"
-                value={time10}
-                onChange={(e) => setTime10(e.target.value)}
-                name="psaTime"
-                placeholder="Please specify if you would like a 10 second or 30 second psa"
-              />
-            </label>
-          </div>
-          <label className="form-label">
-            Your Announcement:
-            <textarea
-              rows={10}
-              cols={50}
-              name="announcement"
-              value={announcement}
-              className="form-textarea"
-              onChange={(e) => setAnnouncement(e.target.value)}
-            />
-          </label>
-
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-
-        <div className="component-test">Component 3</div>
       </div>
     </div>
+
+    // <div className="getInvolvedContainer">
+    // <div className="top-level-container">
+    //   <div className="get-involved-glass-container">
+    //     <span className="texts">
+    //     <img src={Scroll} alt="scroll" />
+    //     </span>
+    //     <div className="images-container">
+    //       {images.map((image: imageType, i: any) => {
+    //         return (
+    //           <label htmlFor="links">
+    //             <a href={links[i]}>
+    //             <div
+    //               className="image-container"
+    //               key={i}
+    //               data-hover={imageOverlayText[i]}
+    //             >
+    //                 <div className="frames">
+    //                   <img id="images" src={image?.asset?.url} alt="button" />
+    //                   <img id="frame" src={woodFrame} alt="frame" />
+    //                 </div>
+    //                 <div className="side_button">
+    //                   <button className="button-wood-plank" id={`links-${i}`}>
+    //                     <img src={planksArr[i]} alt="planks" />
+    //                   </button>
+    //                 </div>
+
+    //             </div>
+    //             </a>
+    //           </label>
+    //         );
+    //       })}
+    //     </div>
+    //   </div>
+    // </div>
+    // </div>
   );
 }
 
-export default SubmitPSAGood;
+export default GetInvolvedTest;

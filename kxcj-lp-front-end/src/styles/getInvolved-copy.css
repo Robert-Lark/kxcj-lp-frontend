@@ -1,0 +1,100 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the container height to full viewport height */
+  background: url("../assets/GetInvolvedBG_2.jpg") no-repeat center center fixed; 
+  background-size: cover;
+  background-position: center;
+}
+
+.image-box {
+  height: 33vh; /* Set the height of the first box to 1/3 of the viewport height */
+  display: flex;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover; /* Adjust the image to cover the container */
+}
+
+.content-box {
+  flex-grow: 1; /* Allow the content box to take up the remaining space */
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  z-index: 999;
+  }
+  
+  .image-container  {
+      position: relative;
+      border-bottom: 1px dotted black;
+    }
+    
+    .image-container:before {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      content: attr(data-hover);
+      visibility: hidden;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, .15);   
+      backdrop-filter: blur(8px);
+      color: #fff;
+      text-align: center;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      padding: 5px 0;
+      transition: opacity 0.5s ease-in-out;
+      width: 11rem;
+      height: 10rem;
+      position: absolute;
+      z-index: 1;
+      left: 35px;
+      right: 0;
+      top: 35px;
+      bottom: 0;
+      cursor: pointer;
+    }
+    
+    .image-container:hover:before {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+  .frames {
+      display: grid;
+  }
+  
+  #images {
+      width: 11rem;
+      height: 11.5rem;
+      position: absolute;
+      z-index: -1;
+      margin: 42px 0px 0px 30px;
+  
+      object-fit: cover;
+  }
+  
+  #frame {
+      width: 15rem;
+      height: 15rem;
+  }
+  
+  .frames img {
+      grid-column: 1;
+      grid-row: 1;
+      
+        
+  }
+  
+  .button-wood-plank img{
+  width: 250px;
+  }

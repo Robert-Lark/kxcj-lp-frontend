@@ -4,7 +4,7 @@
     height: 100vh; /* Adjust the height as needed */
   }
 
-  .background-test {
+  .background-test-volunteer {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,7 +16,33 @@
     z-index: -1;
     /* Add any other styles you want for the background */
   }
+
+  .background-test-dj {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/GetInvolvedBG_2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Add any other styles you want for the background */
+  }
   
+  .background-test-submit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/ArchiveBG.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Add any other styles you want for the background */
+  }
+
   .sidebar-test {
     margin-top:60px;
   }
