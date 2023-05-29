@@ -67,12 +67,13 @@ function Form(props: formValues) {
         )
         .then((result) => {
           console.log(result.text);
+          console.log("test")
         })
         .catch((error) => {
           console.log(error.text);
         });
-      alert("Successful form submission");
     }
+    console.log("test")
   }
 
   return (

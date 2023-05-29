@@ -1,9 +1,10 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useRef } from "react";
 import "../../styles/form.css";
 import { useMultistepForm } from "../../lib/FormHook";
 import { PsaFormThree } from "./PSAFormThree";
 import { PsaFormTwo } from "./PSAFormTwo";
 import { GeneralInfo } from "../GeneralInfo";
+import emailjs from "@emailjs/browser";
 
 type formValues = {
   value: string;
@@ -40,10 +41,11 @@ const INITIAL_DATA: FormData = {
 
 function PSAForm(props: formValues) {
   const [data, setData] = useState(INITIAL_DATA);
+  const form = useRef<HTMLFormElement>(null);
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
       <GeneralInfo {...data} updateFields={updateFields} />,
-      
+
       <PsaFormThree {...data} updateFields={updateFields} />,
     ]);
 
@@ -56,12 +58,27 @@ function PSAForm(props: formValues) {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!isLastStep) return next();
-    // here is where we send the data
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_9fu5jyw",
+          "template_8r21128",
+          form.current,
+          "_9f0M6ZsHv1G2xiIL"
+        )
+        .then((result) => {
+          console.log(result);
+          console.log("test");
+        })
+        .catch((error) => {
+          console.log(error.text);
+        });
+    }
     alert("successfull form submission");
   }
   return (
     <div className="form">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} ref={form}>
         <div className="step">
           {currentStepIndex + 1} / {steps.length}
         </div>

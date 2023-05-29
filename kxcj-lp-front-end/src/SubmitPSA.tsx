@@ -6,6 +6,7 @@ import PSAForm from "./forms/psa/PSAForm";
 import Scroll from "./assets/Scrolls/Scroll_p.png";
 import { useState } from "react";
 import "../src/styles/volunteer.css";
+import PSAFormFinal from "./forms/PSAFormFinal";
 
 
 const SUBMITPSA_QUERY = gql`
@@ -93,7 +94,7 @@ function SubmitPSA() {
           <Modal show={show} setShow={setShow}/>
           
           <span className="form-container">
-            <PSAForm value={""} placeholder={""} formHeading={formHeading} />
+            <PSAFormFinal />
           </span>
           </div>
             </div>

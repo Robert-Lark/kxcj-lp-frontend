@@ -26,12 +26,14 @@ export function GeneralInfo({
         type="text"
         value={name}
         onChange={(e) => updateFields({ name: e.target.value })}
+        name="name"
       ></input>
       <label>Email Address</label>
       <input
         type="text"
         value={email}
         onChange={(e) => updateFields({ email: e.target.value })}
+        name="email"
       ></input>
     </FormWrapper>
   );
