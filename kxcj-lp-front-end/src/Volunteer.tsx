@@ -1,48 +1,111 @@
-import React from "react";
-import {useLocation} from 'react-router-dom';
-import "../src/styles/innerPages.css";
-import "../src/styles/volunteer.css";
-import { useQuery, gql } from "@apollo/client";
-import ErrorState from "./lib/ErrorState";
-import TemplateFormPage from "./TemplateFormPage";
+import React, { useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import "./styles/test.css";
 import Scroll from "./assets/Scrolls/Scroll_v.png";
 import SideButtons from "./lib/SideButtons";
-import Form from "./lib/Form";
-import { VolunteerForm } from "./lib/VolunteerForm";
 
-const VOLUNTEER_QUERY = gql`
-  query GetAllVolunteer {
-    allVolunteer {
-      heading
-      contentRaw
-      formHeading
-    }
-  }
-`;
-
-function Volunteer() {
+function VolunteerGood() {
   const location = useLocation();
-  const { loading, error } = useQuery(VOLUNTEER_QUERY);
-  if (loading) return <p>loading...</p>;
-  if (error) return <ErrorState error={error} />;
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [skills, setSkills] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const form = useRef(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Handle form submission here
+    if (form.current) {
+        emailjs
+          .sendForm(
+            "service_9fu5jyw",
+            "template_8r21128",
+            form.current,
+            "_9f0M6ZsHv1G2xiIL"
+          )
+          .then((result) => {
+            setName('')
+            setEmail('')
+            setSkills('')
+            setPhone('')
+            alert("successfull form submission");
+          })
+          .catch((error) => {
+            console.log(error.text);
+          });
+      }
+  };
 
   return (
-    <div className='container'>
-            <div className="box1">
-                <img src={Scroll} alt='scroll'/>
-            </div>
-            <div className='box2'>
-              <span>
-              <SideButtons back currentPage={location.pathname}/>  
-              </span>
-                <span className='form-container'>
-                    <VolunteerForm Name={""} Email={""} Reason={""} Phone={""} updateFields={function (fields: Partial<{ Name: string; Email: string; Reason: string; Phone: string; }>): void {
-            throw new Error("Function not implemented.");
-          } } />
-                </span>
-            </div>
+    <div className="container-test">
+      <div className="background-test" />
+      <div className="sidebar-test">
+        <SideButtons back currentPage={location.pathname} />
+      </div>
+      <div className="content-test">
+        <div className="component-test">
+          <img
+            style={{ maxWidth: "100%", height: "auto" }}
+            src={Scroll}
+            alt="scroll"
+          />
         </div>
+
+        <div className="component-test-form">
+        
+    <form onSubmit={handleSubmit} ref={form}>
+      <label htmlFor="name">Name</label>
+      <input
+        autoFocus
+        required
+        type="text"
+        id="name"
+        name="volunteerName"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <label htmlFor="email">Email</label>
+      <input
+        required
+        type="text"
+        id="email"
+        name="volunteerEmail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <label htmlFor="skills">Skills & Expectations</label>
+      <textarea
+        rows={4}
+        cols={50}
+        id="skills"
+        name="skills"
+        value={skills}
+        onChange={(e) => setSkills(e.target.value)}
+      ></textarea>
+
+      <label htmlFor="phone">Phone</label>
+      <input
+        required
+        min={8}
+        type="number"
+        id="phone"
+        name="phone"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+        </div>
+
+        <div className="component-test">Component 3</div>
+      </div>
+    </div>
   );
 }
 
-export default Volunteer;
+export default VolunteerGood;

@@ -6,7 +6,9 @@ import GetInvolved from './GetInvolved'
 import { Routes, Route } from "react-router-dom";
 import Volunteer from './Volunteer';
 import SubmitPSA from './SubmitPSA';
-import BecomeDJ from './BecomeDJ';
+
+import BecomeDjGood from './BecomeDJ';
+
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
         <Route path="/listenNow" element={<ListenNow />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/getInvolved" element={<GetInvolved />} />
-        <Route path="/volunteer" element={<Volunteer />} />
-        <Route path="/becomeadj" element={<BecomeDJ />} />
+        <Route path="/volunteer" element={<Volunteer />} /> 
+        <Route path="/becomeadj" element={<BecomeDjGood />} />
         <Route path="/submit" element={<SubmitPSA />} />
       </Routes>
     </div>

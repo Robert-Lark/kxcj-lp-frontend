@@ -15,7 +15,7 @@ export function BecomeDjForm() {
       emailjs
         .sendForm(
           "service_9fu5jyw",
-          "template_lj7mk7j",
+          "template_8r21128",
           form.current,
           "_9f0M6ZsHv1G2xiIL"
         )

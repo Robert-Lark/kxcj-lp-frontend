@@ -1,0 +1,68 @@
+.container-test {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 1/4 and 3/4 of the page */
+    height: 100vh; /* Adjust the height as needed */
+  }
+
+  .background-test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/ArchiveBG.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Add any other styles you want for the background */
+  }
+  
+  .sidebar-test {
+    margin-top:60px;
+  }
+  
+  .content-test {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .component-test {
+    flex: 1; /* Each component will take up 1/3 of the available space */
+    /* Add any other styles you want for the components */
+  }
+
+
+  .component-test-form {
+    flex: 1; /* Take up 1/3rd of the available vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: whitesmoke;
+    border: 1px solid black;
+    padding: 1.5rem;
+    width: 70%;
+    
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: .5em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+  
+  .component-test-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width if desired */
+    
+  }
+
+  button[type="submit"] {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
