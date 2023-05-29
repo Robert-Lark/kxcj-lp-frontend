@@ -56,15 +56,13 @@ function SideButtons(props: props) {
             );
         })}
         {props.cal && (
-          <button id="id-5" className="button-wood-plank">
-            <a
-              role="button"
-              href="https://www.illinoisvalleyweb.org/calendar"
-              className="button-wood-plank"
-              target="_blank"
-              rel="noreferrer"
-            ></a>
-          </button>
+          <button
+          id="id-5"
+          className="button-wood-plank"
+          onClick={() =>
+            window.open('https://www.illinoisvalleyweb.org/calendar', '_blank')
+          }
+        ></button>
         )}
       </div>
   );
