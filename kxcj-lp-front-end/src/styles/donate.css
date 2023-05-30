@@ -28,8 +28,6 @@ justify-content: center;
 }
 
 #logo {
-
-
     width: 600px;
 }
 
@@ -37,25 +35,6 @@ justify-content: center;
     margin-top: 150px;
     width: 100%;
 }
-
-/* #donate_button {
-    width: 150px;
-    height: 150px;
-    background-image: url("../assets/PayPal_Plank_2.png") no-repeat; 
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-#logo {
-    width: 600px;
-    position: absolute;
-    top: 30px;
-    right: 100px;
-}
-
 #paypal {
     width: 300px;
-    position: absolute;
-    right: 270px;
-    bottom: 170px;
-
-} */
+}

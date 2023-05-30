@@ -10,8 +10,6 @@ import SubmitPSAGood from './SubmitPSA';
 import BecomeDjGood from './BecomeDJ';
 
 
-
-
 function App() {
   return (
     <div>
