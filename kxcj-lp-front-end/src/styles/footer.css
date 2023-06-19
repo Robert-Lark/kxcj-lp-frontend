@@ -15,6 +15,9 @@
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
+
+    /* remove eventually */
+    display: none;
   }
 
   .container a {

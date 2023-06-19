@@ -124,7 +124,7 @@ function SubmitPSAGood() {
                 value={time10}
                 onChange={(e) => setTime10(e.target.value)}
                 name="psaTime"
-                placeholder="Please specify if you would like a 10 second or 30 second psa"
+                placeholder="Please specify if you would like a 10s or 30s psa"
               />
             </label>
           </div>
@@ -144,7 +144,7 @@ function SubmitPSAGood() {
           </form>
         </div>
 
-        <div className="component-test">Component 3</div>
+        <div className="component-test"></div>
       </div>
     </div>
   );

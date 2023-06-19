@@ -102,7 +102,7 @@ function VolunteerGood() {
     </form>
         </div>
 
-        <div className="component-test">Component 3</div>
+        <div className="component-test"></div>
       </div>
     </div>
   );

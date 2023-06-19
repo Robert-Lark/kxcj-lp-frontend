@@ -17,6 +17,9 @@ justify-content: center;
 .donate-side-container {
     
     width: 500px;
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .donate-content-container {
@@ -37,4 +40,5 @@ justify-content: center;
 }
 #paypal {
     width: 300px;
+    
 }

@@ -6,6 +6,9 @@
     gap: .2rem;
     margin-left: 20px;
     height: 750px;
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .button-wood-plank {

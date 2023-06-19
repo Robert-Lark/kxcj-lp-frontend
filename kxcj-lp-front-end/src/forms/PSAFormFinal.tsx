@@ -8,7 +8,6 @@ const PSAFormFinal = () => {
   const [email, setEmail] = useState("");
   const [useThrough, setUseThrough] = useState("");
   const [time10, setTime10] = useState("");
-  const [time30, setTime30] = useState("");
   const [announcement, setAnnouncement] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,7 +71,7 @@ const PSAFormFinal = () => {
                 value={time10}
                 onChange={(e) => setTime10(e.target.value)}
                 name="psaTime"
-                placeholder="Please specify if you would like a 10 second or 30 second psa"
+                placeholder="Please specify if you would like a 10s or 30s psa"
               />
             </label>
           </div>
