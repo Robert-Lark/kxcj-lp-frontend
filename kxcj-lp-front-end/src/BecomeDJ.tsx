@@ -49,7 +49,6 @@ function BecomeDjGood() {
       <div className="content-test">
         <div className="component-test">
           <img
-            style={{ maxWidth: "100%", height: "auto" }}
             src={Scroll}
             alt="scroll"
           />
