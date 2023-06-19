@@ -20,7 +20,7 @@ function SideButtons(props: props) {
     "/listenNow",
     "/donate",
     "/getInvolved",
-    "/shop",
+    "/teeShirts",
     "/becomeadj",
   ];
   const navigate = useNavigate();
