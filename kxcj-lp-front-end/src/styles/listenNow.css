@@ -86,6 +86,7 @@ html, body {
     "sidebar content"
     "footer footer";
     height: 100vh;
+    padding-top: 50px;
 }
 
 .sidebar {
@@ -109,6 +110,9 @@ html, body {
     height: 25%;
 margin-top: -60px;
     z-index: 5;
+
+    /* remove when we get the footer working  */
+    display: none;
 }
 
 .tock {
