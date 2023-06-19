@@ -39,8 +39,8 @@
 
 /* logo */
 .logo img {
-  min-width: 700px;
-  max-width: 800px;
+  max-width: 100%;
+  height: auto;
   @media (max-width: 600px) {
     min-width: 300px;
   max-width: 300px;
@@ -48,6 +48,8 @@
 }
 /* buttons */
 .buttons-home {
+  max-width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +69,8 @@
 
 #plank{
 margin-top: -30px;
-  width: 250px;
+max-width: 100%;
+height: auto;
 
 }
 #plank:hover {
