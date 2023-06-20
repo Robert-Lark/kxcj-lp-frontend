@@ -41,18 +41,25 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-bottom:-40px;
+    margin-bottom:-150px;
+    
     
 }
 
 .buttons-listen-now img {
     width: 300px;
     margin-top: -100px;
+    
+}
+
+#whatsUp {
+    margin-top: -250px;
+    cursor: pointer;
 }
 
 #archive {
-    margin-top: -96px;
     cursor: pointer;
+    margin-top: -150px;
 }
 
 #archive:hover {
@@ -66,6 +73,7 @@ html, body {
     max-width: 750px;
     max-height: 400px;
     overflow: scroll;
+    
 }
 
 .stream-container p {
@@ -115,7 +123,16 @@ margin-top: -60px;
     display: none;
 }
 
-.tock {
-    max-height: 300px;
-    overflow-y: scroll;
+.whatsUpPoster img{
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10001;
+    /* border: 5px solid red; */
+}
+
+.whatsUpPosterNone {
+    display: none;
 }
