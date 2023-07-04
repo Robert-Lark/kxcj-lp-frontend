@@ -8,7 +8,6 @@ function Home() {
 
   const openNewWindow = () => {
     window.open('http://207.55.228.207:8888/KXCJ', '_blank', 'width=800,height=600');
-    window.location.href = '/listenNow';
   };
   
   return (
@@ -18,7 +17,7 @@ function Home() {
           <img src={logo} alt="logo" />
         </div>
         <div className="buttons-home" id="amatic">
-            <a href="/listenNow" target="_blank" rel="noopener noreferrer">
+            <a href="/listenNow" >
               <img src={ListenNow} id="plank" alt="menu button" onClick={openNewWindow}/>
             </a>
             <a href="/donate">
