@@ -12,6 +12,7 @@ import Shop from './Shop';
 
 
 function App() {
+  const [streaming, setStreaming] = React.useState(false)
   return (
     <div>
       <Routes>
