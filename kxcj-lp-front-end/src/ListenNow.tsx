@@ -37,7 +37,7 @@ function ListenNow() {
               onClick={openArchive}
             />
           </div>
-            <div className={show ? "whatsUpPoster" : "whatsUpPosterNone"}>
+            <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
               <img src={testPoster} alt="poster" />
             </div>
           <div
@@ -59,7 +59,7 @@ function WhatsUpModal(props: any) {
   const { show, setShow } = props;
   if (!show) return null;
   return (
-    <div>
+    <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
       <img src="testPoster" />
     </div>
   );
