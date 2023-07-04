@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./styles/test.css";
 import Paypal from "./assets/PayPal_Plank_2.png";
 import DonateAVehicle from "./assets/Donate-a-Vehicle.png";
+import Supporters from "./assets/Supporters1.png"
 import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
 import SideButtons from "./lib/SideButtons";
@@ -31,6 +32,7 @@ function Donate() {
           <img src={Logo} alt="scroll" />
         </div>
         <div className="donate-image">
+        <img src={Supporters} alt="supporters" id="supporters" />
           <a
             role="button"
             href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
