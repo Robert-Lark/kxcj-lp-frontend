@@ -43,7 +43,7 @@ function ListenNow() {
             className="tock"
             data-tockify-component="calendar"
             data-tockify-calendar="kxcjfm"
-            data-tockify-height="350px"
+            data-tockify-height="550px"
           ></div>
         </div>
         <div className="listen-footer">
