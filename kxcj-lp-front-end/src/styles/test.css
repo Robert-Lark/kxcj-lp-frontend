@@ -230,6 +230,7 @@
     @media (max-width: 600px) {
       max-height: 100vh;
       gap: 0;
+      overflow: hidden;
     }
   }
 
