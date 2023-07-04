@@ -35,7 +35,7 @@ function ListenNow() {
               </a>
             </div>
           </div>
-          <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
+          <div className={show ? "whatsUpPoster" : "whatsUpPosterNone"}>
             <img src={testPoster} alt="poster" />
           </div>
 

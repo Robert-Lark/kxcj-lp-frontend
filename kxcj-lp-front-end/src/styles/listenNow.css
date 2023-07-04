@@ -152,34 +152,23 @@ html, body {
     display: none;
 }
 
+.whatsUpPoster {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 30%;
+    z-index: 1010;
+}
+
 .whatsUpPoster img{
     width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 10001;
+   
 }
 
 .whatsUpPosterNone {
     display: none;
 }
 
-.whatsUpPoster {
-  animation: spin 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform-origin: center center;
-  opacity: 1;
-}
-
-@keyframes spin {
-  0% {
-    transform: scale(0) rotate(0deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotate(360deg);
-    opacity: 1;
-  }
-}
 
 .donateMobileButton {
     display: none;
