@@ -66,7 +66,6 @@ function SubmitPSAGood() {
           console.log(error.text);
         });
     }
-    // console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
   };
 
   return (

@@ -46,6 +46,7 @@ z-index: 999;
 .image-container  {
     position: relative;
     border-bottom: 1px dotted black;
+    transition: opacity 0.5s;
   }
   
   .image-container:before {
@@ -78,6 +79,11 @@ z-index: 999;
   .image-container:hover:before {
     opacity: 1;
     visibility: visible;
+  }
+
+  .image-container:not(:hover):before {
+    opacity: 0;
+    visibility: hidden;
   }
 
 .frames {
