@@ -37,15 +37,15 @@ function ListenNow() {
               onClick={openArchive}
             />
           </div>
-            <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
-              <img src={testPoster} alt="poster" />
-            </div>
-          <div
-            className="tock"
-            data-tockify-component="calendar"
-            data-tockify-calendar="kxcjfm"
-            data-tockify-height="350px"
-          ></div>
+          <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
+            <img src={testPoster} alt="poster" />
+          </div>
+            <div
+              className="tock"
+              data-tockify-component="calendar"
+              data-tockify-calendar="kxcjfm"
+              data-tockify-height="350px"
+            ></div>
         </div>
         <div className="listen-footer">
           <Footer />
