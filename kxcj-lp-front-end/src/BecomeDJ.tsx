@@ -26,18 +26,25 @@ function BecomeDjGood() {
           "_9f0M6ZsHv1G2xiIL"
         )
         .then((result) => {
-          setDjName('');
-          setMusicStyle('');
-          setCoHosts('');
-          setPhoneNumber('');
-          setEmail('');
+          setDjName("");
+          setMusicStyle("");
+          setCoHosts("");
+          setPhoneNumber("");
+          setEmail("");
           alert("successfull form submission");
         })
         .catch((error) => {
           console.log(error.text);
         });
     }
-    console.log('Form submitted:', djName, musicStyle, coHosts, phoneNumber, email);
+    console.log(
+      "Form submitted:",
+      djName,
+      musicStyle,
+      coHosts,
+      phoneNumber,
+      email
+    );
   };
 
   return (
@@ -49,6 +56,7 @@ function BecomeDjGood() {
       <div className="content-test">
         <div className="component-test">
           <img
+            style={{ maxWidth: "100%", height: "auto", marginBottom: "-60px" }}
             src={Scroll}
             alt="scroll"
           />

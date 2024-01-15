@@ -78,6 +78,7 @@ function SubmitPSAGood() {
         <div className="component-test">
           <img
             src={Scroll}
+            style={{ maxWidth: "100%", height: "auto"}}
             alt="scroll"
           />
           <button className="example-psa-button" onClick={() => setShow(!show)}>
