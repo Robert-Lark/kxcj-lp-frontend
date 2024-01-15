@@ -66,9 +66,13 @@ function GetInvolved() {
     <div className="getInvolvedContainer">
     <div className="top-level-container">
       <div className="get-involved-glass-container">
-        <span className="texts">
-        <img src={Scroll} alt="scroll" />
-        </span>
+        <div className="component-test">
+          <img
+            style={{ maxWidth: "100%", height: "auto" }}
+            src={Scroll}
+            alt="scroll"
+          />
+        </div>
         <div className="images-container">
           {images.map((image: imageType, i: any) => {
             return (
