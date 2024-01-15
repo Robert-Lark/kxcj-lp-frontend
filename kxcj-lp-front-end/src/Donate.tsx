@@ -53,9 +53,9 @@ function Donate() {
             <img src={ListenNow} alt="archive button" id="listenButton" onClick={openNewWindow}/>
           </a>
         </div>
-        {/* <div className="donate-footer">
+        <div className="donate-footer">
           <Footer />
-        </div> */}
+        </div>
       </div>
     </div>
   );
