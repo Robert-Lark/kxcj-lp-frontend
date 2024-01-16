@@ -9,6 +9,7 @@ import SubmitPSAGood from './SubmitPSA';
 
 import BecomeDjGood from './BecomeDJ';
 import Shop from './Shop';
+import Supporters from './Supporters';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/becomeadj" element={<BecomeDjGood />} />
         <Route path="/submit" element={<SubmitPSAGood />} />
         <Route path="/teeShirts" element={<Shop />} />
+        <Route path="/supporters" element={<Supporters />} />
       </Routes>
     </div>
   );
