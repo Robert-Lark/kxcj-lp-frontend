@@ -113,14 +113,41 @@ margin-bottom: -400px;
     display: grid;
 }
 
-#images {
+#images-0 {
     width: 11rem;
     height: 11.5rem;
     position: absolute;
     z-index: -1;
     margin: 42px 0px 0px 30px;
-
     object-fit: cover;
+}
+
+#images-1 {
+  width: 11rem;
+  height: 11.5rem;
+  position: absolute;
+  z-index: -1;
+  margin: 42px 0px 0px 30px;
+  object-fit: cover;
+}
+
+#images-2 {
+  width: 11rem;
+  height: 11.5rem;
+  position: absolute;
+  z-index: -1;
+  margin: 42px 0px 0px 30px;
+  object-fit: cover;
+}
+
+#images-3 {
+  width: 11rem;
+  height: 12.9rem;
+  position: absolute;
+  z-index: -1;
+  margin: 42px 0px 0px 30px;
+  margin-top: 29px;
+  object-fit: cover;
 }
 
 #frame {

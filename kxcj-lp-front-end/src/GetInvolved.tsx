@@ -84,15 +84,14 @@ function GetInvolved() {
                   data-hover={imageOverlayText[i]}
                 >
                     <div className="frames">
-                      <img id="images" src={image?.asset?.url} alt="button" />
+                      <img id={`images-${i}`} src={image?.asset?.url} alt="button" />
                       <img id="frame" src={woodFrame} alt="frame" />
                     </div>
                     <div className="side_button">
                       <button className="button-wood-plank" id={`links-${i}`}>
-                        <img src={planksArr[i]} alt="planks" />
+                        <img src={planksArr[i]} alt="planks"/>
                       </button>
                     </div>
-                  
                 </div>
                 </a>
               </label>
