@@ -160,12 +160,12 @@ html, body {
     width: 500px;
     height: 500px;
     position: absolute;
-    top: 30%;
+    right: 43%;
     z-index: 1010;
 }
 
 .whatsUpPoster img{
-    width: 500px;
+    width: 700px;
     transform: rotate(90deg); 
 }
 
