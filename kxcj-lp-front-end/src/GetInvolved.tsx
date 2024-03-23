@@ -68,7 +68,6 @@ function GetInvolved() {
       <div className="get-involved-glass-container">
         <div className="component-test">
           <img
-            style={{ maxWidth: "100%", height: "auto" }}
             src={Scroll}
             alt="scroll"
           />

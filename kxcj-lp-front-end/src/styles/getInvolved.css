@@ -42,21 +42,27 @@ font-size: 3rem;
 }
 
 .component-test img {
-  max-width: 75%;
-  max-height: 500px;
+  position: fixed;
+  max-width: 60%;
+  top: -50px;
+  z-index: 999;
+  max-height: 100%;
   @media (max-width: 600px) {
     min-width: 300px;
-  max-width: 300px;
+  max-width: 500px;
   margin-top: 100px;
   }
 }
 
 
 .images-container {
+  position: fixed;
 display: flex;
 justify-content: center;
+bottom: 1px;
 flex-wrap: wrap;
 align-items: flex-end;
+margin-top: 10px;
 gap: 20px;
 max-width: 100%;
 z-index: 999;
