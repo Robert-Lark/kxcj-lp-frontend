@@ -55,7 +55,7 @@ function Donate() {
           </a>
         </div>
         <div className="listenMobileButton">
-          <a href="/listenNow">
+          <a href="/donate">
             <img
               src={ListenNow}
               alt="archive button"

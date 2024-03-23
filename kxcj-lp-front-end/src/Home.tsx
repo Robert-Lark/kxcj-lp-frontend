@@ -3,10 +3,11 @@ import ListenNow from "../src/assets/Listen_Now_Plank.png";
 import GetInvolved from "../src/assets/Get_Involved_Plank.png";
 import Donate from "../src/assets/Donate_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
-
+import { useMediaQuery } from "react-responsive";
 
 function Home() {
-  
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   const openNewWindow = () => {
     window.open(
       "http://216.115.15.236:8888/KXCJ",
@@ -22,7 +23,7 @@ function Home() {
           <img src={logo} alt="logo" />
         </div>
         <div className="buttons-home" id="amatic">
-          <a href="/listenNow">
+          <a href={isMobile ? "/" : "/listenNow"}>
             <img
               src={ListenNow}
               id="plank"
@@ -30,7 +31,7 @@ function Home() {
               onClick={openNewWindow}
             />
           </a>
-          <a href="/donate">
+          <a href="/donate" className="donatePlank">
             <img src={Donate} id="plank" alt="menu button" />
           </a>
           <a href="/getInvolved" id="lastChild">
