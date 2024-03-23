@@ -166,7 +166,8 @@ html, body {
 
 .whatsUpPoster img{
     width: 700px;
-    transform: rotate(90deg); 
+    /* if poster needs to be rotated vertically */
+    /* transform: rotate(90deg);  */
 }
 
 .whatsUpPosterNone {
