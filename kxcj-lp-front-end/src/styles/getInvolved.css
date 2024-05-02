@@ -63,8 +63,13 @@ margin-top: 10px;
 gap: 20px;
 max-width: 100%;
 z-index: 999;
+overflow: scroll;
 @media (max-height: 700px) {
   bottom: 20px;
+}
+@media (max-width: 1060px) {
+
+  top: 300px;
 }
 
 }
@@ -73,6 +78,9 @@ z-index: 999;
     position: relative;
     border-bottom: 1px dotted black;
     transition: opacity 0.5s;
+    @media (max-width: 1060px) {
+      width: 225px;
+    }
   }
   
   .image-container:before {
