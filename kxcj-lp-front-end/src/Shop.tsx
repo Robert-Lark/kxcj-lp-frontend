@@ -12,7 +12,7 @@ function Shop() {
   const location = useLocation();
   return (
     <div className="container-test">
-      <div className="background-test-donate" />
+      <div className="background-test-merch" />
       <div className="sidebar-test">
         <SideButtons back currentPage={location.pathname} />
       </div>
