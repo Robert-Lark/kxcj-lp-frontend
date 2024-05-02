@@ -22,6 +22,12 @@
 
 .box {margin-top: -125px;}
 
+#fbook-link {
+  
+  margin-top: 10px;
+  margin-right: 110px;
+}
+
 .box-content {
     position: relative;
     width: 100px;

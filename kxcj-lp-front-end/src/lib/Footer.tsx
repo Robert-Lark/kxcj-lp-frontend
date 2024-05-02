@@ -5,7 +5,7 @@ function Footer() {
     <div className="footer">
       <div className="footer-container">
         <a role="button" href="https://www.facebook.com/KXCJ1057/">
-          <div className="box">
+          <div className="box" id="fbook-link">
             <div className="box-content"></div>
           </div>
         </a>
