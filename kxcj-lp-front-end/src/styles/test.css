@@ -71,6 +71,14 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .merch-test {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
   
   .component-test {
     max-width: 75%;
@@ -284,18 +292,17 @@
     }
   }
 
-  .shirts-1-row {
+  .merch-1-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+
     margin-top: 25px;
   }
 
   #tee {
-    transform: scale(1.8);
-  transform-origin: center center;
+    width: 44rem;
   }
 
   .button-wood-plank-shop {
