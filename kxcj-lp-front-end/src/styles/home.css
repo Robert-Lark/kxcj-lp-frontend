@@ -35,6 +35,9 @@
   @media (max-width: 600px) {
     padding: 0px;
   }
+  @media screen and (max-height: 730px) {
+   padding-bottom: 0px;
+  }
 }
 
 /* logo */
@@ -92,6 +95,10 @@ button {
 
 #amatic {
   font-family: 'Amatic SC', cursive;
+  @media screen and (max-height: 730px) {
+  
+  height: 1px;
+  }
 }
 
 #indie-flower {
