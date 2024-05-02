@@ -70,6 +70,7 @@ function GetInvolved() {
           <img
             src={Scroll}
             alt="scroll"
+            className="getInvolvedScroll"
           />
         </div>
         <div className="images-container">
