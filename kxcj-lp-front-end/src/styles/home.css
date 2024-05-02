@@ -32,11 +32,115 @@
   max-width: 900px;
   margin: auto;
   margin-top: 30px;
+  
   @media (max-width: 600px) {
     padding: 0px;
   }
   @media screen and (max-height: 730px) {
    padding-bottom: 0px;
+  }
+  @media (max-width: 800px) {
+   
+      border: 2px solid red;
+    
+  }
+  
+  /* Media query 2 */
+  @media (max-width: 770px) {
+   
+      border: 2px solid blue;
+    
+  }
+  
+  /* Media query 3 */
+  @media (max-width: 740px) {
+   
+      border: 2px solid green;
+    
+  }
+  
+  /* Media query 4 */
+  @media (max-width: 710px) {
+   
+      border: 2px solid yellow;
+    
+  }
+  
+  /* Media query 5 */
+  @media (max-width: 680px) {
+   
+      border: 2px solid orange;
+    
+  }
+  
+  /* Media query 6 */
+  @media (max-width: 650px) {
+   
+      border: 2px solid purple;
+    
+  }
+  
+  /* Media query 7 */
+  @media (max-width: 620px) {
+   
+      border: 2px solid cyan;
+    
+  }
+  
+  /* Media query 8 */
+  @media (max-width: 590px) {
+   
+      border: 2px solid magenta;
+    
+  }
+  
+  /* Media query 9 */
+  @media (max-width: 560px) {
+   
+      border: 2px solid teal;
+    
+  }
+  
+  /* Media query 10 */
+  @media (max-width: 530px) {
+   
+      border: 2px solid brown;
+    
+  }
+  
+  /* Media query 11 */
+  @media (max-width: 500px) {
+   
+      border: 2px solid lime;
+    
+  }
+  
+  /* Media query 12 */
+  @media (max-width: 470px) {
+   
+      border: 2px solid pink;
+    
+  }
+  
+  /* Media query 13 */
+  @media (max-width: 440px) {
+   
+      border: 2px solid silver;
+    
+  }
+  
+  /* Media query 14 */
+  @media (max-width: 410px) {
+   
+      border: 2px solid gold;
+    
+  }
+  
+  /* Media query 15 */
+  @media (max-width: 380px) {
+   
+      border: 2px solid navy;
+    
   }
 }
 
@@ -44,6 +148,7 @@
 .logo img {
   max-width: 100%;
   height: auto;
+  
   @media (max-width: 600px) {
     min-width: 300px;
   max-width: 300px;
@@ -58,6 +163,7 @@
   justify-content: center;
   gap: 40px;
   margin-top: 90px;
+  
   @media (max-width: 600px) {
    flex-direction: column;
    gap: 0px;
@@ -99,6 +205,8 @@ button {
   
   height: 1px;
   }
+
+  
 }
 
 #indie-flower {
@@ -128,3 +236,5 @@ button {
 #limelight {
   font-family: 'Limelight', cursive;
 }
+
+
