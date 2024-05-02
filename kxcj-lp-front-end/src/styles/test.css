@@ -33,6 +33,11 @@
     /* Add any other styles you want for the background */
   }
 
+  .volunteer-scroll {
+    width: 44rem!important;
+    margin-bottom: -50px !important;
+  }
+
   .background-test-dj {
     position: fixed;
     top: 0;
