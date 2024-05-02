@@ -139,7 +139,7 @@
   /* Media query 15 */
   @media (max-width: 380px) {
    
-      border: 2px solid navy;
+      border: 8px solid navy;
     
   }
 }
