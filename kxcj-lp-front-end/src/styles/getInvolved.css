@@ -43,9 +43,8 @@ font-size: 3rem;
 
 .component-test .getInvolvedScroll {
   position: fixed;
-  width: 60%;
-  max-width: 80%;
-  top: -20px;
+  max-width: 60%;
+  top: -50px;
   z-index: 999;
   max-height: 100%;
   @media (max-width: 600px) {
