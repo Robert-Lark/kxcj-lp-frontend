@@ -24,6 +24,10 @@
   }
 }
 
+.landscape-message {
+  display: none;
+}
+
 .in-cont {
   display: flex;
   flex-direction: column;
@@ -133,3 +137,27 @@ button {
 #limelight {
   font-family: 'Limelight', cursive;
 }
+
+.landscape-message {
+  display: none;
+}
+
+@media screen and (max-width: 935px) and (max-height: 450px) and (orientation: landscape) {
+      .landscape-message {
+        display: block;
+        font-size: 50px;
+        text-align: center;
+      }
+      .in-cont {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) and (orientation: portrait) {
+      .landscape-message {
+        display: none;
+      }
+      .in-cont {
+        display: block;
+      }
+    }

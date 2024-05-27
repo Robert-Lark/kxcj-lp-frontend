@@ -18,6 +18,9 @@ function Home() {
 
   return (
     <div className="homepage">
+      <div className="landscape-message">
+        Please rotate your device to portrait mode.
+      </div>
       <div className="in-cont">
         <div className="logo">
           <img src={logo} alt="logo" />

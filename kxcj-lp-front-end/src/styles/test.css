@@ -145,6 +145,10 @@
     display: flex;
     gap: 30px;
   }
+
+  .volunteer-form {
+    margin-top: 40px;
+  }
   
   .component-test-form form {
     display: flex;
