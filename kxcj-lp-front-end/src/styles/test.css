@@ -107,8 +107,8 @@
   }
 
   .component-test img {
-    width: 50%;
-    margin-bottom:25px;
+    width: 90%;
+    margin-bottom:-25px;
     max-width: 75%;
     max-height: 500px;
     @media (max-width: 600px) {
@@ -128,13 +128,22 @@
     background: whitesmoke;
     border: 1px solid black;
     padding: 1.5rem;
-    width: 70%;
+    width: 50%;
     
     padding: 1.5rem;
-    margin: 1rem;
+    
     border-radius: .5em;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+  }
+  .first-block {
+    display: flex;
+    gap: 30px;
+  }
+
+  .second-block {
+    display: flex;
+    gap: 30px;
   }
   
   .component-test-form form {
@@ -168,7 +177,7 @@
     background-color: beige;
     padding: 5px;
     max-width: 500px;
-    margin-top: -50px;
+    margin-top: 25px;
 }
 
 .modal {
