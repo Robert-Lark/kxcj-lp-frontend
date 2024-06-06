@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between; /* Ensure elements are spaced correctly */
+  gap: 30px;
 }
 
 .scroll-container {
@@ -18,6 +19,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Prevent overflow */
+  z-index: 0;
 }
 
 .scroll-image {
@@ -35,7 +37,7 @@
   padding: 20px;
   gap: 10px;
   overflow: hidden; /* Prevent overflow */
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-top: -100px;
 }
 
