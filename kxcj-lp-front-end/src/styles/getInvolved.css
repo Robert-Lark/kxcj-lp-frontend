@@ -180,3 +180,121 @@ width: 250px;
 .side_button {
   margin-bottom: -90px;
 }
+
+
+
+
+
+
+/* new page */
+
+
+.full-screen-background {
+  background-image: url("../assets/GetInvolvedBG_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Ensure elements are spaced correctly */
+}
+
+.scroll-container {
+  width: 70%;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.scroll-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden; /* Prevent overflow */
+  margin-bottom: 100px;
+  margin-top: -100px;
+}
+
+.box {
+  background-color: transparent; /* Make the box transparent */
+  width: 200px; /* Fixed width for each box */
+  height: 300px; /* Fixed height for each box */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between top and bottom images */
+  align-items: center;
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px; /* Padding inside the box to create gap */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.box-image-container {
+  width: 100%;
+  height: 50%; /* Fixed height for the image */
+  object-fit: cover;
+  position: relative;
+  transition: opacity 0.5s;
+}
+
+.box-image-container:before {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, .15);   
+    backdrop-filter: blur(8px);
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 11.2rem;
+    height: 8rem;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.box-image-container:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.box-image-container:not(:hover):before {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.box-image {
+  width: 100%;
+  height: 100%; /* Fixed height for the image */
+  object-fit: cover;
+  position: relative;
+}
+
+.box-image.bottom:hover {
+  transform: skewY(20deg); /* Skew down on hover */
+}
+
+.box:nth-child(3) .box-image.bottom:hover,
+.box:nth-child(4) .box-image.bottom:hover {
+  transform: skewY(-20deg); /* Skew down on the left */
+}
