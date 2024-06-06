@@ -202,8 +202,8 @@ width: 250px;
 }
 
 .scroll-container {
-  width: 70%;
-  height: 45vh;
+  width: 100%;
+  height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,9 +222,9 @@ width: 250px;
   align-items: center;
   width: 100%;
   padding: 20px;
+  gap: 10px;
   overflow: hidden; /* Prevent overflow */
-  margin-bottom: 100px;
-  margin-top: -100px;
+  margin-bottom: 200px;
 }
 
 .box {
@@ -240,6 +240,7 @@ width: 250px;
   text-align: center;
   padding: 10px; /* Padding inside the box to create gap */
   cursor: pointer; /* Change cursor to pointer */
+  gap: 30px;
 }
 
 .box-image-container {
@@ -266,10 +267,12 @@ width: 250px;
     border-radius: 5px;
     padding: 5px 0;
     transition: opacity 0.5s ease-in-out;
-    width: 11.2rem;
-    height: 8rem;
+    width: 12.8rem;
+    height: 10.8rem;
     position: absolute;
-    z-index: 1;
+    right: -8px;
+    top: -28px;
+    z-index: 2;
     cursor: pointer;
 }
 
@@ -281,6 +284,16 @@ width: 250px;
 .box-image-container:not(:hover):before {
   opacity: 0;
   visibility: hidden;
+}
+
+.frame {
+  width: 13rem;
+  height: 12rem;
+  position: absolute;
+  z-index: 1;
+  right: -10px;
+  bottom: -20px;
+  object-fit: cover;
 }
 
 .box-image {

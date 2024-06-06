@@ -89,6 +89,11 @@ function GetInvolved() {
                 className="box-image top"
                 onClick={() => handleClick(links[index])}
               />
+              <img
+                src={woodFrame}
+                alt="frame"
+                className="frame"
+              />
             </div>
 
             <img
