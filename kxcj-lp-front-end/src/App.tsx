@@ -10,7 +10,7 @@ import SubmitPSAGood from './SubmitPSA';
 import BecomeDjGood from './BecomeDJ';
 import Shop from './Shop';
 import Supporters from './Supporters';
-import WhatsOn from './WhatsOn';
+import WhatsOn from './Whatson';
 
 
 function App() {
