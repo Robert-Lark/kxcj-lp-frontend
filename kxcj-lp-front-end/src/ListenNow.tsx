@@ -3,7 +3,6 @@ import SideButtons from "./lib/SideButtons";
 import SteamNow from "./assets/whats_up.png";
 import Archive from "./assets/Archive_Plank_2.png";
 import Donate from "./assets/Donate_Plank.png";
-import testPoster from "./assets/June23Oddspells_2.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "./lib/Footer";
 import React from "react";
@@ -56,16 +55,6 @@ function ListenNow() {
           <Footer />
         </div>
       </div>
-    </div>
-  );
-}
-
-function WhatsUpModal(props: any) {
-  const { show, setShow } = props;
-  if (!show) return null;
-  return (
-    <div className={show ? "whatsUpPoster spin" : "whatsUpPosterNone"}>
-      <img src="testPoster" />
     </div>
   );
 }
