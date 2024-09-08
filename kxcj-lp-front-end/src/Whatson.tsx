@@ -47,22 +47,22 @@ function WhatsOn() {
           <SideButtons currentPage={location.pathname} listenNow />
         </div>
         <div className="whatsOn-content">
-          {data?.allWhatsOn.map((item) => (
-            <div key={item._id} className={`whatsOn-item ${item.orientation}`}>
+          {data?.allWhatsOn[0] && (
+            <div className={`whatsOn-item ${data.allWhatsOn[0].orientation}`}>
               <div
                 className={`whatsOn-img-container ${
-                  item.caption ? "with-caption" : ""
+                  data.allWhatsOn[0].caption ? "with-caption" : ""
                 }`}
               >
                 <img
-                  src={item.image.asset.url}
-                  alt={item.caption}
+                  src={data.allWhatsOn[0].image.asset.url}
+                  alt={data.allWhatsOn[0].caption}
                   className="whatsOn-img"
                 />
-                <p className="whatsOn-caption">{item.caption}</p>
+                <p className="whatsOn-caption">{data.allWhatsOn[0].caption}</p>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>
