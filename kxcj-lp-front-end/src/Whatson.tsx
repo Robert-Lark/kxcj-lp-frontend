@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import "./styles/whatsOn.css"; // Keep your styles
+import SideButtons from "./lib/SideButtons";
+import { useLocation } from "react-router-dom";
 
 // GraphQL query to fetch the data from Sanity
 const WHATS_ON_QUERY = gql`
@@ -33,27 +35,37 @@ function WhatsOn() {
   const { loading, error, data } = useQuery<{ allWhatsOn: WhatsOnData[] }>(
     WHATS_ON_QUERY
   );
+  const location = useLocation();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="background-test-whatsOn">
-    <div className="image-container-whatsOn">
-      <div className="whatsOn-content">
-        {data?.allWhatsOn.map((item) => (
-          <div key={item._id} className={`whatsOn-item ${item.orientation}`}>
-            <img
-              src={item.image.asset.url}
-              alt={item.caption}
-              className="whatsOn-img"
-            />
-            <p className="whatsOn-caption">{item.caption}</p>
-          </div>
-        ))}
+    <div>
+      <div className="listenNowContainer">
+        <div className="sidebar">
+          <SideButtons currentPage={location.pathname} listenNow />
+        </div>
+        <div className="whatsOn-content">
+          {data?.allWhatsOn.map((item) => (
+            <div key={item._id} className={`whatsOn-item ${item.orientation}`}>
+              <div
+                className={`whatsOn-img-container ${
+                  item.caption ? "with-caption" : ""
+                }`}
+              >
+                <img
+                  src={item.image.asset.url}
+                  alt={item.caption}
+                  className="whatsOn-img"
+                />
+                <p className="whatsOn-caption">{item.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 

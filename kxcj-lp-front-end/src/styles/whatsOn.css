@@ -44,30 +44,60 @@
   align-items: center;
 }
 
-/* Base style for all images */
+/* Container for image and caption with a white border */
+.whatsOn-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 4px solid transparent; /* Default to no border */
+  margin-bottom: 15px;
+}
+
+/* Apply white border if caption exists */
+.whatsOn-img-container.with-caption {
+  border-color: white; /* White border around both image and caption */
+  background-color: white; /* Set white background to make the caption stand out */
+}
+
+/* Default image styling (for mobile and small screens) */
 .whatsOn-img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* Vertical orientation specific styles */
 .whatsOn-item.vertical .whatsOn-img {
-  width: 300px;
+  width: 300px; /* Default size for smaller screens */
   max-height: 500px;
 }
 
 /* Horizontal orientation specific styles */
 .whatsOn-item.horizontal .whatsOn-img {
-  width: 500px;
+  width: 500px; /* Default size for smaller screens */
   max-height: 300px;
 }
 
-/* Responsive typography */
+/* Larger image sizes for desktop (screens larger than 768px) */
+@media (min-width: 768px) {
+  .whatsOn-item.vertical .whatsOn-img {
+    width: 1200px; /* Increase the width for vertical images */
+    max-height: 2000px; /* Increase max-height for vertical images */
+  }
+
+  .whatsOn-item.horizontal .whatsOn-img {
+    width: 1600px; /* Increase the width for horizontal images */
+    max-height: 800px; /* Increase max-height for horizontal images */
+  }
+}
+
+/* Caption styling inside the white box */
 .whatsOn-caption {
-  font-size: 1.2rem; /* Responsive font size */
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #000; /* Black text to contrast against white background */
+  margin-bottom: 0;
+  text-align: center; /* Center the caption below the image */
 }
 
 @media (max-width: 768px) {
