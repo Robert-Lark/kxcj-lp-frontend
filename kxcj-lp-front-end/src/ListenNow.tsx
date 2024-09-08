@@ -4,33 +4,18 @@ import SteamNow from "./assets/whats_up.png";
 import Archive from "./assets/Archive_Plank_2.png";
 import Donate from "./assets/Donate_Plank.png";
 import testPoster from "./assets/June23Oddspells_2.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "./lib/Footer";
 import React from "react";
 
 function ListenNow() {
   const location = useLocation();
-  const [show, setShow] = React.useState(false);
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleClick = () => {
-    setShow(!show);
+    navigate("/whatsOn"); // Navigate to the /whatsOn page
   };
 
-  React.useEffect(() => {
-    const handleDocumentClick = (event: any) => {
-      const whatsUpElement = document.getElementById("whatsUp");
-      if (whatsUpElement && !whatsUpElement.contains(event.target)) {
-        setShow(false);
-      }
-    };
-
-    if (show) {
-      document.addEventListener("click", handleDocumentClick);
-    }
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, [show]);
 
   return (
     <div>
@@ -57,9 +42,6 @@ function ListenNow() {
                 <img src={Donate} alt="archive button" id="donateListen" />
               </a>
             </div>
-          </div>
-          <div className={show ? "whatsUpPoster" : "whatsUpPosterNone"}>
-            <img src={testPoster} alt="poster" />
           </div>
 
           <div

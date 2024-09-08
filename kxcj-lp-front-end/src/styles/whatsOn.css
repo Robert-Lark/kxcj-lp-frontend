@@ -1,0 +1,86 @@
+.background-test-whatsOn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Background Image */
+  background: url("../assets/DonateBG.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container to center the content and make it responsive */
+.image-container-whatsOn {
+  max-width: 1200px; /* Limit the maximum width of the content */
+  width: 100%; /* Make the content responsive */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Centering the content in the middle */
+.whatsOn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 800px; /* Maximum width to avoid over-expanding */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style for each item, keeping it responsive */
+.whatsOn-item {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Base style for all images */
+.whatsOn-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Vertical orientation specific styles */
+.whatsOn-item.vertical .whatsOn-img {
+  width: 300px;
+  max-height: 500px;
+}
+
+/* Horizontal orientation specific styles */
+.whatsOn-item.horizontal .whatsOn-img {
+  width: 500px;
+  max-height: 300px;
+}
+
+/* Responsive typography */
+.whatsOn-caption {
+  font-size: 1.2rem; /* Responsive font size */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .whatsOn-content {
+    padding: 10px;
+  }
+
+  .whatsOn-img {
+    width: 100%; /* Ensure images are fully responsive on smaller screens */
+    max-width: none;
+  }
+
+  .whatsOn-caption {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
