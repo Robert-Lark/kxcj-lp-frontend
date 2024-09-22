@@ -42,7 +42,7 @@ function WhatsOn() {
 
   return (
     <div>
-      <div className="listenNowContainer">
+      <div className="listenNowContainer whatson">
         <div className="sidebar">
           <SideButtons currentPage={location.pathname} listenNow />
         </div>

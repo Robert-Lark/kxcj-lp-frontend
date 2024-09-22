@@ -15,6 +15,17 @@ html, body {
      height: 100vh;
 }
 
+.whatson {
+    background: url("../assets/WhatsUpBG.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    background-attachment: fixed;
+     height: 100vh;
+}
+
 .stream-container {
     display: flex;
     flex-direction: column;
