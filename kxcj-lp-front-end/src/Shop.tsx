@@ -7,6 +7,7 @@ import Merch from "./assets/Merch_tiny.png";
 
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
+import FooterRedux from "./lib/FooterRedux";
 
 function Shop() {
   const location = useLocation();
@@ -28,9 +29,9 @@ function Shop() {
           </a>
          
         </div>
-        <div className="donate-footer">
-          <Footer />
-        </div>
+        {/* <div className="footer-redux-container">
+          <FooterRedux />
+        </div> */}
       </div>
     </div>
   );

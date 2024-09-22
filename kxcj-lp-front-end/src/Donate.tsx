@@ -8,6 +8,7 @@ import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
+import FooterRedux from "./lib/FooterRedux";
 
 function Donate() {
   const location = useLocation();
@@ -64,9 +65,9 @@ function Donate() {
             />
           </a>
         </div>
-        <div className="donate-footer">
-          <Footer />
-        </div>
+        {/* <div className="donate-footer">
+          <FooterRedux />
+        </div> */}
       </div>
     </div>
   );

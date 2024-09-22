@@ -1,43 +1,73 @@
-
 .donatePage {
-    background: url("../assets/DonateBG.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url("../assets/DonateBG.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-}
-
-.donateMain {
+  }
+  
+  .donateMain {
     display: flex;
-justify-content: center;
-margin-top: 100px;
-}
-
-.donate-side-container {
-    
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .donate-side-container {
     width: 500px;
     @media (max-width: 600px) {
-        display: none;
+      display: none;
     }
-}
-
-.donate-content-container {
-    padding: 0px 200px;
+  }
+  
+  .donate-content-container {
+    padding: 0 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-#logo {
-    width: 600px;
-}
-
-.donate-footer {
+  }
+  
+  /* Scale the logo responsively */
+  #logo {
+    width: 100%; /* Make it scale based on the parent container */
+    max-width: 600px; /* Maximum width */
+  }
+  
+  /* Footer */
+  .donate-footer {
     margin-top: 150px;
     width: 100%;
-}
-#paypal {
-    width: 300px;
-}
+  }
+  
+  .donate-image {
+    display: flex;           /* Flexbox to align images horizontally */
+    justify-content: center; /* Center align all images */
+    flex-wrap: nowrap;        /* Prevent the images from wrapping */
+    gap: 20px;                /* Add some space between images */
+  }
+  
+  .donate-image img {
+    max-width: 100%;         /* Scale images responsively */
+    height: auto;
+    width: 200px;            /* Adjust width based on design */
+    object-fit: contain;     /* Make sure images keep their aspect ratio */
+  }
+  
+  @media (max-width: 768px) {
+    .donate-image img {
+      width: 150px;          /* Scale down for smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .donate-image img {
+      width: 100px;          /* Further scale down for mobile */
+    }
+  
+    .donate-content-container {
+      padding: 0 20px;       /* Reduce padding on smaller screens */
+    }
+  
+    .donate-footer {
+      margin-top: 50px;      /* Reduce space before the footer */
+    }
+  }
+  

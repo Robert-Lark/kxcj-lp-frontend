@@ -1,0 +1,65 @@
+.footer-redux {
+    position: relative;
+    width: 100%;
+border: 2px solid red;
+clip-path: inset(30% 10% 0% 10%);
+overflow: visible;  
+margin-bottom: -100px;
+margin-top: -80px;
+padding-bottom: 0;  /* Remove any padding */
+height: auto; 
+  }
+  
+  .scroll-background-Redux {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+  }
+  
+  .icon-container-redux {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hover-area-redux {
+    position: absolute;
+    bottom: 20%;
+    width: 10%;  /* Adjust this width to match the icons */
+    height: 40%; /* Adjust height */
+    cursor: pointer;
+  }
+  
+  .hover-image-redux {
+    position: absolute;
+    bottom: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    width: 15vw;  /* Adjust based on design */
+    height: auto;
+    z-index: 2001;
+  }
+
+  .clickable-area {
+    width: 100%;       /* Make the clickable area take up the full hover-area */
+    height: 100%;      /* Same as above */
+    cursor: pointer;   /* Show pointer on hover */
+    background-color: transparent;  /* Ensure it's transparent */
+  }
+  
+  .hover-area-redux:hover .hover-image-redux {
+    display: block;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .hover-image-redux {
+      width: 25vw;
+    }
+  }
+  

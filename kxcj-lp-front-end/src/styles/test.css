@@ -95,7 +95,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
   }
   
   .component-test {
@@ -271,36 +270,60 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     @media (max-width: 600px) {
       max-height: 100vh;
       gap: 0;
       overflow: hidden;
     }
   }
-
+  
+  /* Flexbox container for the images */
+  .donate-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;                /* Add space between images */
+    flex-wrap: nowrap;         /* Prevent images from wrapping */
+    
+    @media (max-width: 600px) {
+      gap: 10px;               /* Adjust gap for smaller screens */
+    }
+  }
+  
   #donate {
     margin-top: 5px;
     height: 300px;
     width: 350px;
+    object-fit: contain;        /* Ensure the image scales within its container */
+    
     @media (max-width: 600px) {
       margin-top: -50px;
+      height: 200px;            /* Scale down for mobile */
+      width: 230px;             /* Scale width for mobile */
     }
   }
-
+  
   #paypal {
     height: 300px;
+    width: auto;               /* Maintain aspect ratio */
+    object-fit: contain;
+    
     @media (max-width: 600px) {
       margin-top: -50px;
+      height: 200px;
     }
   }
-
+  
   #supporters {
     height: 250px;
     width: 250px;
     margin-top: -100px;
     margin-right: 10px;
+    object-fit: contain;
+  
     @media (max-width: 600px) {
-      display: none;
+      display: none;            /* Hide on mobile */
     }
   }
 
@@ -348,4 +371,3 @@
           margin-top: -70px;
       }
   }
-
