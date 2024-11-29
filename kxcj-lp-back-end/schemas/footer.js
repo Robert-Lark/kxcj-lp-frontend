@@ -1,18 +1,23 @@
 export default {
-    title: 'Footer',
-    name: 'footer',
-    type: 'image',
-    options: {
-      hotspot: true
-    },
+    name: "footer",
+    title: "Footer",
+    type: "document", // Use 'document' or 'object' to define the schema
     fields: [
       {
-        name: 'caption',
-        type: 'string',
-        title: 'Caption',
+        name: "image",
+        title: "Image",
+        type: "image", // Define the image field
         options: {
-          isHighlighted: true // <-- make this field easily accessible
-        }
+          hotspot: true, // Enable image hotspot
+        },
       },
-    ]
-  }
+      {
+        name: "caption",
+        type: "string",
+        title: "Caption",
+        options: {
+          isHighlighted: true, // Make this field easily accessible
+        },
+      },
+    ],
+  };
