@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import "./styles/test.css";
 import Scroll from "./assets/Scrolls/Scroll_s.png";
 import SideButtons from "./lib/SideButtons";
+import Footer from "./lib/Footer";
 
 function BecomeDjGood() {
   const location = useLocation();
@@ -112,7 +113,7 @@ function BecomeDjGood() {
             <button type="submit">Submit</button>
           </form>
         </div>
-
+<Footer />
         <div className="component-test"></div>
       </div>
     </div>
