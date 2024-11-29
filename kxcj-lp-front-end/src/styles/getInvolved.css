@@ -87,6 +87,10 @@
   margin-bottom: -10px;
   }
 
+  .box:nth-child(2) .bottom {
+    margin-top: -40px;
+  }
+
 .frame {
   width: 13rem;
   height: 12rem;
