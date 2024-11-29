@@ -10,6 +10,7 @@ import Donate_Plank_2 from "./assets/Donate_Plank.png";
 import Volunteer_Plank from "./assets/Volunteer_Plank_2.png";
 
 import Scroll from "./assets/Scroll.png";
+import Footer from "./lib/Footer";
 
 const GET_INVOVLED_QUERY = gql`
   query GetAllGetInvolved {
@@ -77,22 +78,17 @@ function GetInvolved() {
         <img src={Scroll} alt="scroll" className="scroll-image" />
       </div>
       <div className="box-container">
+        
         {images.map((image: imageType, index: any) => (
           <div className="box" key={index}>
             <div
               className="box-image-container"
-              data-hover={imageOverlayText[index]}
             >
               <img
                 src={image?.asset?.url}
                 alt={`Plank ${index + 1}`}
                 className="box-image top"
                 onClick={() => handleClick(links[index])}
-              />
-              <img
-                src={woodFrame}
-                alt="frame"
-                className="frame"
               />
             </div>
 
@@ -105,6 +101,7 @@ function GetInvolved() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

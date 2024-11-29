@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between; /* Ensure elements are spaced correctly */
-  gap: 30px;
+  
 }
 
 .scroll-container {
@@ -34,11 +34,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px;
   gap: 10px;
   overflow: hidden; /* Prevent overflow */
-  margin-bottom: 50px;
-  margin-top: -100px;
+  margin-top: -45px;
 }
 
 .box {
@@ -57,13 +55,8 @@
   gap: 30px;
 }
 
-.box-image-container {
-  width: 100%;
-  height: 50%; /* Fixed height for the image */
-  object-fit: cover;
-  position: relative;
-  transition: opacity 0.5s;
-}
+
+
 
 .box-image-container:before {
   display: flex;
@@ -90,15 +83,9 @@
     cursor: pointer;
 }
 
-.box-image-container:hover:before {
-  opacity: 1;
-  visibility: visible;
-}
-
-.box-image-container:not(:hover):before {
-  opacity: 0;
-  visibility: hidden;
-}
+.bottom {
+  margin-bottom: -10px;
+  }
 
 .frame {
   width: 13rem;
@@ -124,4 +111,9 @@
 .box:nth-child(3) .box-image.bottom:hover,
 .box:nth-child(4) .box-image.bottom:hover {
   transform: skewY(-20deg); /* Skew down on the left */
+}
+
+
+div {
+  border: 2px solid blue;
 }

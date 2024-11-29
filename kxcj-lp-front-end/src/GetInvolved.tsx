@@ -10,6 +10,7 @@ import Donate_Plank_2 from "./assets/Donate_Plank.png";
 import Volunteer_Plank from "./assets/Volunteer_Plank_2.png";
 
 import Scroll from "./assets/Scroll.png";
+import Footer from "./lib/Footer";
 
 const GET_INVOVLED_QUERY = gql`
   query GetAllGetInvolved {
@@ -27,8 +28,17 @@ const GET_INVOVLED_QUERY = gql`
       imageOverlayThree
       imageOverlayFour
     }
+    allFooter {
+      image {
+        asset {
+          url
+        }
+      }
+    }
   }
 `;
+
+
 
 type imageType = {
   asset: { url: string | undefined };
@@ -100,9 +110,9 @@ function GetInvolved() {
         </div>
       </div>
     </div>
+    <Footer />
     </div>
   );
-
 }
 
 export default GetInvolved;
