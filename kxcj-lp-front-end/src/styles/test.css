@@ -247,10 +247,11 @@
 
   .donate-component-test {
     display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 75%;
+    margin-top: -100px;
     @media (max-width: 600px) {
 
       height: 200px;
