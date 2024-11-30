@@ -15,7 +15,7 @@ function Donate() {
 
   const openNewWindow = () => {
     window.open(
-      "http://207.55.228.207:8888/KXCJ",
+      "http://216.115.15.236:8888/KXCJ",
       "_blank",
       "width=800,height=600"
     );
