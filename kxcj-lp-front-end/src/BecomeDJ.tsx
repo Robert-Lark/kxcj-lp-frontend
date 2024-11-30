@@ -113,7 +113,7 @@ function BecomeDjGood() {
             <button type="submit">Submit</button>
           </form>
         </div>
-<Footer />
+{/* <Footer /> */}
         <div className="component-test"></div>
       </div>
     </div>

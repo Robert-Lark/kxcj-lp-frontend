@@ -2,7 +2,7 @@
 .footer-non-hover img {
   width: 100%; /* Make the image responsive */
   max-width: 500px; /* Set a maximum width */
-  height: 200px; /* Maintain aspect ratio */
+  height: 300px; /* Maintain aspect ratio */
 }
 
 /* Add media query for smaller screens (adjust breakpoint as needed) */

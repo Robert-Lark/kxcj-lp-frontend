@@ -4,9 +4,28 @@ import GetInvolved from "../src/assets/Get_Involved_Plank.png";
 import Donate from "../src/assets/Donate_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
 import { useMediaQuery } from "react-responsive";
+import { useQuery, gql } from "@apollo/client";
+import ErrorState from "./lib/ErrorState";
+
+const GET_INVOVLED_QUERY = gql`
+query GetHome {
+  allHome {
+    image {
+      asset {
+        url
+      }
+    }
+  }
+}
+`;
 
 function Home() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const { loading, error, data } = useQuery(GET_INVOVLED_QUERY);
+  if (loading) return <p>loading...</p>;
+  if (error) return <ErrorState error={error} />;
+
+  const logoImage = data?.allHome?.[0].image?.asset?.url ?? logo;
 
   const openNewWindow = () => {
     window.open(
@@ -23,7 +42,7 @@ function Home() {
       </div>
       <div className="in-cont">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logoImage} alt="logo" />
         </div>
         <div className="buttons-home" id="amatic">
           <a href={isMobile ? "/" : "/listenNow"}>

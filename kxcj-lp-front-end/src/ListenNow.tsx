@@ -50,10 +50,11 @@ function ListenNow() {
             data-tockify-height="550px"
             data-tockify-max-width="850px"
           ></div>
+                    <Footer />
         </div>
-        <div className="listen-footer">
-          <Footer />
-        </div>
+      
+
+      
       </div>
     </div>
   );

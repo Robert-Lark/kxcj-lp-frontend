@@ -65,9 +65,7 @@ function Donate() {
             />
           </a>
         </div>
-        {/* <div className="donate-footer">
-          <FooterRedux />
-        </div> */}
+<Footer />
       </div>
     </div>
   );
