@@ -8,15 +8,15 @@ import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
 
 const GET_INVOVLED_QUERY = gql`
-query GetHome {
-  allHome {
-    image {
-      asset {
-        url
+  query GetHome {
+    allHome {
+      image {
+        asset {
+          url
+        }
       }
     }
   }
-}
 `;
 
 function Home() {
@@ -56,9 +56,11 @@ function Home() {
           <a href="/donate" className="donatePlank">
             <img src={Donate} id="plank" alt="menu button" />
           </a>
-          <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">
-            <img src={GetInvolved} id="plank" alt="menu button" />
-          </a>
+          {!isMobile && (
+            <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">
+              <img src={GetInvolved} id="plank" alt="menu button" />
+            </a>
+          )}
         </div>
       </div>
     </div>
