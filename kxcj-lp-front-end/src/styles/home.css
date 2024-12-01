@@ -82,12 +82,6 @@
   }
 }
 
-.getInvolvedPlank {
-  @media (max-width: 600px) {
-    display: none;
-  }
-}
-
 #plank{
 margin-top: -30px;
 max-width: 100%;
