@@ -76,15 +76,15 @@
   }
 }
 
-.getInvolvedPlank {
+#donatePlank {
   @media (max-width: 600px) {
-    display: none;
+    height: 100px;
   }
 }
 
-.donatePlank {
+.getInvolvedPlank {
   @media (max-width: 600px) {
-    height: 100px;
+    display: none;
   }
 }
 

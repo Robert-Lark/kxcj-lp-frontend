@@ -53,7 +53,7 @@ function Home() {
               onClick={openNewWindow}
             />
           </a>
-          <a href="/donate" className="donatePlank">
+          <a href="/donate" id="donatePlank">
             <img src={Donate} id="plank" alt="menu button" />
           </a>
           <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">
