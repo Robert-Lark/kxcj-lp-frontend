@@ -42,7 +42,7 @@ function ListenNow() {
               </a>
             </div>
           </div>
-
+<div className="tock-class">
           <div
             className="tock"
             data-tockify-component="calendar"
@@ -50,6 +50,7 @@ function ListenNow() {
             data-tockify-height="550px"
             data-tockify-max-width="850px"
           ></div>
+          </div>
                     <Footer />
         </div>
       
