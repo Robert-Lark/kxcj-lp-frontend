@@ -252,9 +252,9 @@
     justify-content: center;
     max-width: 75%;
     margin-top: -100px;
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
-      height: 200px;
+      display: none;
     }
   }
 
@@ -273,9 +273,7 @@
     align-items: center;
     
     @media (max-width: 600px) {
-      max-height: 100vh;
-      gap: 0;
-      overflow: hidden;
+  padding-right: 45px;
     }
   }
   
@@ -369,6 +367,6 @@
       @media (max-width: 700px) {
         width: 200px;
           display: flex;
-          margin-top: -70px;
+         
       }
   }
