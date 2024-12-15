@@ -272,9 +272,7 @@
     flex-direction: column;
     align-items: center;
     
-    @media (max-width: 600px) {
-  padding-right: 45px;
-    }
+
   }
   
   /* Flexbox container for the images */
