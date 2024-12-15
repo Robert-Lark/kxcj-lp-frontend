@@ -6,6 +6,9 @@
       display: flex;
       flex-direction: column;
     }
+    @media (max-height: 500px) { 
+      grid-template-columns: 1fr
+    }
   }
 
   .background-test-donate {
@@ -79,7 +82,7 @@
 
   .sidebar-test {
     margin-top:60px;
-    @media (max-width: 600px) { 
+    @media (max-height: 500px) { 
       display: none;
     }
   }
@@ -271,8 +274,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
   }
   
   /* Flexbox container for the images */

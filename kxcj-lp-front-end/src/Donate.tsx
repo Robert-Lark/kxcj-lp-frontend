@@ -8,24 +8,8 @@ import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
-import FooterRedux from "./lib/FooterRedux";
-
-
-
 
 function Donate() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
-
-    handleResize(); // Initial check on mount
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   const location = useLocation();
 
   const openNewWindow = () => {
@@ -36,56 +20,12 @@ function Donate() {
     );
   };
 
-  return isMobile ? (
+  return (
     <div className="container-test">
       <div className="background-test-donate" />
         <div className="sidebar-test">
           <SideButtons back currentPage={location.pathname} />
         </div>
-        <div className="custom-donate">
-          <div className="donate-component-test">
-            {" "}
-            <img src={Logo} alt="scroll" />
-          </div>
-          <div className="donate-image">
-            <a
-              role="button"
-              href="/supporters"
-              className="button-wood-plank"
-            >
-              <img src={Supporters} alt="supporters" id="supporters" />
-            </a>
-            <a
-              role="button"
-              href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
-              className="button-wood-plank"
-            >
-              <img src={Paypal} alt="archive button" id="paypal" />
-            </a>
-            <a
-              role="button"
-              href="https://careasy.org/KXCJ"
-              className="button-wood-plank"
-            >
-              <img src={DonateAVehicle} alt="archive button" id="donate" />
-            </a>
-          </div>
-          <div className="listenMobileButton">
-            <a href="/donate">
-              <img
-                src={ListenNow}
-                alt="archive button"
-                id="listenButton"
-                onClick={openNewWindow}
-              />
-            </a>
-          </div>
-          <Footer />
-      </div>
-    </div>
-  ) : (
-    <div className="container-test">
-      <div className="background-test-donate" />
         <div className="custom-donate">
           <div className="donate-component-test">
             {" "}
