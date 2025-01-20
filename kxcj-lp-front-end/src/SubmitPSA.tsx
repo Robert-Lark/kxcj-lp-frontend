@@ -57,12 +57,14 @@ function SubmitPSAGood() {
           form.current,
           "_9f0M6ZsHv1G2xiIL"
         )
-        .then((result) => {
-          alert("successfull form submission");
-        })
-        .catch((error) => {
-          console.log(error.text);
-        });
+        .then(
+          (result) => {
+            alert("successfull form submission");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     }
   };
 
@@ -146,7 +148,6 @@ function SubmitPSAGood() {
             View an example PSA here
           </button>
         </div>
-        
       </div>
     </div>
   );

@@ -369,3 +369,16 @@
          
       }
   }
+
+
+  @media screen and (max-width: 935px) and (max-height: 450px) and (orientation: landscape) {
+    .landscape-message {
+      display: block;
+      font-size: 50px;
+      text-align: center;
+      color: gold;
+    }
+    .in-cont {
+      display: none;
+    }
+  }
