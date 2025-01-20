@@ -11,6 +11,7 @@ import BecomeDjGood from './BecomeDJ';
 import Shop from './Shop';
 import Supporters from './Supporters';
 import WhatsOn from './Whatson';
+import History from './History';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
         <Route path="/volunteer" element={<Volunteer />} /> 
         <Route path="/becomeadj" element={<BecomeDjGood />} />
         <Route path="/submit" element={<SubmitPSAGood />} />
-        <Route path="/teeShirts" element={<Shop />} />
+        <Route path="/merch" element={<Shop />} />
+        <Route path="/about" element={<History />} />
         <Route path="/supporters" element={<Supporters />} />
         <Route path="/whatsOn" element={<WhatsOn />} />
       </Routes>

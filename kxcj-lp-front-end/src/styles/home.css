@@ -72,13 +72,7 @@
   
   @media (max-width: 600px) {
    flex-direction: column;
-   gap: 0px;
-  }
-}
-
-.donatePlank {
-  @media (max-width: 600px) {
-    height: 100px;
+   gap: 70px;
   }
 }
 
@@ -93,6 +87,11 @@ height: auto;
 
 #plank:hover {
   transform: skewY(10deg);
+}
+
+#lastChild{
+  margin-bottom: -80px;
+  width: 100%;
 }
 
 button {
@@ -158,6 +157,7 @@ button {
         display: none;
       }
       .in-cont {
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
     }

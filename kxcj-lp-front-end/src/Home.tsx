@@ -1,7 +1,9 @@
 import "../src/styles/home.css";
-import ListenNow from "../src/assets/Listen_Now_Plank.png";
+import ListenNow from "../src/assets/planks_panda/Listen_Now_Plank.png";
 import GetInvolved from "../src/assets/Get_Involved_Plank.png";
-import Donate from "../src/assets/Donate_Plank.png";
+import Donate from "../src/assets/planks_panda/Donate_Plank.png";
+import Archive from "../src/assets/planks_panda/Archive_Plank.png";
+import Schedule from "../src/assets/planks_panda/Schedule_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
 import { useMediaQuery } from "react-responsive";
 import { useQuery, gql } from "@apollo/client";
@@ -44,7 +46,7 @@ function Home() {
         <div className="logo">
           <img src={logoImage} alt="logo" />
         </div>
-        <div className="buttons-home" id="amatic">
+        <div className="buttons-home">
           <a href={isMobile ? "/" : "/listenNow"}>
             <img
               src={ListenNow}
@@ -56,6 +58,17 @@ function Home() {
           <a href="/donate" className="donatePlank">
             <img src={Donate} id="plank" alt="menu button" />
           </a>
+          {isMobile && (<a href="/donate" className="donatePlank">
+            <img src={Schedule} id="plank" alt="menu button" />
+          </a>)}
+          {isMobile && (<a
+            href="https://archive.org/details/@kxcj-lp"
+            className="donatePlank"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Archive} id="plank" alt="menu button" />
+          </a>)}
           {!isMobile && (
             <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">
               <img src={GetInvolved} id="plank" alt="menu button" />
