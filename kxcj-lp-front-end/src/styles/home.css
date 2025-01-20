@@ -48,7 +48,15 @@
 .logo {
   display: flex;
   justify-content: center;
+  @media (max-width: 600px) {
+    
+    margin-top: -40px;
+    width: 110%;
+    height: 190px;
+  }
+  
 }
+
 
 /* logo */
 .logo img {
@@ -57,7 +65,7 @@
   
   @media (max-width: 600px) {
     min-width: 300px;
-  max-width: 300px;
+  max-width: 340px;
   }
 }
 /* buttons */
@@ -81,7 +89,9 @@ margin-top: -30px;
 max-width: 100%;
 height: auto;
 @media (max-width: 600px) { 
-  margin-top: -60px;
+  margin-top: -70px;
+  margin-left: 20px;
+  width: 90%;
 }
 }
 
@@ -102,38 +112,9 @@ button {
   font-family: 'Amatic SC', cursive;
   @media screen and (max-height: 730px) {
   
-  /* height: 1px; */
   }
 
   
-}
-
-#indie-flower {
-  font-family: 'Indie Flower', cursive;
-}
-
-#francois-one {
-  font-family: 'Francois One', sans-serif;
-}
-
-#neutcha {
-  font-family: 'Neucha', cursive;
-}
-
-#caveat-brush {
-  font-family: 'Caveat Brush', cursive;
-}
-
-#rubik-dirt {
-  font-family: 'Rubik Dirt', cursive;
-}
-
-#rye {
-  font-family: 'Rye', cursive;
-}
-
-#limelight {
-  font-family: 'Limelight', cursive;
 }
 
 .landscape-message {
