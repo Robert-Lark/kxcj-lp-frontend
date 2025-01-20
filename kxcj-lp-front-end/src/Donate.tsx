@@ -8,9 +8,11 @@ import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
+import { useMediaQuery } from "react-responsive";
 
 function Donate() {
   const location = useLocation();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const openNewWindow = () => {
     window.open(
@@ -63,7 +65,7 @@ function Donate() {
             />
           </a>
         </div>
-        <Footer />
+        {!isMobile && <Footer />}
       </div>
     </div>
   );
