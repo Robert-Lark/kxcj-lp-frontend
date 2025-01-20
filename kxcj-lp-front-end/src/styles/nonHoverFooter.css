@@ -1,7 +1,9 @@
 /* nonHoverFooter.css */
 .footer-non-hover img {
-  width: 100%; /* Make the image responsive */
-  height: 300px; /* Maintain aspect ratio */
+  width: 125%; /* Make the image responsive */
+  height: 400px; /* Maintain aspect ratio */
+  
+  margin-left: -100px;
 }
 
 /* Add media query for smaller screens (adjust breakpoint as needed) */

@@ -58,7 +58,7 @@ function Home() {
           <a href="/donate" className="donatePlank">
             <img src={Donate} id="plank" alt="menu button" />
           </a>
-          {isMobile && (<a href="/donate" className="donatePlank">
+          {isMobile && (<a href="/listenNowMobile" className="donatePlank">
             <img src={Schedule} id="plank" alt="menu button" />
           </a>)}
           {isMobile && (<a

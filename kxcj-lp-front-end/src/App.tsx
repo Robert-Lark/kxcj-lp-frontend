@@ -12,6 +12,7 @@ import Shop from './Shop';
 import Supporters from './Supporters';
 import WhatsOn from './Whatson';
 import History from './History';
+import MobileListenNow from './MobileListenNow';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="*" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/listenNow" element={<ListenNow />} />
+        <Route path="/listenNowMobile" element={<MobileListenNow />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/getInvolved" element={<GetInvolved />} />
         <Route path="/volunteer" element={<Volunteer />} /> 

@@ -20,7 +20,7 @@ function ListenNow() {
     <div>
       <div className="listenNowContainer">
         <div className="sidebar">
-          <SideButtons currentPage={location.pathname} listenNow cal />
+          <SideButtons currentPage={location.pathname} listenNow cal about/>
         </div>
         <div className="content">
           <div className="buttons-listen-now">

@@ -6,6 +6,7 @@ type props = {
   currentPage: string;
   listenNow?: boolean;
   cal?: boolean;
+  about?: boolean;
 };
 
 function SideButtons(props: props) {
@@ -24,10 +25,9 @@ function SideButtons(props: props) {
     "/becomeadj",
   ];
   const navigate = useNavigate();
-  const { back = false, listenNow = false, currentPage } = props;
+  const { back = false, listenNow = false, about = false, currentPage } = props;
 
   return (
-
       <div className="side_buttons">
         {back && (
           <button
@@ -55,6 +55,13 @@ function SideButtons(props: props) {
               </div>
             );
         })}
+        {about && (
+          <button
+            className="button-wood-plank back"
+            onClick={() => navigate("/about")}
+            id="about"
+          ></button>
+        )}
         {props.cal && (
           <button
           id="id-5"
