@@ -39,9 +39,10 @@ function SideButtons(props: props) {
         {listenNow && (
           <button
             className="button-wood-plank back"
-            onClick={() => navigate("/")}
-            id="home"
+            onClick={() => navigate("/about")}
+            id="about"
           ></button>
+          
         )}
         {buttonArr.map((button: string, i: any) => {
           if (linkArr[i] === currentPage) {
@@ -55,13 +56,6 @@ function SideButtons(props: props) {
               </div>
             );
         })}
-        {about && (
-          <button
-            className="button-wood-plank back"
-            onClick={() => navigate("/about")}
-            id="about"
-          ></button>
-        )}
         {props.cal && (
           <button
           id="id-5"

@@ -59,6 +59,19 @@
     transform: skewY(10deg);
 }
 
+#about {
+    background: url("../assets/planks_panda/About_Plank.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 85px;
+}
+
+#about:hover {
+    transform: skewY(10deg);
+}
+
 #id-0 {
     background: url("../assets/Listen_Now_Plank.png"); 
     -webkit-background-size: cover;
