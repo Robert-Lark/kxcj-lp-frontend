@@ -66,37 +66,8 @@
   margin-bottom: 10px;
 }
 
-/* Default image styling (for mobile and small screens) */
-.whatsOn-img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
 
-/* Vertical orientation specific styles (50% smaller) */
-.whatsOn-item.vertical .whatsOn-img {
-  width: 150px; /* 50% smaller than the original 300px */
-  max-height: 250px; /* 50% smaller than the original 500px */
-}
 
-/* Horizontal orientation specific styles (50% smaller) */
-.whatsOn-item.horizontal .whatsOn-img {
-  width: 250px; /* 50% smaller than the original 500px */
-  max-height: 150px; /* 50% smaller than the original 300px */
-}
-
-/* Larger image sizes for desktop (screens larger than 768px) */
-@media (min-width: 768px) {
-  .whatsOn-item.vertical .whatsOn-img {
-    width: 600px; /* 50% smaller than the original 1200px */
-    max-height: 1000px; /* 50% smaller than the original 2000px */
-  }
-
-  .whatsOn-item.horizontal .whatsOn-img {
-    width: 800px; /* 50% smaller than the original 1600px */
-    max-height: 400px; /* 50% smaller than the original 800px */
-  }
-}
 /* Caption styling inside the white box */
 .whatsOn-caption {
   font-size: 1.2rem;
