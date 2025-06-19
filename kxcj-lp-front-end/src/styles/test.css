@@ -1,7 +1,7 @@
 .container-test {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* 1/4 and 3/4 of the page */
-    height: 100vh; /* Adjust the height as needed */
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
     @media (max-width: 600px) {
       display: flex;
       flex-direction: column;
@@ -276,16 +276,15 @@
     align-items: center;
   }
   
-  /* Flexbox container for the images */
   .donate-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;                /* Add space between images */
-    flex-wrap: nowrap;         /* Prevent images from wrapping */
+    gap: 20px;
+    flex-wrap: nowrap;
     
     @media (max-width: 600px) {
-      gap: 10px;               /* Adjust gap for smaller screens */
+      gap: 10px;
     }
   }
   
@@ -293,18 +292,18 @@
     margin-top: 5px;
     height: 300px;
     width: 350px;
-    object-fit: contain;        /* Ensure the image scales within its container */
+    object-fit: contain;
     
     @media (max-width: 600px) {
       margin-top: -50px;
-      height: 200px;            /* Scale down for mobile */
-      width: 230px;             /* Scale width for mobile */
+      height: 200px;
+      width: 230px;
     }
   }
   
   #paypal {
     height: 300px;
-    width: auto;               /* Maintain aspect ratio */
+    width: auto;
     object-fit: contain;
     
     @media (max-width: 600px) {
@@ -321,7 +320,7 @@
     object-fit: contain;
   
     @media (max-width: 600px) {
-      display: none;            /* Hide on mobile */
+      display: none;
     }
   }
 

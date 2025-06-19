@@ -2,6 +2,8 @@ import "../src/styles/home.css";
 import ListenNowDesktop from "../src/assets/Listen_Now_Plank.png";
 import GetInvolvedDesktop from "../src/assets/Get_Involved_Plank.png";
 import DonateDesktop from "../src/assets/Donate_Plank.png";
+import Schedule from "../src/assets/schedule_button.png";
+import About from "../src/assets/about_button.png";
 
 import ListenNowMobile from "../src/assets/Listen_Now_Plank.png";
 import DonateMobile from "../src/assets/Donate_Plank.png";
@@ -33,12 +35,7 @@ const ButtonLink: React.FC<ButtonLinkProps> = ({
 }) => {
   return (
     <a href={href} className={className}>
-      <img
-        src={imageSrc}
-        id="plank"
-        alt={altText}
-        onClick={onClick}
-      />
+      <img src={imageSrc} id="plank" alt={altText} onClick={onClick} />
     </a>
   );
 };
@@ -83,26 +80,41 @@ function Home() {
 
         {/* Desktop Buttons */}
         {!isMobile && (
-          <div className="buttons-home desktop-buttons" id="amatic">
-            <ButtonLink
-              href="/listenNow"
-              imageSrc={ListenNowDesktop}
-              altText="Listen Now button"
-              onClick={openNewWindow}
-            />
-            <ButtonLink
-              href="/donate"
-              imageSrc={DonateDesktop}
-              altText="Donate button"
-              className="donatePlank"
-            />
-            <ButtonLink
-              href="/getInvolved"
-              imageSrc={GetInvolvedDesktop}
-              altText="Get Involved button"
-              className="getInvolvedPlank"
-            />
-          </div>
+          <>
+            <div className="buttons-home desktop-buttons" id="amatic">
+              <ButtonLink
+                href="/listenNow"
+                imageSrc={ListenNowDesktop}
+                altText="Listen Now button"
+                onClick={openNewWindow}
+              />
+              <ButtonLink
+                href="/donate"
+                imageSrc={DonateDesktop}
+                altText="Donate button"
+                className="donatePlank"
+              />
+              <ButtonLink
+                href="/getInvolved"
+                imageSrc={GetInvolvedDesktop}
+                altText="Get Involved button"
+                className="getInvolvedPlank"
+              />
+            </div>
+            <div className="buttons-home-2 desktop-buttons" id="amatic">
+              <ButtonLink
+                href="/listenNow"
+                imageSrc={Schedule}
+                altText="Schedule button"
+              />
+              <ButtonLink
+                href="/about"
+                imageSrc={About}
+                altText="Get Involved button"
+                className="getInvolvedPlank"
+              />
+            </div>
+          </>
         )}
 
         {/* Mobile Buttons */}

@@ -77,6 +77,14 @@
   margin-top: 90px; 
 }
 
+.buttons-home-2 {
+  max-width: 70%;
+  height: auto; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
 
 .desktop-buttons {
   gap: 40px; 
