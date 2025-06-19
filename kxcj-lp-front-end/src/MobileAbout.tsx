@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/mobilePages.css";
-import image from "./assets/M_about.png";
+import image from "./assets/M_about1.png";
 import back from "./assets/Back_Plank.png";
 
 function MobileAbout() {
