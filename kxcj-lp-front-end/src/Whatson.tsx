@@ -48,7 +48,7 @@ function WhatsOn() {
         </div>
         <div className="whatsOn-content">
           {data?.allWhatsOn[0] && (
-            <div className={`whatsOn-item ${data.allWhatsOn[0].orientation}`}>
+            <div className={`whatsOn-item2 ${data.allWhatsOn[0].orientation}`}>
               
                 <img
                   src={data.allWhatsOn[0].image.asset.url}
