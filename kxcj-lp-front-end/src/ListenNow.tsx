@@ -2,6 +2,7 @@ import "../src/styles/listenNow.css";
 import SideButtons from "./lib/SideButtons";
 import SteamNow from "./assets/whats_up.png";
 import Archive from "./assets/Archive_Plank_2.png";
+import Supporters from "./assets/supporters_button.png";
 import Donate from "./assets/Donate_Plank.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "./lib/Footer";
@@ -9,18 +10,17 @@ import React from "react";
 
 function ListenNow() {
   const location = useLocation();
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/whatsOn"); // Navigate to the /whatsOn page
+    navigate("/whatsOn");
   };
-
 
   return (
     <div>
       <div className="listenNowContainer">
         <div className="sidebar">
-          <SideButtons currentPage={location.pathname} listenNow cal about/>
+          <SideButtons currentPage={location.pathname} listenNow cal about />
         </div>
         <div className="content">
           <div className="buttons-listen-now">
@@ -42,20 +42,17 @@ function ListenNow() {
               </a>
             </div>
           </div>
-<div className="tock-class">
-          <div
-            className="tock"
-            data-tockify-component="calendar"
-            data-tockify-calendar="kxcjfm"
-            data-tockify-height="550px"
-            data-tockify-max-width="850px"
-          ></div>
+          <div className="tock-class">
+            <div
+              className="tock"
+              data-tockify-component="calendar"
+              data-tockify-calendar="kxcjfm"
+              data-tockify-height="550px"
+              data-tockify-max-width="850px"
+            ></div>
           </div>
-                    <Footer />
+          <Footer />
         </div>
-      
-
-      
       </div>
     </div>
   );
