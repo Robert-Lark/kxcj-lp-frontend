@@ -7,8 +7,8 @@
 }
 
 /* Add media query for smaller screens (adjust breakpoint as needed) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-non-hover img {
-    max-width: 300px;
+   display: none;
   }
 }

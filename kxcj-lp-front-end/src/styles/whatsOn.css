@@ -66,6 +66,17 @@
   margin-bottom: 10px;
 }
 
+/* Vertical orientation specific styles (50% smaller) */
+.whatsOn-item.vertical .whatsOn-img {
+  width: 150px; /* 50% smaller than the original 300px */
+  max-height: 250px; /* 50% smaller than the original 500px */
+}
+
+/* Horizontal orientation specific styles (50% smaller) */
+.whatsOn-item.horizontal .whatsOn-img {
+  width: 250px; /* 50% smaller than the original 500px */
+  max-height: 150px; /* 50% smaller than the original 300px */
+}
 
 
 /* Caption styling inside the white box */

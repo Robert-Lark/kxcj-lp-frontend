@@ -1,13 +1,47 @@
 import "../src/styles/home.css";
-import ListenNow from "../src/assets/planks_panda/Listen_Now_Plank.png";
-import GetInvolved from "../src/assets/Get_Involved_Plank.png";
-import Donate from "../src/assets/planks_panda/Donate_Plank.png";
-import Archive from "../src/assets/planks_panda/Archive_Plank.png";
-import Schedule from "../src/assets/planks_panda/Schedule_Plank.png";
+import ListenNowDesktop from "../src/assets/Listen_Now_Plank.png";
+import GetInvolvedDesktop from "../src/assets/Get_Involved_Plank.png";
+import DonateDesktop from "../src/assets/Donate_Plank.png";
+
+import ListenNowMobile from "../src/assets/Listen_Now_Plank.png";
+import DonateMobile from "../src/assets/Donate_Plank.png";
+import MobileButtonAboutImage from "../src/assets/M_about_button.png";
+import MobileButtonArchiveImage from "../src/assets/M_archive_button.png";
+import MobileButtonContactImage from "../src/assets/M_contact_button.png";
+import MobileButtonWhatsUpImage from "../src/assets/M_whatsup_button.png";
+
 import logo from "../src/assets/logo_white_2.png";
+
 import { useMediaQuery } from "react-responsive";
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./lib/ErrorState";
+
+interface ButtonLinkProps {
+  href: string;
+  imageSrc: string;
+  altText: string;
+  className?: string;
+  onClick?: () => void;
+}
+
+const ButtonLink: React.FC<ButtonLinkProps> = ({
+  href,
+  imageSrc,
+  altText,
+  className,
+  onClick,
+}) => {
+  return (
+    <a href={href} className={className}>
+      <img
+        src={imageSrc}
+        id="plank"
+        alt={altText}
+        onClick={onClick}
+      />
+    </a>
+  );
+};
 
 const GET_INVOVLED_QUERY = gql`
   query GetHome {
@@ -22,7 +56,7 @@ const GET_INVOVLED_QUERY = gql`
 `;
 
 function Home() {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const { loading, error, data } = useQuery(GET_INVOVLED_QUERY);
   if (loading) return <p>loading...</p>;
   if (error) return <ErrorState error={error} />;
@@ -46,35 +80,73 @@ function Home() {
         <div className="logo">
           <img src={logoImage} alt="logo" />
         </div>
-        <div className="buttons-home">
-          <a href={isMobile ? "/" : "/listenNow"}>
-            <img
-              src={ListenNow}
-              id="plank"
-              alt="menu button"
+
+        {/* Desktop Buttons */}
+        {!isMobile && (
+          <div className="buttons-home desktop-buttons" id="amatic">
+            <ButtonLink
+              href="/listenNow"
+              imageSrc={ListenNowDesktop}
+              altText="Listen Now button"
               onClick={openNewWindow}
             />
-          </a>
-          <a href="/donate" className="donatePlank">
-            <img src={Donate} id="plank" alt="menu button" />
-          </a>
-          {isMobile && (<a href="/listenNowMobile" className="donatePlank">
-            <img src={Schedule} id="plank" alt="menu button" />
-          </a>)}
-          {isMobile && (<a
-            href="https://archive.org/details/@kxcj-lp"
-            className="donatePlank"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Archive} id="plank" alt="menu button" />
-          </a>)}
-          {!isMobile && (
-            <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">
-              <img src={GetInvolved} id="plank" alt="menu button" />
-            </a>
-          )}
-        </div>
+            <ButtonLink
+              href="/donate"
+              imageSrc={DonateDesktop}
+              altText="Donate button"
+              className="donatePlank"
+            />
+            <ButtonLink
+              href="/getInvolved"
+              imageSrc={GetInvolvedDesktop}
+              altText="Get Involved button"
+              className="getInvolvedPlank"
+            />
+          </div>
+        )}
+
+        {/* Mobile Buttons */}
+        {isMobile && (
+          <div className="mobile-buttons" id="amatic">
+            <ButtonLink
+              href="/"
+              imageSrc={ListenNowMobile}
+              altText="Listen Now button"
+              onClick={openNewWindow}
+              className="mobilePlank"
+            />
+            <ButtonLink
+              href="/donate"
+              imageSrc={DonateMobile}
+              altText="Donate button"
+              className="mobilePlank"
+            />
+            <ButtonLink
+              href="/mobileAbout"
+              imageSrc={MobileButtonAboutImage}
+              altText="Mobile Page About button"
+              className="mobilePlank"
+            />
+            <ButtonLink
+              href="https://archive.org/details/@kxcj-lp"
+              imageSrc={MobileButtonArchiveImage}
+              altText="Mobile Page Archive button"
+              className="mobilePlank archive"
+            />
+            <ButtonLink
+              href="/mobileWhatsUp"
+              imageSrc={MobileButtonWhatsUpImage}
+              altText="Mobile Page Whats Up button"
+              className="mobilePlank"
+            />
+            <ButtonLink
+              href="/mobileContact"
+              imageSrc={MobileButtonContactImage}
+              altText="Mobile Page Contact button"
+              className="mobilePlank"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

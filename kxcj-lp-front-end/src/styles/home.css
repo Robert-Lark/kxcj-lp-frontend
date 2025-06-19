@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat+Brush&family=Francois+One&family=Indie+Flower&family=Limelight&family=Neucha&family=Roboto:ital@1&family=Rubik+Dirt&family=Rye&display=swap');
 
 
-/* Homepage background */
+
 
 .homepage {
-  background: url("../assets/GetInvolvedBG.jpg") no-repeat center center fixed; 
+  background: url("../assets/GetInvolvedBG.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -36,7 +36,7 @@
   max-width: 900px;
   margin: auto;
   margin-top: 30px;
-  
+
   @media (max-width: 600px) {
     padding: 0px;
   }
@@ -58,51 +58,82 @@
 }
 
 
-/* logo */
 .logo img {
   max-width: 100%;
   height: auto;
-  
+
   @media (max-width: 600px) {
     min-width: 300px;
   max-width: 340px;
   }
 }
-/* buttons */
+
 .buttons-home {
   max-width: 100%;
-  height: auto;
-  display: flex;
+  height: auto; 
+  display: flex; 
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  margin-top: 90px;
+  margin-top: 90px; 
+}
+
+
+.desktop-buttons {
+  gap: 40px; 
+  flex-direction: row; 
+}
+
+
+@media (max-width: 600px) {
+  .mobile-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 15px; 
+    
+  }
+
   
-  @media (max-width: 600px) {
-   flex-direction: column;
-   gap: 70px;
+  .mobile-buttons > a:last-child {
+    margin-bottom: 0;
   }
 }
 
+
+.mobilePlank {
+  
+  @media (max-width: 600px) {
+    height: 70px; 
+    width: 240px; 
+  }
+  
+  }
+
+.archive {
+  margin-top: -25px;
+}
+
+
 #plank{
-margin-top: -30px;
-max-width: 100%;
-height: auto;
-@media (max-width: 600px) { 
-  margin-top: -70px;
-  margin-left: 20px;
-  width: 90%;
+  margin-top: -30px; 
+  max-width: 100%;
+  height: auto; 
 }
+
+
+
+@media (max-width: 600px) {
+  #plank {
+    margin-top: 0px; 
+  }
 }
+
 
 #plank:hover {
   transform: skewY(10deg);
 }
 
-#lastChild{
-  margin-bottom: -80px;
-  width: 100%;
-}
 
 button {
   font-size: 50px;
@@ -111,10 +142,9 @@ button {
 #amatic {
   font-family: 'Amatic SC', cursive;
   @media screen and (max-height: 730px) {
-  
-  }
 
   
+  }
 }
 
 .landscape-message {
