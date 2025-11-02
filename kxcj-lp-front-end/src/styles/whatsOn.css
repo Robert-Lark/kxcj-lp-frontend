@@ -70,7 +70,7 @@
 
 /* Caption styling inside the white box */
 .whatsOn-caption {
-  font-size: 1.2rem;
+  font-size: 4.2rem;
   color: #000; /* Black text to contrast against white background */
   margin-bottom: 0;
   text-align: center; /* Center the caption below the image */
@@ -87,6 +87,6 @@
   }
 
   .whatsOn-caption {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 2.2rem; /* Adjust font size for smaller screens */
   }
 }

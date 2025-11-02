@@ -4,12 +4,13 @@ import "./styles/whatsOn.css"; // Keep your styles
 import SideButtons from "./lib/SideButtons";
 import { useLocation } from "react-router-dom";
 
-// GraphQL query to fetch the data from Sanity
+// 1. UPDATE THE GRAPHQL QUERY
 const WHATS_ON_QUERY = gql`
   query GetWhatsOn {
     allWhatsOn {
       _id
       caption
+      eventLink  # <-- NEW: Fetch the eventLink field
       image {
         asset {
           url
@@ -20,9 +21,11 @@ const WHATS_ON_QUERY = gql`
   }
 `;
 
+// 2. UPDATE THE TYPESCRIPT INTERFACE
 interface WhatsOnData {
   _id: string;
   caption: string;
+  eventLink?: string; // <-- NEW: Make it an optional string (?)
   image: {
     asset: {
       url: string;
@@ -40,6 +43,9 @@ function WhatsOn() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
+  // Destructure the first item for cleaner access
+  const whatsOnItem = data?.allWhatsOn[0];
+
   return (
     <div>
       <div className="listenNowContainer whatson">
@@ -47,15 +53,34 @@ function WhatsOn() {
           <SideButtons currentPage={location.pathname} listenNow />
         </div>
         <div className="whatsOn-content">
-          {data?.allWhatsOn[0] && (
-            <div className={`whatsOn-item ${data.allWhatsOn[0].orientation}`}>
+          {whatsOnItem && (
+            <div className={`whatsOn-item ${whatsOnItem.orientation}`}>
               
-                <img
-                  src={data.allWhatsOn[0].image.asset.url}
-                  alt={data.allWhatsOn[0].caption}
-                  className="whatsOn-img"
-                />
-                <p className="whatsOn-caption">{data.allWhatsOn[0].caption}</p>
+                {/* 3. ADD LINK/BUTTON LOGIC */}
+                {/* If eventLink exists, wrap the entire image/caption block in an <a> tag */}
+                {whatsOnItem.eventLink ? (
+                  <a 
+                    href={whatsOnItem.eventLink} 
+                    target="_blank" // Open link in a new tab
+                    rel="noopener noreferrer" // Security best practice
+                  >
+                    <img
+                      src={whatsOnItem.image.asset.url}
+                      alt={whatsOnItem.caption}
+                      className="whatsOn-img"
+                    />
+                    <p className="whatsOn-caption">{whatsOnItem.caption}</p>
+                  </a>
+                ) : (
+                  <>
+                    <img
+                      src={whatsOnItem.image.asset.url}
+                      alt={whatsOnItem.caption}
+                      className="whatsOn-img"
+                    />
+                    <p className="whatsOn-caption">{whatsOnItem.caption}</p>
+                  </>
+                )}
               
             </div>
           )}
