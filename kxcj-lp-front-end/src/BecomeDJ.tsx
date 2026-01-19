@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import "./styles/test.css";
+import "./styles/pages.css";
 import Scroll from "./assets/Scrolls/Scroll_s.png";
 import SideButtons from "./lib/SideButtons";
-import Footer from "./lib/Footer";
 
 function BecomeDjGood() {
   const location = useLocation();

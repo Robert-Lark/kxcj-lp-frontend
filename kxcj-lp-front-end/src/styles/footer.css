@@ -177,3 +177,16 @@
     gap: 20px;
 margin-top: 20px;
   }
+
+/* Non-hover footer (simple image footer) */
+.footer-non-hover img {
+  width: 125%;
+  height: 400px;
+  margin-left: -100px;
+}
+
+@media (max-width: 768px) {
+  .footer-non-hover img {
+    max-width: 300px;
+  }
+}

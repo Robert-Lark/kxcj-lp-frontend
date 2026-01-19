@@ -1,13 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./styles/test.css";
-
-import Scroll from "./assets/T-shirt-Scroll.png";
+import "./styles/pages.css";
 import Merch from "./assets/Merch_tiny.png";
-
 import SideButtons from "./lib/SideButtons";
-import Footer from "./lib/Footer";
-import FooterRedux from "./lib/FooterRedux";
 
 function Shop() {
   const location = useLocation();

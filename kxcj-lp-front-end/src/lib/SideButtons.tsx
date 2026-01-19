@@ -25,7 +25,7 @@ function SideButtons(props: props) {
     "/becomeadj",
   ];
   const navigate = useNavigate();
-  const { back = false, listenNow = false, about = false, currentPage } = props;
+  const { back = false, listenNow = false, currentPage } = props;
 
   return (
       <div className="side_buttons">
