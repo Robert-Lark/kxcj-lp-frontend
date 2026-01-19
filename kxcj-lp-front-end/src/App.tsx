@@ -2,7 +2,7 @@ import React from 'react';
 import ListenNow from './ListenNow'
 import Home from './Home'
 import Donate from './Donate'
-import GetInvolved from './getInvolvedRedux'
+import GetInvolved from './GetInvolved'
 import { Routes, Route } from "react-router-dom";
 import Volunteer from './Volunteer';
 import SubmitPSAGood from './SubmitPSA';

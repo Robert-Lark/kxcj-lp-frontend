@@ -1,4 +1,4 @@
-import "../styles/nonHoverFooter.css";
+import "../styles/footer.css";
 import { useQuery, gql } from "@apollo/client";
 import ErrorState from "./ErrorState";
 import non_hover_footer from "../assets/footer/non_hover_footer.png";

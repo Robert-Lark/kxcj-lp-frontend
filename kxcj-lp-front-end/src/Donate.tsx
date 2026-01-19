@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./styles/test.css";
+import "./styles/pages.css";
 import Paypal from "./assets/PayPal_Plank_2.png";
 import DonateAVehicle from "./assets/Donate-a-Vehicle.png";
 import Supporters from "./assets/Supporters1.png";
