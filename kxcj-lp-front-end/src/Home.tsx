@@ -4,6 +4,7 @@ import GetInvolved from "../src/assets/Get_Involved_Plank.png";
 import Donate from "../src/assets/planks_panda/Donate_Plank.png";
 import Archive from "../src/assets/planks_panda/Archive_Plank.png";
 import Schedule from "../src/assets/planks_panda/Schedule_Plank.png";
+import About from "../src/assets/planks_panda/About_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
 import { useMediaQuery } from "react-responsive";
 import { useQuery, gql } from "@apollo/client";
@@ -75,6 +76,16 @@ function Home() {
             </a>
           )}
         </div>
+        {!isMobile && (
+          <div className="buttons-home-secondary">
+            <a href="/listenNow">
+              <img src={Schedule} id="plank" alt="schedule button" />
+            </a>
+            <a href="/about">
+              <img src={About} id="plank" alt="about button" />
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

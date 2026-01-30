@@ -77,11 +77,26 @@
   justify-content: center;
   gap: 40px;
   margin-top: 90px;
-  
+
   @media (max-width: 600px) {
    flex-direction: column;
    gap: 70px;
   }
+}
+
+.buttons-home-secondary {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.buttons-home-secondary #plank {
+  max-width: 230px;
+  height: auto;
 }
 
 #plank{
