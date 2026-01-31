@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Deployment (Netlify)
 
-- **Live site:** kxcj.org
+- **Live site:** kxcj.org]
 - **Plan:** Netlify Free (300 build minutes/month)
 - **Build time:** ~1-3 minutes per deploy
 - **Important:** If build minutes are exceeded, the site is suspended until next month. Batch multiple changes into single deploys when possible.
