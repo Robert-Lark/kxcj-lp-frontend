@@ -179,10 +179,26 @@ margin-top: 20px;
   }
 
 /* Non-hover footer (simple image footer) */
+.footer-non-hover {
+  position: relative;
+}
+
 .footer-non-hover img {
   width: 125%;
   height: 400px;
   margin-left: -100px;
+}
+
+.footer-non-hover .facebook-link {
+  position: absolute;
+  left: -60px;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {

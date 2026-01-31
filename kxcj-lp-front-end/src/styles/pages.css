@@ -382,3 +382,9 @@
       display: none;
     }
   }
+
+/* Facebook link positioning for Donate page */
+.container-test .footer-non-hover .facebook-link {
+  top: 40%;
+  left: -80px;
+}

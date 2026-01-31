@@ -70,4 +70,9 @@
       margin-top: 50px;      /* Reduce space before the footer */
     }
   }
-  
+
+/* Facebook link positioning for Donate page */
+.container-test .footer-non-hover .facebook-link {
+  top: 200% !important;
+  left: -400px !important;
+}

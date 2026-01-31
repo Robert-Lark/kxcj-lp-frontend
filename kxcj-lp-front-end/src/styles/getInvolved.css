@@ -122,3 +122,9 @@
 div {
   border: 2px solid blue;
 }
+
+/* Facebook link positioning for GetInvolved page */
+.full-screen-background .footer-non-hover .facebook-link {
+  top: 38%;
+  left: -70px;
+}

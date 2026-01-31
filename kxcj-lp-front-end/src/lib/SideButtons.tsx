@@ -61,7 +61,7 @@ function SideButtons(props: props) {
           id="id-5"
           className="button-wood-plank"
           onClick={() =>
-            window.open('https://www.illinoisvalleyweb.org/calendar', '_blank')
+            window.open('https://www.theivnews.com/events/', '_blank')
           }
         ></button>
         )}

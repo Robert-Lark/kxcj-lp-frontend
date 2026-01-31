@@ -25,6 +25,13 @@ function Footer() {
   return (
     <div className="footer-non-hover">
       <img src={footer} alt="footer" />
+      <a
+        href="https://facebook.com/KXCJ1057"
+        target="_blank"
+        rel="noreferrer"
+        className="facebook-link"
+        aria-label="KXCJ Facebook page"
+      />
     </div>
   );
 }

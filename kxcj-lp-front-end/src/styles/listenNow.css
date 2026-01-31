@@ -202,3 +202,12 @@ html, body {
     min-height: 100%;
     min-width: 100%;
 }
+
+/* Footer positioning specific to ListenNow page */
+.listenNowContainer .footer-non-hover img {
+    margin-top: -300px;
+}
+
+.listenNowContainer .footer-non-hover .facebook-link {
+    top: calc(50% - 175px);
+}
