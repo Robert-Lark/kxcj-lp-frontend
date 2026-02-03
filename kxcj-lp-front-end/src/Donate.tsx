@@ -9,10 +9,25 @@ import Logo from "./assets/logo_white_2.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
 import { useMediaQuery } from "react-responsive";
+import { useQuery, gql } from "@apollo/client";
+import ErrorState from "./lib/ErrorState";
+
+const GET_HOME_QUERY = gql`
+  query GetHome {
+    allHome {
+      image {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
 
 function Donate() {
   const location = useLocation();
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const { loading, error, data } = useQuery(GET_HOME_QUERY);
 
   const openNewWindow = () => {
     window.open(
@@ -21,6 +36,11 @@ function Donate() {
       "width=800,height=600"
     );
   };
+
+  if (loading) return <p>loading...</p>;
+  if (error) return <ErrorState error={error} />;
+
+  const logoImage = data?.allHome?.[0]?.image?.asset?.url ?? Logo;
 
   return (
     <div className="container-test">
@@ -34,7 +54,7 @@ function Donate() {
       <div className="custom-donate in-cont">
         <div className="donate-component-test">
           {" "}
-          <img src={Logo} alt="scroll" />
+          <img src={logoImage} alt="scroll" />
         </div>
         <div className="donate-image">
           <a role="button" href="/supporters" className="button-wood-plank">

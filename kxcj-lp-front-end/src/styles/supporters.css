@@ -1,17 +1,21 @@
 .background-test-supporters {
-
-    background: url("../assets/DonateBG.jpg") no-repeat center center fixed; background: url("../assets/DonateBG.jpg") no-repeat center center fixed; 
+    background: url("../assets/DonateBG.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
-    
+    width: 100%;
+    min-height: 100vh;
   }
 
   .image-container-supporters {
     display: flex;
     justify-content: center;
     overflow: scroll;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .image-container-supporters img {
-    max-width: 60%;
+    width: 70%;
+    max-width: none;
   }

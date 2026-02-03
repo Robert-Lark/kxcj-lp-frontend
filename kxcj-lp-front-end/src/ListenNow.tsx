@@ -47,8 +47,8 @@ function ListenNow() {
             className="tock"
             data-tockify-component="calendar"
             data-tockify-calendar="kxcjfm"
-            data-tockify-height="550px"
-            data-tockify-max-width="850px"
+            data-tockify-height="800px"
+            data-tockify-max-width="1100px"
           ></div>
           </div>
                     <Footer />
