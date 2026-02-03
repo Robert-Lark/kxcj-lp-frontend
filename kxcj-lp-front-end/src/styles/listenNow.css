@@ -205,7 +205,7 @@ html, body {
 
 /* Footer positioning specific to ListenNow page */
 .listenNowContainer .footer-non-hover img {
-    margin-top: -150px;
+    margin-top: 0px;
 }
 
 .listenNowContainer .footer-non-hover .facebook-link {
