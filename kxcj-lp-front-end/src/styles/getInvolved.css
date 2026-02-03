@@ -4,17 +4,17 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Full viewport height */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Ensure elements are spaced correctly */
-  
+  justify-content: flex-start; /* Align elements to top */
+  padding-top: 0px;
 }
 
 .scroll-container {
   width: 100%;
-  height: 55vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,15 +35,15 @@
   align-items: center;
   width: 100%;
   gap: 10px;
-  
-  margin-top: -45px;
-  margin-bottom: -75px;
+
+  margin-top: -30px;
+  margin-bottom: -40px;
 }
 
 .box {
   background-color: transparent; /* Make the box transparent */
-  width: 200px; /* Fixed width for each box */
-  height: 300px; /* Fixed height for each box */
+  width: 240px; /* Fixed width for each box */
+  height: 360px; /* Fixed height for each box */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Space between top and bottom images */
@@ -125,6 +125,6 @@ div {
 
 /* Facebook link positioning for GetInvolved page */
 .full-screen-background .footer-non-hover .facebook-link {
-  top: 38%;
+  top: 40%;
   left: -70px;
 }

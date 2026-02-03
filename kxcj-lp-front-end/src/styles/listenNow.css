@@ -209,5 +209,5 @@ html, body {
 }
 
 .listenNowContainer .footer-non-hover .facebook-link {
-    top: calc(50% - 175px);
+    top: calc(50% - 25px);
 }
