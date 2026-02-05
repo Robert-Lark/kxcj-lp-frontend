@@ -103,10 +103,10 @@
 margin-top: -30px;
 max-width: 100%;
 height: auto;
-@media (max-width: 600px) { 
-  margin-top: -70px;
-  margin-left: 20px;
-  width: 90%;
+@media (max-width: 600px) {
+  margin-top: -60px;
+  margin-left: 35px;
+  width: 75%;
 }
 }
 
