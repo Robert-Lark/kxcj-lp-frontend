@@ -74,7 +74,7 @@
 /* Make Donate a Vehicle button larger on mobile */
 @media (max-width: 600px) {
   #donate {
-    width: 140px !important;
+    width: 180px !important;
   }
 }
 
