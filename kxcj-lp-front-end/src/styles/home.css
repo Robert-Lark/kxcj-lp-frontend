@@ -81,6 +81,7 @@
   @media (max-width: 600px) {
    flex-direction: column;
    gap: 70px;
+   margin-top: 50px;
   }
 }
 
