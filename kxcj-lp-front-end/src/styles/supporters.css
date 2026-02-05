@@ -16,6 +16,6 @@
   }
 
   .image-container-supporters img {
-    width: 70%;
-    max-width: none;
+    width: 50%;
+    max-width: 800px;
   }
