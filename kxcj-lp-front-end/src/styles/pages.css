@@ -297,8 +297,8 @@
     
     @media (max-width: 600px) {
       margin-top: -50px;
-      height: 200px;            /* Scale down for mobile */
-      width: 230px;             /* Scale width for mobile */
+      height: 280px;            /* Scale down for mobile */
+      width: 320px;             /* Scale width for mobile */
     }
   }
   
