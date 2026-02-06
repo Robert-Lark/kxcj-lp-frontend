@@ -4,6 +4,15 @@ export default {
     type: 'document',
     fields: [
         {
+            name: 'scrollImage',
+            title: 'Scroll Image',
+            type: 'image',
+            description: 'The scroll image at the top of the page',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'url',
             title: 'Page URL',
             type: 'string',

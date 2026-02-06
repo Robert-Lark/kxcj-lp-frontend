@@ -8,7 +8,7 @@ import Submit_A_PSA from "./assets/Submit_PSA_Plank_2.png";
 import Donate_Plank_2 from "./assets/Donate_Plank.png";
 import Volunteer_Plank from "./assets/Volunteer_Plank_2.png";
 
-import Scroll from "./assets/Scroll.png";
+import ScrollFallback from "./assets/Scroll.png";
 import Footer from "./lib/Footer";
 
 const GET_INVOVLED_QUERY = gql`
@@ -16,6 +16,11 @@ const GET_INVOVLED_QUERY = gql`
     allGetInvolved {
       heading
       contentRaw
+      scrollImage {
+        asset {
+          url
+        }
+      }
       referenceList {
         caption
         asset {
@@ -54,6 +59,8 @@ function GetInvolved() {
   };
 
   const images = data.allGetInvolved[0]?.referenceList;
+  const sanityImageUrl = data.allGetInvolved[0]?.scrollImage?.asset?.url;
+  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : ScrollFallback;
 
   const links = ["/becomeadj", "/submit", "/donate", "/volunteer"];
 
@@ -67,7 +74,7 @@ function GetInvolved() {
   return (
     <div className="full-screen-background">
       <div className="scroll-container">
-        <img src={Scroll} alt="scroll" className="scroll-image" />
+        <img src={scrollImage} alt="scroll" className="scroll-image" />
       </div>
       <div className="box-container">
         

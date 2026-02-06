@@ -1,12 +1,28 @@
 import React, { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { useQuery, gql } from "@apollo/client";
 import "./styles/pages.css";
-import Scroll from "./assets/Scrolls/Scroll_v.png";
+import ScrollFallback from "./assets/Scrolls/Scroll_v.png";
 import SideButtons from "./lib/SideButtons";
+
+const GET_VOLUNTEER_QUERY = gql`
+  query GetVolunteer {
+    allVolunteer {
+      scrollImage {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
 
 function VolunteerGood() {
   const location = useLocation();
+  const { data } = useQuery(GET_VOLUNTEER_QUERY);
+  const sanityImageUrl = data?.allVolunteer?.[0]?.scrollImage?.asset?.url;
+  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : ScrollFallback;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [skills, setSkills] = useState("");
@@ -47,8 +63,8 @@ function VolunteerGood() {
       <div className="content-test">
         <div className="component-test">
           <img
-            style={{ maxWidth: "100%", height: "auto" }}
-            src={Scroll}
+            style={{ maxWidth: "100%", height: "auto", marginBottom: "20px" }}
+            src={scrollImage}
             alt="scroll"
             className="volunteer-scroll"
           />

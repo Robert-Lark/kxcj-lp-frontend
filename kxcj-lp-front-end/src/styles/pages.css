@@ -1,13 +1,9 @@
 .container-test {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* 1/4 and 3/4 of the page */
-    height: 100vh; /* Adjust the height as needed */
+    min-height: 100vh;
+    overflow-y: auto;
     @media (max-width: 600px) {
       display: flex;
       flex-direction: column;
-    }
-    @media (max-height: 500px) { 
-      grid-template-columns: 1fr
     }
   }
 
@@ -50,8 +46,25 @@
   }
 
   .volunteer-scroll {
-    width: 44rem!important;
+    width: 55rem!important;
+    margin-top: 60px;
     margin-bottom: -50px !important;
+  }
+
+  .submit-scroll {
+    margin-top: 60px;
+  }
+
+  .submit-form {
+    margin-top: 80px;
+  }
+
+  .dj-scroll {
+    margin-top: 60px;
+  }
+
+  .dj-form {
+    margin-top: 50px;
   }
 
   .background-test-dj {
@@ -81,8 +94,12 @@
   }
 
   .sidebar-test {
-    margin-top:60px;
-    @media (max-height: 500px) { 
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 25%;
+    height: 100vh;
+    @media (max-height: 500px) {
       display: none;
     }
   }
@@ -91,6 +108,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 25%;
+    padding-bottom: 60px;
   }
 
   .merch-test {
@@ -127,10 +146,11 @@
     justify-content: center;
     align-items: center;
     
-    background: whitesmoke;
+    background: #f5e6d3;
     border: 1px solid black;
     padding: 1.5rem;
-    width: 50%;
+    width: 60%;
+    max-width: 500px;
     
     padding: 1.5rem;
     
@@ -149,7 +169,7 @@
   }
 
   .volunteer-form {
-    margin-top: 40px;
+    margin-top: 80px;
   }
   
   .component-test-form form {
@@ -158,14 +178,14 @@
     gap: 10px;
     width: 100%; /* Adjust the width as needed */
     max-width: 400px; /* Set a maximum width if desired */
-    
+    font-size: 18px;
   }
 
   .component-test-form form input {
     width: 100%;
     height: 5px;
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s ease;
@@ -173,8 +193,12 @@
 
   button[type="submit"] {
     margin-top: 10px;
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: #a8c69f;
+    border: 1px solid #7da870;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
 .example-psa-button {

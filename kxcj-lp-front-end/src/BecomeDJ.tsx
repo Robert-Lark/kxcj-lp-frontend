@@ -1,12 +1,28 @@
 import React, { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { useQuery, gql } from "@apollo/client";
 import "./styles/pages.css";
-import Scroll from "./assets/Scrolls/Scroll_s.png";
+import ScrollFallback from "./assets/Scrolls/Scroll_s.png";
 import SideButtons from "./lib/SideButtons";
+
+const GET_BECOME_DJ_QUERY = gql`
+  query GetBecomeDJ {
+    allBecomeDJ {
+      scrollImage {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
 
 function BecomeDjGood() {
   const location = useLocation();
+  const { data } = useQuery(GET_BECOME_DJ_QUERY);
+  const sanityImageUrl = data?.allBecomeDJ?.[0]?.scrollImage?.asset?.url;
+  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : ScrollFallback;
   const [djName, setDjName] = useState("");
   const [musicStyle, setMusicStyle] = useState("");
   const [coHosts, setCoHosts] = useState("");
@@ -56,13 +72,14 @@ function BecomeDjGood() {
       <div className="content-test">
         <div className="component-test">
           <img
-            style={{ maxWidth: "100%", height: "auto", marginBottom: "-60px" }}
-            src={Scroll}
+            style={{ maxWidth: "80%", height: "auto" }}
+            src={scrollImage}
             alt="scroll"
+            className="dj-scroll"
           />
         </div>
 
-        <div className="component-test-form">
+        <div className="component-test-form dj-form">
           <form onSubmit={handleSubmit} ref={form}>
             <label htmlFor="djName">DJ Name</label>
             <input

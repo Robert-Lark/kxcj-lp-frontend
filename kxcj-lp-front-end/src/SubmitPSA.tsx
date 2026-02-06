@@ -1,9 +1,22 @@
 import React, { useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { useQuery, gql } from "@apollo/client";
 import "./styles/pages.css";
-import Scroll from "./assets/Scrolls/Scroll_p.png";
+import ScrollFallback from "./assets/Scrolls/Scroll_p.png";
 import SideButtons from "./lib/SideButtons";
+
+const GET_SUBMIT_PSA_QUERY = gql`
+  query GetSubmitPSA {
+    allSubmitPSA {
+      scrollImage {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`;
 
 function Modal(props: any) {
   const { show, setShow } = props;
@@ -38,6 +51,9 @@ function Modal(props: any) {
 
 function SubmitPSAGood() {
   const location = useLocation();
+  const { data } = useQuery(GET_SUBMIT_PSA_QUERY);
+  const sanityImageUrl = data?.allSubmitPSA?.[0]?.scrollImage?.asset?.url;
+  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : ScrollFallback;
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -77,13 +93,14 @@ function SubmitPSAGood() {
       <div className="content-test">
         <div className="component-test">
           <img
-            src={Scroll}
-            style={{ maxWidth: "100%", height: "auto" }}
+            src={scrollImage}
+            style={{ maxWidth: "80%", height: "auto" }}
             alt="scroll"
+            className="submit-scroll"
           />
         </div>
         <Modal show={show} setShow={setShow} />
-        <div className="component-test-form">
+        <div className="component-test-form submit-form">
           <form onSubmit={handleSubmit} ref={form}>
             <div className="first-block">
               <label className="form-label">
