@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useQuery, gql } from "@apollo/client";
 import "./styles/pages.css";
-import ScrollFallback from "./assets/Scrolls/Scroll_p.png";
+
 import SideButtons from "./lib/SideButtons";
 
 const GET_SUBMIT_PSA_QUERY = gql`
@@ -53,7 +53,7 @@ function SubmitPSAGood() {
   const location = useLocation();
   const { data } = useQuery(GET_SUBMIT_PSA_QUERY);
   const sanityImageUrl = data?.allSubmitPSA?.[0]?.scrollImage?.asset?.url;
-  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : ScrollFallback;
+  const scrollImage = sanityImageUrl ? `${sanityImageUrl}?q=80&auto=format` : null;
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -92,12 +92,12 @@ function SubmitPSAGood() {
       </div>
       <div className="content-test">
         <div className="component-test">
-          <img
+          {scrollImage && <img
             src={scrollImage}
             style={{ maxWidth: "80%", height: "auto" }}
             alt="scroll"
             className="submit-scroll"
-          />
+          />}
         </div>
         <Modal show={show} setShow={setShow} />
         <div className="component-test-form submit-form">

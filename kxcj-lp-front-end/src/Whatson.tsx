@@ -10,7 +10,6 @@ const WHATS_ON_QUERY = gql`
     allWhatsOn {
       _id
       caption
-      eventLink  # <-- NEW: Fetch the eventLink field
       image {
         asset {
           url
@@ -21,11 +20,9 @@ const WHATS_ON_QUERY = gql`
   }
 `;
 
-// 2. UPDATE THE TYPESCRIPT INTERFACE
 interface WhatsOnData {
   _id: string;
   caption: string;
-  eventLink?: string; // <-- NEW: Make it an optional string (?)
   image: {
     asset: {
       url: string;
@@ -55,33 +52,12 @@ function WhatsOn() {
         <div className="whatsOn-content">
           {whatsOnItem && (
             <div className={`whatsOn-item ${whatsOnItem.orientation}`}>
-              
-                {/* 3. ADD LINK/BUTTON LOGIC */}
-                {/* If eventLink exists, wrap the entire image/caption block in an <a> tag */}
-                {whatsOnItem.eventLink ? (
-                  <a 
-                    href={whatsOnItem.eventLink} 
-                    target="_blank" // Open link in a new tab
-                    rel="noopener noreferrer" // Security best practice
-                  >
-                    <img
-                      src={whatsOnItem.image.asset.url}
-                      alt={whatsOnItem.caption}
-                      className="whatsOn-img"
-                    />
-                    <p className="whatsOn-caption">{whatsOnItem.caption}</p>
-                  </a>
-                ) : (
-                  <>
-                    <img
-                      src={whatsOnItem.image.asset.url}
-                      alt={whatsOnItem.caption}
-                      className="whatsOn-img"
-                    />
-                    <p className="whatsOn-caption">{whatsOnItem.caption}</p>
-                  </>
-                )}
-              
+                <img
+                  src={whatsOnItem.image.asset.url}
+                  alt={whatsOnItem.caption}
+                  className="whatsOn-img"
+                />
+                <p className="whatsOn-caption">{whatsOnItem.caption}</p>
             </div>
           )}
         </div>
