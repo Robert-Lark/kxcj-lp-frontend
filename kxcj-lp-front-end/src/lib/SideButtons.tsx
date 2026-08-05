@@ -21,7 +21,7 @@ function SideButtons(props: props) {
     "/listenNow",
     "/donate",
     "/getInvolved",
-    "/merch",
+    "https://kxcj-lp-merch.printify.me",
     "/becomeadj",
   ];
   const navigate = useNavigate();
@@ -47,14 +47,20 @@ function SideButtons(props: props) {
         {buttonArr.map((button: string, i: any) => {
           if (linkArr[i] === currentPage) {
             return null;
-          } else
+          } else {
+            const isExternal = linkArr[i].startsWith("http");
             return (
               <div key={i}>
-                <a href={linkArr[i]}>
+                <a
+                  href={linkArr[i]}
+                  target={isExternal ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                >
                   <button id={`id-${i}`} className="button-wood-plank"></button>
                 </a>
               </div>
             );
+          }
         })}
         {props.cal && (
           <button
