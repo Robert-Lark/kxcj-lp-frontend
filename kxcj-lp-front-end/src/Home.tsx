@@ -5,6 +5,7 @@ import Donate from "../src/assets/planks_panda/Donate_Plank.png";
 import Archive from "../src/assets/planks_panda/Archive_Plank.png";
 import Schedule from "../src/assets/planks_panda/Schedule_Plank.png";
 import About from "../src/assets/planks_panda/About_Plank.png";
+import Shop from "../src/assets/Shop_Plank.png";
 import logo from "../src/assets/logo_white_2.png";
 import { useMediaQuery } from "react-responsive";
 import { useQuery, gql } from "@apollo/client";
@@ -69,6 +70,14 @@ function Home() {
             rel="noreferrer"
           >
             <img src={Archive} id="plank" alt="menu button" />
+          </a>)}
+          {isMobile && (<a
+            href="https://kxcj-lp-merch.printify.me"
+            className="donatePlank shopPlank"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Shop} id="plank" alt="shop button" />
           </a>)}
           {!isMobile && (
             <a href="/getInvolved" className="getInvolvedPlank" id="lastChild">

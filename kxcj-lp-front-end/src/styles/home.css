@@ -115,6 +115,12 @@ height: auto;
   transform: skewY(10deg);
 }
 
+.shopPlank {
+  @media (max-width: 600px) {
+    margin-top: -20px;
+  }
+}
+
 #lastChild{
   margin-bottom: -80px;
   width: 100%;
