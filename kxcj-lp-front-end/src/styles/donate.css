@@ -56,7 +56,7 @@
       width: 150px;          /* Scale down for smaller screens */
     }
   }
-  
+
   @media (max-width: 600px) {
     .donate-image img {
       width: 100px;          /* Further scale down for mobile */

@@ -264,12 +264,40 @@
   }
 
   .donate-image img{
-    max-width: 100%; 
+    max-width: 100%;
     /* max-height: auto; */
-    
+
     @media (max-width: 600px) {
       margin-top: 0px;
   }
+  }
+
+  .donate-subscribe-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -45px;
+    gap: 0px;
+  }
+
+  .donate-subscribe-row .subscribe-banner {
+    max-width: 100%;
+    width: 460px;
+    height: auto;
+
+    @media (max-width: 600px) {
+      width: 300px;
+    }
+  }
+
+  .donate-subscribe-row .paypal-button-container {
+    width: 260px;
+    max-width: 100%;
+    margin-top: -10px;
+
+    @media (max-width: 600px) {
+      width: 200px;
+    }
   }
 
   .donate-component-test {
@@ -411,4 +439,8 @@
 .container-test .footer-non-hover .facebook-link {
   top: 40%;
   left: -80px;
+}
+
+.container-test .footer-non-hover {
+  margin-top: -60px;
 }
