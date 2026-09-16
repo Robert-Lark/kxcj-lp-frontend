@@ -278,6 +278,10 @@
     align-items: center;
     margin-top: -45px;
     gap: 0px;
+
+    @media (max-width: 600px) {
+      margin-top: 40px;
+    }
   }
 
   .donate-subscribe-row .subscribe-banner {
@@ -286,7 +290,7 @@
     height: auto;
 
     @media (max-width: 600px) {
-      width: 300px;
+      width: 450px;
     }
   }
 
@@ -296,7 +300,8 @@
     margin-top: -10px;
 
     @media (max-width: 600px) {
-      width: 200px;
+      width: 260px;
+      margin-top: 0;
     }
   }
 

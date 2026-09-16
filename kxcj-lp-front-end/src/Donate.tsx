@@ -7,6 +7,7 @@ import Supporters from "./assets/Supporters1.png";
 import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
 import TenForTenBanner from "./assets/10For10Banner.png";
+import TenForTenBannerMobile from "./assets/10For10BannerMobile.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
 import { useMediaQuery } from "react-responsive";
@@ -105,6 +106,39 @@ function Donate() {
 
   const logoImage = data?.allHome?.[0]?.image?.asset?.url ?? Logo;
 
+  const supportersButton = (
+    <a role="button" href="/supporters" className="button-wood-plank">
+      <img src={Supporters} alt="supporters" id="supporters" />
+    </a>
+  );
+
+  const paypalOneTimeButton = (
+    <a
+      role="button"
+      href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
+      className="button-wood-plank"
+    >
+      <img src={Paypal} alt="archive button" id="paypal" />
+    </a>
+  );
+
+  const donateVehicleButton = (
+    <a role="button" href="https://careasy.org/KXCJ" className="button-wood-plank">
+      <img src={DonateAVehicle} alt="archive button" id="donate" />
+    </a>
+  );
+
+  const subscribeRow = (
+    <div className="donate-subscribe-row">
+      <img
+        src={isMobile ? TenForTenBannerMobile : TenForTenBanner}
+        alt="10 for 10 for 10 campaign"
+        className="subscribe-banner"
+      />
+      <div id={PAYPAL_CONTAINER_ID} className="paypal-button-container" />
+    </div>
+  );
+
   return (
     <div className="container-test">
       <div className="background-test-donate" />
@@ -119,33 +153,25 @@ function Donate() {
           {" "}
           <img src={logoImage} alt="scroll" />
         </div>
-        <div className="donate-image">
-          <a role="button" href="/supporters" className="button-wood-plank">
-            <img src={Supporters} alt="supporters" id="supporters" />
-          </a>
-          <a
-            role="button"
-            href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
-            className="button-wood-plank"
-          >
-            <img src={Paypal} alt="archive button" id="paypal" />
-          </a>
-          <a
-            role="button"
-            href="https://careasy.org/KXCJ"
-            className="button-wood-plank"
-          >
-            <img src={DonateAVehicle} alt="archive button" id="donate" />
-          </a>
-        </div>
-        <div className="donate-subscribe-row">
-          <img
-            src={TenForTenBanner}
-            alt="10 for 10 for 10 campaign"
-            className="subscribe-banner"
-          />
-          <div id={PAYPAL_CONTAINER_ID} className="paypal-button-container" />
-        </div>
+        {isMobile ? (
+          <>
+            {subscribeRow}
+            <div className="donate-image">
+              {donateVehicleButton}
+              {paypalOneTimeButton}
+              {supportersButton}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="donate-image">
+              {supportersButton}
+              {paypalOneTimeButton}
+              {donateVehicleButton}
+            </div>
+            {subscribeRow}
+          </>
+        )}
         <div className="listenMobileButton">
           <a href="/donate">
             <img
