@@ -359,7 +359,7 @@
     }
   }
   
-  #paypal {
+  #paypal-onetime {
     height: 300px;
     width: auto;               /* Maintain aspect ratio */
     object-fit: contain;

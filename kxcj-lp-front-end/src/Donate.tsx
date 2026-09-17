@@ -118,7 +118,7 @@ function Donate() {
       href="https://www.paypal.com/donate?hosted_button_id=D4VVLZXCKBVPS"
       className="button-wood-plank"
     >
-      <img src={Paypal} alt="archive button" id="paypal" />
+      <img src={Paypal} alt="archive button" id="paypal-onetime" />
     </a>
   );
 
