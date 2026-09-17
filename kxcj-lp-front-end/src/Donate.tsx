@@ -6,7 +6,6 @@ import DonateAVehicle from "./assets/Donate-a-Vehicle.png";
 import Supporters from "./assets/Supporters1.png";
 import ListenNow from "./assets/Listen_Now_Plank.png";
 import Logo from "./assets/logo_white_2.png";
-import TenForTenBanner from "./assets/10For10Banner.png";
 import TenForTenBannerMobile from "./assets/10For10BannerMobile.png";
 import SideButtons from "./lib/SideButtons";
 import Footer from "./lib/Footer";
@@ -131,8 +130,8 @@ function Donate() {
   const subscribeRow = (
     <div className="donate-subscribe-row">
       <img
-        src={isMobile ? TenForTenBannerMobile : TenForTenBanner}
-        alt="10 for 10 for 10 campaign"
+        src={TenForTenBannerMobile}
+        alt="10 for 10 for 10 campaign - KXCJ-LP is celebrating 10 years on the air! Help us mark this special occasion by pledging $10/month for 10 months!"
         className="subscribe-banner"
       />
       <div id={PAYPAL_CONTAINER_ID} className="paypal-button-container" />
